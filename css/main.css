@@ -1,0 +1,78 @@
+body {
+    background-color: #f0ead6;
+    color: #888
+}
+a {
+    text-overflow: ellipsis;
+    color :#444;
+    font-weight:bold
+}
+h1 {
+    font-family: Helvetica, sans-serif;
+    text-overflow: ellipsis;
+    color:#666
+}
+
+/* Small caps version of Heading1 */
+h1.small {
+    font-variant: small-caps;
+    font-family: Helvetica, sans-serif;
+    text-overflow: ellipsis;
+    text-decoration: underline;
+    text-underline-offset: 15%;
+    color:#666
+    
+}
+h2 {
+    font-family: Helvetica, sans-serif;
+    text-overflow: ellipsis;
+    text-underline-offset: 15%;
+    color:#666
+    
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+    text-overflow: ellipsis;
+    color:#666
+}
+table, th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid;
+  }
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.half-width {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+.thirty-width {
+    display: inline-block;
+    width: 29%;
+    vertical-align: top;
+}
+.forty-width {
+    display: inline-block;
+    width: 39%;
+    vertical-align: top;
+}
+.sixty-width {
+    display: inline-block;
+    width: 59%;
+    vertical-align: top;
+}
+.seventy-width {
+    display: inline-block;
+    width: 69%;
+    vertical-align: top;
+}
+footer {
+    font-family: Helvetica, sans-serif;
+    text-overflow: ellipsis;
+    color:#666
+}
