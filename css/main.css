@@ -1,6 +1,12 @@
+main {
+    max-width: 750px;
+    margin: 40px auto;
+}
 body {
+    font-family: "Cabin", serif;
     background-color: #f0ead6;
-    color: #888
+    color: #888;
+    
 }
 a {
     text-overflow: ellipsis;
@@ -8,15 +14,19 @@ a {
     font-weight:bold
 }
 h1 {
-    font-family: Helvetica, sans-serif;
+    background-color: #c5c0b056;
+    font-family: "Josefin Sans", serif;
+    font-weight: 300;
+    font-size: 3em;
     text-overflow: ellipsis;
     color:#666
 }
 
 /* Small caps version of Heading1 */
 h1.small {
+    
     font-variant: small-caps;
-    font-family: Helvetica, sans-serif;
+    font-family: "Josefin Sans", serif;
     text-overflow: ellipsis;
     text-decoration: underline;
     text-underline-offset: 15%;
@@ -24,14 +34,16 @@ h1.small {
     
 }
 h2 {
-    font-family: Helvetica, sans-serif;
+    font-family: "Cabin", serif;
     text-overflow: ellipsis;
     text-underline-offset: 15%;
     color:#666
     
 }
 p {
-    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 50px;
+    vertical-align:auto;
+    font-family: "Cabin", serif;
     text-overflow: ellipsis;
     color:#666
 }
@@ -71,9 +83,18 @@ img {
     width: 69%;
     vertical-align: top;
 }
+.boxed {
+    margin: 0px;
+    padding: 10px;
+    border: 0px solid #444;
+}
+
 footer {
-    background-color: #999;
-    font-family: Helvetica, sans-serif;
+    
+    font-variant: small-caps;
+    background-color: #c5c0b056;
+    font-family: "Josefin Sans", serif;
+    font-weight: 100;
     text-overflow: ellipsis;
     color:#666
 }
