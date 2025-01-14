@@ -72,6 +72,7 @@ img {
     vertical-align: top;
 }
 footer {
+    background-color: #999;
     font-family: Helvetica, sans-serif;
     text-overflow: ellipsis;
     color:#666
