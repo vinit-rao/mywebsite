@@ -4,169 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinit Rao</title>
+    <title>Vinit Rao - Portfolio</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon href" href="images/favicon.png">
-    <!--
-    font-family: "Cabin", serif;
-    font-family: "Josefin Sans", serif;
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
+    <link rel="icon" href="images/favicon.png">
 </head>
 
 <body>
-    <nav class="flex">
-        <h1><a class="small" href="index.html">Vinit Rao</a></h1>
-        <h1><a class="smaller" href="index.html">Projects</a></h1>
-        <h1><a class="smaller" href="index.html">About</a></h1>
-        <h1><a class="smaller" href="index.html">Contact</a></h1>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Vinit Rao</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-    <main>
-        <br>
-        <br>
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1 style="font-size:50px">Vinit Rao</h1>
-                <h2>woah</h2>
-                <button>yes</button>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Vinit Rao</span></h1>
+            <p>Website still a work in progress.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>I'm a skilled front-end developer with expertise in responsive design and modern web technologies.</p>
+        </div>
+        <div class="about-image">
+            <img src="images/placeholder.png" alt="Vinit Rao">
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skill-grid">
+            <div class="skill"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png.png"
+                    alt="HTML"></div>
+            <div class="skill"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1051px-Adobe_Premiere_Pro_CC_icon.svg.png.png"
+                    alt="CSS"></div>
+            <div class="skill"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/1051px-Adobe_Illustrator_CC_icon.svg.png.png"
+                    alt="JavaScript"></div>
+            <div class="skill"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Adobe_InDesign_CC_icon.svg/1200px-Adobe_InDesign_CC_icon.svg.png.png"
+                    alt="React"></div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <img src="images/project1.jpg" alt="Project 1">
+                <div class="overlay">Project 1</div>
+            </div>
+            <div class="project">
+                <img src="images/project2.jpg" alt="Project 2">
+                <div class="overlay">Project 2</div>
+            </div>
+            <div class="project">
+                <img src="images/project3.jpg" alt="Project 3">
+                <div class="overlay">Project 3</div>
             </div>
         </div>
-        <h2>test</h2>
+    </section>
 
-        <p>This website is a work in progress... go subscribe to my <a class="normal"
-                href="https://www.youtube.com/@OfficialVinitRao" target="_blank">youtube</a> in the meantime! Mauris
-            quis nunc et mi dignissim laoreet. Vestibulum
-            laoreet justo nec est consectetur, in suscipit nulla suscipit. Curabitur ultrices aliquam nulla, in
-            convallis orci dapibus id. Nunc mattis feugiat sollicitudin. Interdum et malesuada fames ac ante ipsum
-            primis in faucibus. Suspendisse id turpis et enim consectetur varius tempor eu ex. Nulla faucibus tortor
-            nisl, sit amet fermentum nisi laoreet quis. Phasellus imperdiet vehicula ultricies. Sed porttitor venenatis
-            metus, a cursus ligula ultrices rhoncus. Suspendisse potenti. Donec semper, nunc a facilisis tristique, sem
-            nulla sollicitudin leo, in tincidunt dui dui sed turpis. Fusce a dolor dictum, placerat urna vel, malesuada
-            ante. Etiam blandit nulla a tellus bibendum feugiat. Curabitur dictum ante sed maximus volutpat. Aliquam
-            auctor mauris et gravida iaculis. Maecenas pharetra convallis diam non gravida. Praesent vel pellentesque
-            purus, nec euismod ex. Maecenas in augue quis nibh hendrerit dictum. Pellentesque consequat, eros eget
-            egestas tristique, elit magna dictum libero, eu viverra tortor odio eu nunc. Phasellus dapibus id quam vitae
-            vehicula.
-        </p>
-        <div class="flex justify-content">
-            <p class="float">This website is a work in progress... go subscribe to my <a
-                    href="https://www.youtube.com/@OfficialVinitRao" target="_blank">youtube</a> in the meantime! Mauris
-                quis nunc et mi dignissim laoreet. Vestibulum
-                laoreet justo nec est consectetur, in suscipit nulla suscipit. Curabitur ultrices aliquam nulla, in
-                convallis orci dapibus id. Nunc mattis feugiat sollicitudin. Interdum et malesuada fames ac ante ipsum
-                primis in faucibus. Suspendisse id turpis et enim consectetur varius tempor eu ex. Nulla faucibus tortor
-                nisl, sit amet fermentum nisi laoreet quis. Phasellus imperdiet vehicula ultricies. Sed porttitor
-                venenatis
-                metus, a cursus ligula ultrices rhoncus. Suspendisse potenti. Donec semper, nunc a facilisis tristique,
-                sem
-                nulla sollicitudin leo, in tincidunt dui dui sed turpis. Fusce a dolor dictum, placerat urna vel,
-                malesuada
-                ante. Etiam blandit nulla a tellus bibendum feugiat. Curabitur dictum ante sed maximus volutpat. Aliquam
-                auctor mauris et gravida iaculis. Maecenas pharetra convallis diam non gravida. Praesent vel
-                pellentesque
-                purus, nec euismod ex. Maecenas in augue quis nibh hendrerit dictum. Pellentesque consequat, eros eget
-                egestas tristique, elit magna dictum libero, eu viverra tortor odio eu nunc. Phasellus dapibus id quam
-                vitae
-                vehicula.
-            </p>
+    <!-- CONTACT SECTION -->
+    <!-- <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section> -->
 
-            <img src="images/placeholder.png" alt="placeholder" width="30%">
-        </div>
-        <div class="flex justify-content">
-            <p class="float">This website is a work in progress... go subscribe to my <a class="normal"
-                    href="https://www.youtube.com/@OfficialVinitRao" target="_blank">youtube</a> in the meantime! Mauris
-                quis nunc et mi dignissim laoreet. Vestibulum
-                laoreet justo nec est consectetur, in suscipit nulla suscipit. Curabitur ultrices aliquam nulla, in
-                convallis orci dapibus id. Nunc mattis feugiat sollicitudin. Interdum et malesuada fames ac ante ipsum
-                primis in faucibus. Suspendisse id turpis et enim consectetur varius tempor eu ex. Nulla faucibus tortor
-                nisl, sit amet fermentum nisi laoreet quis. Phasellus imperdiet vehicula ultricies. Sed porttitor
-                venenatis
-                metus, a cursus ligula ultrices rhoncus. Suspendisse potenti. Donec semper, nunc a facilisis tristique,
-                sem
-                nulla sollicitudin leo, in tincidunt dui dui sed turpis. Fusce a dolor dictum, placerat urna vel,
-                malesuada
-                ante. Etiam blandit nulla a tellus bibendum feugiat. Curabitur dictum ante sed maximus volutpat. Aliquam
-                auctor mauris et gravida iaculis. Maecenas pharetra convallis diam non gravida. Praesent vel
-                pellentesque
-                purus, nec euismod ex. Maecenas in augue quis nibh hendrerit dictum. Pellentesque consequat, eros eget
-                egestas tristique, elit magna dictum libero, eu viverra tortor odio eu nunc. Phasellus dapibus id quam
-                vitae
-                vehicula.
-            </p>
-
-            <img src="images/placeholder.png" alt="placeholder" width="30%">
-        </div>
-        <div class="flex justify-content">
-            <p class="float">This website is a work in progress... go subscribe to my <a class="normal"
-                    href="https://www.youtube.com/@OfficialVinitRao" target="_blank">youtube</a> in the meantime! Mauris
-                quis nunc et mi dignissim laoreet. Vestibulum
-                laoreet justo nec est consectetur, in suscipit nulla suscipit. Curabitur ultrices aliquam nulla, in
-                convallis orci dapibus id. Nunc mattis feugiat sollicitudin. Interdum et malesuada fames ac ante ipsum
-                primis in faucibus. Suspendisse id turpis et enim consectetur varius tempor eu ex. Nulla faucibus tortor
-                nisl, sit amet fermentum nisi laoreet quis. Phasellus imperdiet vehicula ultricies. Sed porttitor
-                venenatis
-                metus, a cursus ligula ultrices rhoncus. Suspendisse potenti. Donec semper, nunc a facilisis tristique,
-                sem
-                nulla sollicitudin leo, in tincidunt dui dui sed turpis. Fusce a dolor dictum, placerat urna vel,
-                malesuada
-                ante. Etiam blandit nulla a tellus bibendum feugiat. Curabitur dictum ante sed maximus volutpat. Aliquam
-                auctor mauris et gravida iaculis. Maecenas pharetra convallis diam non gravida. Praesent vel
-                pellentesque
-                purus, nec euismod ex. Maecenas in augue quis nibh hendrerit dictum. Pellentesque consequat, eros eget
-                egestas tristique, elit magna dictum libero, eu viverra tortor odio eu nunc. Phasellus dapibus id quam
-                vitae
-                vehicula.
-            </p>
-
-            <img src="images/placeholder.png" alt="placeholder" width="30%">
-        </div>
-        <div class="flex justify-content">
-            <p class="float">This website is a work in progress... go subscribe to my <a class="normal"
-                    href="https://www.youtube.com/@OfficialVinitRao" target="_blank">youtube</a> in the meantime! Mauris
-                quis nunc et mi dignissim laoreet. Vestibulum
-                laoreet justo nec est consectetur, in suscipit nulla suscipit. Curabitur ultrices aliquam nulla, in
-                convallis orci dapibus id. Nunc mattis feugiat sollicitudin. Interdum et malesuada fames ac ante ipsum
-                primis in faucibus. Suspendisse id turpis et enim consectetur varius tempor eu ex. Nulla faucibus tortor
-                nisl, sit amet fermentum nisi laoreet quis. Phasellus imperdiet vehicula ultricies. Sed porttitor
-                venenatis
-                metus, a cursus ligula ultrices rhoncus. Suspendisse potenti. Donec semper, nunc a facilisis tristique,
-                sem
-                nulla sollicitudin leo, in tincidunt dui dui sed turpis. Fusce a dolor dictum, placerat urna vel,
-                malesuada
-                ante. Etiam blandit nulla a tellus bibendum feugiat. Curabitur dictum ante sed maximus volutpat. Aliquam
-                auctor mauris et gravida iaculis. Maecenas pharetra convallis diam non gravida. Praesent vel
-                pellentesque
-                purus, nec euismod ex. Maecenas in augue quis nibh hendrerit dictum. Pellentesque consequat, eros eget
-                egestas tristique, elit magna dictum libero, eu viverra tortor odio eu nunc. Phasellus dapibus id quam
-                vitae
-                vehicula.
-            </p>
-
-            <img src="images/placeholder.png" alt="placeholder" width="30%">
-        </div>
-    </main>
-
-
+    <!-- FOOTER -->
     <footer>
-        <div class="thirty-width normal">
-            <a>Vinit Rao<br>Multimedia Designer</a>
-        </div>
-        <div class="thirty-width normal">
-            <a>Contact<br>vinitrao@gmail.com</a>
-        </div>
-        <div class="thirty-width normal">
-            <a>Socials</a><br>
-            <a href="https://ca.linkedin.com/in/vinitrao1?trk=people-guest_people_search-card"
-                target="_blank">Linkedin</a>
-            <a href="https://www.youtube.com/@OfficialVinitRao" target="_blank">Youtube</a>
+        <p>&copy; 2025 Vinit Rao. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><img src="images/github.png" alt="GitHub"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
         </div>
     </footer>
-</body>
 
+</body>
 
 </html>
