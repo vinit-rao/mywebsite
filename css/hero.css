@@ -42,19 +42,21 @@
     color: #ffcc00;
   }
   
+  /* ✅ Typewriter that stops exactly at text */
   .typewriter {
+    display: inline-block;
     overflow: hidden;
-    border-right: 2px solid #ffcc00;
     white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-    font-size: 1.25rem;
-    width: 0;
+    border-right: 2px solid #ffcc00;
     color: #ddd;
+    width: 0;
+    animation: typing 3s steps(52, end) forwards, blink 0.75s step-end infinite;
+    max-width: fit-content;
   }
   
   @keyframes typing {
     from { width: 0; }
-    to { width: 100%; }
+    to { width: 52ch; } /* Match the number of characters in your sentence */
   }
   
   @keyframes blink {
@@ -69,19 +71,6 @@
     margin-top: 1.5rem;
   }
   
-  .hero-graphic {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .animated-blob {
-    width: 200px;
-    height: 200px;
-    animation: float 6s ease-in-out infinite;
-  }
-  
   .scroll-down {
     position: absolute;
     bottom: 40px;
@@ -91,12 +80,6 @@
     color: #ffcc00;
     animation: bounce 2s infinite;
     z-index: 2;
-  }
-  
-  @keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
   }
   
   @keyframes bounce {
