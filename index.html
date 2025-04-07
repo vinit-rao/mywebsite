@@ -1,84 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-    <div class="container">
-        <!-- Sidebar -->
-        <nav class="sidebar">
-            <div class="logo">My Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="media/background.mp4" type="video/mp4" />
+  </video>
 
-        <!-- Main Content -->
-        <main class="content">
-            <section id="home" class="section">
-                <div class="flex-container">
-                    
-                    <div>
-                        <h1>Welcome to My Portfolio</h1>
-                        <p>Still a work in progress...</p>
-                    </div>
-                    <div>
-                        <svg class="rotating-star" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="gold">
-                            <polygon points="32,4 39,24 60,24 42,38 48,58 32,46 16,58 22,38 4,24 25,24"/>
-                      </svg>
-                    </div>
-                </div>
-            </section>
+  <!-- Particles -->
+  <div id="particles-js"></div>
 
-            <section id="about" class="section">
-                <h2>About Me</h2>
-                <div class="flex-container">
-                    <div class="profile">
-                        <img src="images/profile.jpg" alt="Profile Picture">
-                    </div>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                    </div>
-                </div>
-            </section>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">My Portfolio</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle">🌓</button>
+    </nav>
 
-            <section id="projects" class="section">
-                <h2>Projects</h2>
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <img src="images/project1.jpg" alt="Project 1">
-                        <h3>Project One</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/project2.jpg" alt="Project 2">
-                        <h3>Project Two</h3>
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/project3.jpg" alt="Project 3">
-                        <h3>Project Three</h3>
-                        <p>Quis ipsum suspendisse ultrices gravida risus commodo.</p>
-                    </div>
-                </div>
-            </section>
+    <!-- Hero Section -->
+    <main class="content">
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="intro-text">
+            <h1>Hello, I'm [Your Name]</h1>
+            <p class="typewriter">I'm a creative developer bringing ideas to life.</p>
+            <div class="cta-buttons">
+              <a href="about.html" class="btn">Learn More</a>
+              <a href="projects.html" class="btn">See Projects</a>
+            </div>
+          </div>
+          <div class="hero-graphic">
+            <svg id="morphingBlob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#ffcc00" d=""></path>
+            </svg>
+          </div>
+        </div>
+        <div class="scroll-down">↓</div>
+      </section>
+    </main>
+  </div>
 
-            <section id="contact" class="section">
-                <h2>Contact</h2>
-                <p>If you'd like to reach me, feel free to send an email or connect via social media.</p>
-            </section>
-        </main>
-    </div>
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
