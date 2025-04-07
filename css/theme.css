@@ -14,3 +14,16 @@ body {
   transition: 0.4s;
   font-family: sans-serif;
 }
+
+/* === Custom Fonts === */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.logo,
+h1, h2, h3,
+.nav-links a,
+.btn,
+.theme-toggle {
+  font-family: 'Orbitron', sans-serif;
+}

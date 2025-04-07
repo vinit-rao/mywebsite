@@ -10,13 +10,11 @@ particlesJS("particles-js", {
   }
 });
 
-// Theme toggle
 document.getElementById("themeToggle").addEventListener("click", () => {
   const html = document.documentElement;
   html.setAttribute("data-theme", html.dataset.theme === "dark" ? "light" : "dark");
 });
 
-// Morphing blob
 const blob = document.querySelector("#morphingBlob path");
 const shapes = [
   "M41.6,-64.3C53.1,-56.7,62.7,-44.3,66.3,-31.2C69.9,-18.1,67.5,-4.3,65.6,11.8C63.7,27.9,62.2,45.9,52.2,57.1C42.1,68.3,23.6,72.6,6.2,66.3C-11.2,59.9,-22.4,43,-35.1,30.7C-47.9,18.3,-62.2,10.6,-68.2,-1.3C-74.3,-13.1,-71.9,-29.1,-61.3,-37.5C-50.6,-45.9,-31.8,-46.8,-17.4,-53.6C-3,-60.4,7.1,-72.9,19.6,-73.4C32.1,-73.9,47.1,-62,41.6,-64.3Z",

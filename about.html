@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Me</title>
+  <title>About Me</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <!-- Google Fonts -->
@@ -15,50 +15,34 @@
 </head>
 <body>
 
-  <!-- Background Video -->
   <video autoplay muted loop playsinline class="bg-video">
     <source src="media/background.mp4" type="video/mp4" />
   </video>
 
-  <!-- Particles -->
   <div id="particles-js"></div>
 
   <div class="container">
-    <!-- Nav -->
     <nav class="sidebar">
       <div class="logo">My Portfolio</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle">🌓</button>
     </nav>
 
-    <!-- Content -->
     <main class="content">
       <section class="section">
-        <h1>Contact Me</h1>
-        <p>Whether it's a project idea, collaboration, or just a friendly hello — I'd love to hear from you!</p>
-
-        <form class="contact-form" action="mailto:youremail@example.com" method="POST" enctype="text/plain">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit" class="btn">Send Message</button>
-        </form>
+        <h1>About Me</h1>
+        <p>Hello! I'm [Your Name], and I created this site to express who I am and what I love building. 🎨🛠️</p>
+        <p>This is more than a portfolio — it’s a digital extension of my creativity and curiosity.</p>
+        <p>You’ll find a mix of art, code, and random experiments I’m proud of.</p>
       </section>
     </main>
   </div>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/script.js"></script>
 </body>
