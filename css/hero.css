@@ -42,13 +42,12 @@
     color: #ffcc00;
   }
   
-  /* ✅ Typewriter that stops exactly at text */
+  /* Typewriter that stops exactly at text */
   .typewriter {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid #ffcc00;
-    color: #ddd;
     width: 0;
     animation: typing 3s steps(52, end) forwards, blink 0.75s step-end infinite;
     max-width: fit-content;
