@@ -1,4 +1,3 @@
-// Particles.js config
 particlesJS("particles-js", {
   "particles": {
     "number": { "value": 30 },
