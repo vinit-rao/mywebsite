@@ -42,7 +42,6 @@
     color: #ffcc00;
   }
   
-  /* Typewriter that stops exactly at text */
   .typewriter {
     display: inline-block;
     overflow: hidden;
@@ -55,7 +54,7 @@
   
   @keyframes typing {
     from { width: 0; }
-    to { width: 52ch; } /* Match the number of characters in your sentence */
+    to { width: 52ch; } 
   }
   
   @keyframes blink {
