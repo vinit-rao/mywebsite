@@ -88,7 +88,16 @@ body {
   
   @media (max-width: 500px) {
     .logo {
-      font-size: 16px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: auto;
+      width: 100%;
+      padding: 10px 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
     }
   
     .nav-links a {
