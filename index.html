@@ -39,34 +39,61 @@
 <body>
   <a href="#" class="back-to-top" id="backToTop">↑</a>
 
-
   <!-- Hero Section -->
   <div class="container">
     <nav class="hero-nav">
       <div class="logo">VR</div>
       <ul>
-
+        <li><a href="#latest-projects">Latest</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
     <section id="home" class="hero-section">
-  <div class="hero-text">
-    <h2>Vinit Rao</h2>
-    <p>Multimedia Editor & Interactive Media Design student at Carleton University.</p>
-    <p>Explore my work and get to know more about what I do.</p>
+      <div class="hero-text">
+        <h2>Vinit Rao</h2>
+        <p>Multimedia Editor & Interactive Media Design student at Carleton University.</p>
+        <p>Explore my work and get to know more about what I do.</p>
+      </div>
+      <a href="#latest-projects" class="scroll-down-indicator">↓</a>
+    </section>
   </div>
-
-  <a href="#about" class="scroll-down-indicator">↓</a>
-</section>
-
-  </div>
-
 
   <!-- Page Content -->
   <div class="container">
     <main>
+
+      <!-- Latest Projects -->
+      <section id="latest-projects">
+        <h2>Latest Projects</h2>
+        <div class="projects-grid latest-projects-grid">
+          <div class="project-card" data-title="Introducing RAVO"
+            data-description="10-second motion graphics animation created for my dad’s videography brand."
+            data-link="https://www.youtube.com/watch?v=7FCf5Rhu4Zw">
+            <img src="images/project_1.gif" alt="Introducing RAVO GIF">
+            <h3>Introducing RAVO</h3>
+            <p>10-second motion graphics animation created for my dad’s videography brand.</p>
+          </div>
+
+          <div class="project-card" data-title="Text Morph Animation Test"
+            data-description="After Effects experiment using keyframe graphs for smooth morphing animations."
+            data-link="https://www.youtube.com/watch?v=ML7khUEzdOY">
+            <img src="images/project_2.gif" alt="Text Morph GIF">
+            <h3>Text Morph Animation Test</h3>
+            <p>After Effects experiment using keyframe graphs for smooth morphing animations.</p>
+          </div>
+
+          <div class="project-card" data-title="Text Morph Animation Test"
+            data-description="After Effects experiment using keyframe graphs for smooth morphing animations."
+            data-link="https://www.youtube.com/watch?v=ML7khUEzdOY">
+            <img src="images/project_2.gif" alt="Text Morph GIF">
+            <h3>Text Morph Animation Test</h3>
+            <p>After Effects experiment using keyframe graphs for smooth morphing animations.</p>
+          </div>
+        </div>
+      </section>
 
       <!-- About -->
       <section id="about">
@@ -87,63 +114,64 @@
       <!-- Projects -->
       <section id="projects">
         <h2>Projects</h2>
-
-        <div class="projects-grid">
-          <!-- Repeatable project cards -->
-          <div class="project-card">
-            <img src="images/project_1.gif" alt="Introducing RAVO GIF">
-            <h3>Introducing RAVO</h3>
-            <p>10-second motion graphics animation created for my dad’s videography brand.</p>
-            <a href="https://www.youtube.com/watch?v=7FCf5Rhu4Zw" target="_blank">Watch on YouTube</a>
+        <div style="display: flex; gap: 2rem;">
+          <!-- Detail box -->
+          <div id="project-detail-box" class="hidden">
+            <h3 id="detail-title"></h3>
+            <p id="detail-description"></p>
+            <a id="detail-link" href="#" target="_blank">Watch on YouTube</a>
           </div>
 
-          <div class="project-card">
-            <img src="images/project_2.gif" alt="Text Morph GIF">
-            <h3>Text Morph Animation Test</h3>
-            <p>After Effects experiment using keyframe graphs for smooth morphing animations.</p>
-            <a href="https://www.youtube.com/watch?v=ML7khUEzdOY" target="_blank">Watch on YouTube</a>
-          </div>
+          <!-- Project cards -->
+          <div class="projects-grid">
+            <div class="project-card" data-title="Walking Animation Test"
+              data-description="Practice project in Blender — modeling, rigging, and animating a walking cycle."
+              data-link="https://www.youtube.com/watch?v=_4oRm1HuIbo">
+              <img src="images/project_3.gif" alt="Walking Animation GIF">
+              <h3>Walking Animation Test</h3>
+              <p>Practice project in Blender — modeling, rigging, and animating a walking cycle.</p>
+            </div>
 
-          <div class="project-card">
-            <img src="images/project_3.gif" alt="Walking Animation GIF">
-            <h3>Walking Animation Test</h3>
-            <p>Practice project in Blender — modeling, rigging, and animating a walking cycle.</p>
-            <a href="https://www.youtube.com/watch?v=_4oRm1HuIbo" target="_blank">Watch on YouTube</a>
-          </div>
+            <div class="project-card" data-title="Branduci Troll Edit"
+              data-description="Energetic CapCut music edit for artist Branduci — pure chaotic fun."
+              data-link="https://www.youtube.com/watch?v=qA-Iq-SZ5Ts">
+              <img src="images/project_4.gif" alt="Branduci Troll Edit GIF">
+              <h3>Branduci Troll Edit</h3>
+              <p>Energetic CapCut music edit for artist Branduci — pure chaotic fun.</p>
+            </div>
 
-          <div class="project-card">
-            <img src="images/project_4.gif" alt="Branduci Troll Edit GIF">
-            <h3>Branduci Troll Edit</h3>
-            <p>Energetic CapCut music edit for artist Branduci — pure chaotic fun.</p>
-            <a href="https://www.youtube.com/watch?v=qA-Iq-SZ5Ts" target="_blank">Watch on YouTube</a>
-          </div>
+            <div class="project-card" data-title="Music Video Project"
+              data-description="Full music video for Branduci, edited in Premiere Pro with After Effects compositions."
+              data-link="https://www.youtube.com/watch?v=mRWqT6rZetQ">
+              <img src="images/project_5.gif" alt="Music Video Project GIF">
+              <h3>Music Video Project</h3>
+              <p>Full music video for Branduci, edited in Premiere Pro with After Effects compositions.</p>
+            </div>
 
-          <div class="project-card">
-            <img src="images/project_5.gif" alt="Music Video Project GIF">
-            <h3>Music Video Project</h3>
-            <p>Full music video for Branduci, edited in Premiere Pro with After Effects compositions.</p>
-            <a href="https://www.youtube.com/watch?v=mRWqT6rZetQ" target="_blank">Watch on YouTube</a>
-          </div>
+            <div class="project-card" data-title="The Button Animation"
+              data-description="Sprite-based animation in After Effects with custom art and sound."
+              data-link="https://www.youtube.com/watch?v=7xYjZKmTmC8">
+              <img src="images/project_6.gif" alt="The Button Animation GIF">
+              <h3>The Button Animation</h3>
+              <p>Sprite-based animation in After Effects with custom art and sound.</p>
+            </div>
 
-          <div class="project-card">
-            <img src="images/project_6.gif" alt="The Button Animation GIF">
-            <h3>The Button Animation</h3>
-            <p>Sprite-based animation in After Effects with custom art and sound.</p>
-            <a href="https://www.youtube.com/watch?v=7xYjZKmTmC8" target="_blank">Watch on YouTube</a>
-          </div>
+            <div class="project-card" data-title="Introducing RAVO"
+              data-description="10-second motion graphics animation created for my dad’s videography brand."
+              data-link="https://www.youtube.com/watch?v=7FCf5Rhu4Zw">
+              <img src="images/project_1.gif" alt="Introducing RAVO GIF">
+              <h3>Introducing RAVO</h3>
+              <p>10-second motion graphics animation created for my dad’s videography brand.</p>
+            </div>
 
-          <div class="project-card">
-            <img src="images/project_7.gif" alt="Project 7 GIF">
-            <h3>Project Seven</h3>
-            <p>Description for project 7. You can customize this as needed.</p>
-            <a href="#">Watch on YouTube</a>
-          </div>
+            <div class="project-card" data-title="Text Morph Animation Test"
+              data-description="After Effects experiment using keyframe graphs for smooth morphing animations."
+              data-link="https://www.youtube.com/watch?v=ML7khUEzdOY">
+              <img src="images/project_2.gif" alt="Text Morph GIF">
+              <h3>Text Morph Animation Test</h3>
+              <p>After Effects experiment using keyframe graphs for smooth morphing animations.</p>
+            </div>
 
-          <div class="project-card">
-            <img src="images/project_8.gif" alt="Project 8 GIF">
-            <h3>Project Eight</h3>
-            <p>Description for project 8. Update this with real info.</p>
-            <a href="#">Watch on YouTube</a>
           </div>
         </div>
       </section>
@@ -170,7 +198,19 @@
     </main>
   </div>
   <script src="js/script.js"></script>
-</body>
+  <!-- Project Detail Popup -->
+  <div id="project-popup" class="popup hidden">
+    <div class="popup-content">
+      <span class="popup-close" id="popup-close">×</span>
+      <img id="popup-image" src="" alt="" class="popup-image">
+      <h3 id="popup-title"></h3>
+      <p id="popup-description"></p>
+      <a id="popup-link" href="#" target="_blank">Watch on YouTube</a>
+    </div>
+  </div>
 
+
+
+</body>
 
 </html>
