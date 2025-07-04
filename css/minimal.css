@@ -532,3 +532,9 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.7);
   }
 }
+
+.latest-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2rem;
+}

@@ -23,17 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
       popupTitle.textContent = card.dataset.title;
       popupDescription.textContent = card.dataset.description;
       popupLink.href = card.dataset.link;
-      popupImage.src = card.querySelector('img').src;
+
+      // Use popup image if available; otherwise, fall back to the card image
+      popupImage.src = card.dataset.popupImage || card.querySelector('img').src;
       popupImage.alt = card.querySelector('img').alt;
 
       popup.classList.remove('hidden');
       popup.classList.add('show');
     });
-  });
-
-  popupClose.addEventListener('click', () => {
-    popup.classList.add('hidden');
-    popup.classList.remove('show');
   });
 
   window.addEventListener('click', (e) => {
@@ -43,3 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
