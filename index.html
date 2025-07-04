@@ -1,70 +1,176 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Vinit Rao</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/minimal.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@700&display=swap"
-    rel="stylesheet">
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid #eee;
+    }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" type="image/x-icon" href="/images/favicon.jpeg">
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .project {
+      margin-bottom: 2rem;
+    }
+
+    .project h3 {
+      margin-bottom: 0.25rem;
+    }
+  </style>
 </head>
 
 <body>
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
 
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="media/background.mp4" type="video/mp4" />
-  </video>
 
-  <!-- Particles -->
-  <div id="particles-js"></div>
-
+  <!-- Hero Section -->
   <div class="container">
-    <!-- Sidebar / Top Nav -->
-    <nav class="sidebar">
-      <div class="logo" style="display: flex;
-      gap: 1rem;
-      flex-direction: row;
-      align-items: center;
-      margin: 0;">Vinit Rao</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button class="theme-toggle" id="themeToggle">🌓</button></li>
-      </ul>
-      
-    </nav>
+    <nav class="hero-nav">
+      <div class="logo">VR</div>
+      <ul>
 
-    <!-- Hero Content -->
-    <main class="content">
-      <section class="hero-section">
-        <div class="hero-content">
-          <div class="intro-text">
-            <h1>Hi, I'm Vinit</h1>
-            <p class="typewriter">I'm a Multimedia Editor and IMD Student at CU</p>
-            <div class="cta-buttons">
-              <a href="about.html" class="btn">Learn More</a>
-              <a href="projects.html" class="btn">See Projects</a>
-            </div>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <section id="home" class="hero-section">
+  <div class="hero-text">
+    <h2>Vinit Rao</h2>
+    <p>Multimedia Editor & Interactive Media Design student at Carleton University.</p>
+    <p>Explore my work and get to know more about what I do.</p>
+  </div>
+
+  <a href="#about" class="scroll-down-indicator">↓</a>
+</section>
+
+  </div>
+
+
+  <!-- Page Content -->
+  <div class="container">
+    <main>
+
+      <!-- About -->
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="about-flex">
+          <div class="about-text">
+            <p>Hi, I'm Vinit — a passionate Multimedia Editor and Interactive Media Design student at Carleton
+              University.</p>
+            <p>I specialize in creating dynamic digital content that tells compelling stories through visuals, sound,
+              and design.</p>
+          </div>
+          <div class="about-image">
+            <img src="images/mysurupalace_1.jpg" alt="Vinit Rao profile image">
           </div>
         </div>
-        <div class="scroll-down">↓</div>
       </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+          <!-- Repeatable project cards -->
+          <div class="project-card">
+            <img src="images/project_1.gif" alt="Introducing RAVO GIF">
+            <h3>Introducing RAVO</h3>
+            <p>10-second motion graphics animation created for my dad’s videography brand.</p>
+            <a href="https://www.youtube.com/watch?v=7FCf5Rhu4Zw" target="_blank">Watch on YouTube</a>
+          </div>
+
+          <div class="project-card">
+            <img src="images/project_2.gif" alt="Text Morph GIF">
+            <h3>Text Morph Animation Test</h3>
+            <p>After Effects experiment using keyframe graphs for smooth morphing animations.</p>
+            <a href="https://www.youtube.com/watch?v=ML7khUEzdOY" target="_blank">Watch on YouTube</a>
+          </div>
+
+          <div class="project-card">
+            <img src="images/project_3.gif" alt="Walking Animation GIF">
+            <h3>Walking Animation Test</h3>
+            <p>Practice project in Blender — modeling, rigging, and animating a walking cycle.</p>
+            <a href="https://www.youtube.com/watch?v=_4oRm1HuIbo" target="_blank">Watch on YouTube</a>
+          </div>
+
+          <div class="project-card">
+            <img src="images/project_4.gif" alt="Branduci Troll Edit GIF">
+            <h3>Branduci Troll Edit</h3>
+            <p>Energetic CapCut music edit for artist Branduci — pure chaotic fun.</p>
+            <a href="https://www.youtube.com/watch?v=qA-Iq-SZ5Ts" target="_blank">Watch on YouTube</a>
+          </div>
+
+          <div class="project-card">
+            <img src="images/project_5.gif" alt="Music Video Project GIF">
+            <h3>Music Video Project</h3>
+            <p>Full music video for Branduci, edited in Premiere Pro with After Effects compositions.</p>
+            <a href="https://www.youtube.com/watch?v=mRWqT6rZetQ" target="_blank">Watch on YouTube</a>
+          </div>
+
+          <div class="project-card">
+            <img src="images/project_6.gif" alt="The Button Animation GIF">
+            <h3>The Button Animation</h3>
+            <p>Sprite-based animation in After Effects with custom art and sound.</p>
+            <a href="https://www.youtube.com/watch?v=7xYjZKmTmC8" target="_blank">Watch on YouTube</a>
+          </div>
+
+          <div class="project-card">
+            <img src="images/project_7.gif" alt="Project 7 GIF">
+            <h3>Project Seven</h3>
+            <p>Description for project 7. You can customize this as needed.</p>
+            <a href="#">Watch on YouTube</a>
+          </div>
+
+          <div class="project-card">
+            <img src="images/project_8.gif" alt="Project 8 GIF">
+            <h3>Project Eight</h3>
+            <p>Description for project 8. Update this with real info.</p>
+            <a href="#">Watch on YouTube</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have a project idea, want to collaborate, or just say hi? I’d love to hear from you!</p>
+
+        <form action="mailto:vinitrao@gmail.com" method="POST" enctype="text/plain">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+
     </main>
   </div>
-  
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 
 </html>

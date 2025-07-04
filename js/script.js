@@ -1,16 +1,12 @@
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 30 },
-    "color": { "value": "#ffcc00" },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.5 },
-    "size": { "value": 5 },
-    "move": { "speed": 5 }
-  }
-});
+// Back to Top Button Logic
+document.addEventListener('DOMContentLoaded', function () {
+  const backToTop = document.getElementById('backToTop');
 
-document.getElementById("themeToggle").addEventListener("click", () => {
-  const html = document.documentElement;
-  html.setAttribute("data-theme", html.dataset.theme === "dark" ? "light" : "dark");
-
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
 });
