@@ -68,13 +68,13 @@ main p {
 
 /* HERO SECTION */
 .hero-section {
-  background: grey;/*url('../images/herobg.jpg') center center / cover no-repeat; */
+  background: rgb(211, 211, 211);/*url('../images/herobg.jpg') center center / cover no-repeat; */
   border-radius: 12px;
   box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
   padding: 60px 20px;
   margin-bottom: 3rem;
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
 
   /* min-height: 70vh; */
   /* display: flex; */
