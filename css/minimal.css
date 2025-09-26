@@ -66,39 +66,51 @@ main p {
   text-decoration: underline;
 }
 
-/* HERO SECTION */
 .hero-section {
-  background: url('images/your-image.jpg') no-repeat center center fixed; /* Parallax image */
-  background-size: cover;
-  padding: 60px 20px;
-  margin-bottom: 3rem;
-  text-align: center;
-  color: white;
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  transition: background-position 0.1s ease-out; /* Smooth background scroll */
+  min-height: 60vh;
+  padding: 60px 20px;
+  background: url('images/your-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  text-align: left; /* Adjust text alignment */
 }
 
-
-.hero-text {
-  padding: 2rem;
-  border-radius: 15px;
-  max-width: 700px;
-  margin: 0 auto;
+.hero-header {
+  display: flex;
+  justify-content: space-between; /* Space out name and buttons */
+  align-items: center;
+  width: 100%;
 }
 
-.hero-text h2 {
+.hero-name {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  color: white;
+  font-weight: bold;
 }
 
-.hero-text p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-buttons .btn {
+  background-color: #545454;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn:hover {
+  background-color: #b30000;
+  transform: scale(1.03);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .scroll-down-indicator {
@@ -169,7 +181,7 @@ button:hover {
 }
 
 .project-card {
-  border: 1px solid #ddd;
+  border: 1px solid #545454;
   padding: 1rem;
   border-radius: 8px;
   background-color: #252525;
@@ -179,7 +191,9 @@ button:hover {
 
 .project-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 5px 0 rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 0 #b30000;
+  border: 1px solid #b30000;
+  background-color: rgb(25, 25, 25);
 }
 
 .project-card img {
@@ -187,7 +201,6 @@ button:hover {
   height: auto;
   border-radius: 6px;
   margin-bottom: 0.75rem;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 @media (min-width: 600px) {
@@ -446,7 +459,7 @@ button:hover {
 }
 
 .popup-content {
-  background: rgb(25, 25, 25);
+  background: rgb(54, 54, 54);
   border: 1px solid #ddd;
   padding: 2rem;
   border-radius: 10px;
