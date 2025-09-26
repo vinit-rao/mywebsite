@@ -68,8 +68,7 @@ main p {
 
 /* HERO SECTION */
 .hero-section {
-  background: url('../images/herobg.jpg') center center / cover no-repeat;
-  background-size: cover;
+  background: linear-gradient(135deg, #3498db, #9b59b6); /* Gradient background */
   border-radius: 12px;
   box-shadow: 0 6px 0 rgba(255, 255, 255, 0.5);
   padding: 60px 20px;
@@ -81,6 +80,7 @@ main p {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden; /* Make the text slide out from an invisible barrier */
 }
 
 .hero-text {
@@ -559,4 +559,47 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 2rem;
+}
+
+.tech-stack {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  animation: scrollTechStack 15s linear infinite;
+}
+
+.tech-icon {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+.tech-icon i {
+  font-size: 3rem;
+  color: #ffffff;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effects for each icon */
+.tech-icon:hover i {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* Updated animation to loop and slide in from an invisible barrier */
+@keyframes scrollTechStack {
+  0% {
+    transform: translateX(100%); /* Start outside the screen */
+  }
+  10% {
+    transform: translateX(0); /* Enter the screen */
+  }
+  90% {
+    transform: translateX(-50%); /* Stop before hitting the edge */
+  }
+  100% {
+    transform: translateX(-100%); /* Move out of view */
+  }
 }
