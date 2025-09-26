@@ -41,3 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const parallaxElements = document.querySelectorAll('[data-parallax="scroll"]');
+
+  window.addEventListener('scroll', () => {
+    parallaxElements.forEach(element => {
+      const speed = 5; // Adjust this to make the effect more or less intense
+      const offset = window.pageYOffset;
+      const backgroundPosition = 'center ' + (offset * speed) + 'px';
+      element.style.backgroundPosition = backgroundPosition;
+    });
+  });
+});
+
+

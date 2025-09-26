@@ -68,9 +68,8 @@ main p {
 
 /* HERO SECTION */
 .hero-section {
-  background: linear-gradient(135deg, #3498db, #9b59b6); /* Gradient background */
-  border-radius: 12px;
-  box-shadow: 0 6px 0 rgba(255, 255, 255, 0.5);
+  background: url('images/your-image.jpg') no-repeat center center fixed; /* Parallax image */
+  background-size: cover;
   padding: 60px 20px;
   margin-bottom: 3rem;
   text-align: center;
@@ -80,8 +79,10 @@ main p {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  overflow: hidden; /* Make the text slide out from an invisible barrier */
+  overflow: hidden;
+  transition: background-position 0.1s ease-out; /* Smooth background scroll */
 }
+
 
 .hero-text {
   padding: 2rem;
@@ -586,20 +587,4 @@ button:hover {
 .tech-icon:hover i {
   transform: scale(1.2);
   opacity: 0.8;
-}
-
-/* Updated animation to loop and slide in from an invisible barrier */
-@keyframes scrollTechStack {
-  0% {
-    transform: translateX(100%); /* Start outside the screen */
-  }
-  10% {
-    transform: translateX(0); /* Enter the screen */
-  }
-  90% {
-    transform: translateX(-50%); /* Stop before hitting the edge */
-  }
-  100% {
-    transform: translateX(-100%); /* Move out of view */
-  }
 }
