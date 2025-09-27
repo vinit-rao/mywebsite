@@ -41,4 +41,70 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+particlesJS('particles-js', {
+  particles: {
+    number: {
+      value: 1, // Number of particles
+      density: {
+        enable: true,
+        value_area: 200 // Density area
+      }
+    },
+    color: {
+      value: '#252525' // Color of particles
+    },
+    shape: {
+      type: 'triangle', // Shape of particles
+      stroke: {
+        width: 1,
+        color: '#b20000'
+      }
+    },
+    opacity: {
+      value: 0.5, // Opacity of particles
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0.1
+      }
+    },
+    size: {
+      value: 10, // Size of particles
+      anim: {
+        enable: true,
+        speed: 40,
+        size_min: 0.1
+      }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150, // Link particles at this distance
+      color: '#ffffff',
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 30,
+      direction: 'none',
+      random: false,
+      straight: false,
+      out_mode: 'out'
+    }
+  },
+  interactivity: {
+    detect_on: 'canvas',
+    events: {
+      onhover: {
+        enable: true,
+        mode: 'repulse'
+      },
+      onclick: {
+        enable: true,
+        mode: 'push'
+      }
+    }
+  },
+  retina_detect: true
+});
 
