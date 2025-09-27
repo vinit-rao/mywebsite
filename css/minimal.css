@@ -112,7 +112,7 @@ main p {
 .hero-buttons .navbtn {
   background-color: #545454;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
@@ -126,6 +126,10 @@ main p {
   background-color: #b30000;
   transform: scale(1.03);
   box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons .navbtn:hover {
+  background-color: #252525;
 }
 
 .scroll-down-indicator {
@@ -589,3 +593,4 @@ button:hover {
   font-size: var(--icon-size);
   line-height: 1;               /* avoid vertical clipping */
 }
+
