@@ -73,7 +73,7 @@ main p {
   position: relative;
   min-height: 60vh;
   padding: 60px 20px;
-  background: url(/images/herobg.jpg) no-repeat center center fixed;
+  /* background: url(/images/herobg.jpg) no-repeat center center fixed; */
   background-size: cover;
   text-align: left; /* Adjust text alignment */
 }
@@ -106,6 +106,19 @@ main p {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
   border: 1px solid #b30000;
+  background-color: rgb(25, 25, 25);
+}
+
+.hero-buttons .navbtn {
+  background-color: #545454;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+  border: 1px solid #545454;
   background-color: rgb(25, 25, 25);
 }
 
@@ -556,4 +569,23 @@ button:hover {
 .tech-icon:hover i {
   transform: scale(1.2);
   opacity: 0.8;
+}
+
+/* Responsive icon sizing */
+:root {
+  /* tweak the min/ideal/max to taste */
+  --icon-size: clamp(1.1rem, 6vw, 2.6rem);
+}
+
+/* Let the row itself scale a bit too */
+.tech-stack {
+  font-size: clamp(0.95rem, 3.5vw, 1.5rem);
+  flex-wrap: wrap;              /* allow wrapping on small screens */
+  gap: 1.25rem;                 /* a little extra space when wrapping */
+}
+
+/* Icons inherit, but we still cap them via the var */
+.tech-stack .tech-icon i {
+  font-size: var(--icon-size);
+  line-height: 1;               /* avoid vertical clipping */
 }
