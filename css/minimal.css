@@ -73,7 +73,7 @@ main p {
   position: relative;
   min-height: 60vh;
   padding: 60px 20px;
-  background: url('images/your-image.jpg') no-repeat center center fixed;
+  background: url(/images/herobg.jpg) no-repeat center center fixed;
   background-size: cover;
   text-align: left; /* Adjust text alignment */
 }
