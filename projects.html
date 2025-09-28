@@ -1,327 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Vinit Rao</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/minimal.css" />
-  <style>
-    html { scroll-behavior: smooth; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Vinit Rao</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/minimal.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* hide-only label for accessibility */
-    .visually-hidden {
-      position: absolute !important;
-      height: 1px; width: 1px;
-      overflow: hidden; white-space: nowrap;
-      clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%);
-    }
+        /* hide-only label for accessibility */
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            white-space: nowrap;
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+        }
 
-    .page-header { padding: 60px 0 30px; }
-    .page-title { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .5rem; }
-    .page-subtitle { opacity: .8; max-width: 75ch; }
+        .page-header {
+            padding: 60px 0 30px;
+        }
 
-    .filters {
-      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-top: 1.5rem;
-    }
-    .filters .filter-btn {
-      background: #252525; border: 1px solid #545454; padding: .5rem .9rem; border-radius: 999px;
-      cursor: pointer; font-weight: 600;
-      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
-    }
-    .filters .filter-btn.active,
-    .filters .filter-btn:hover {
-      border-color: #b30000; box-shadow: 0 3px 0 #b30000; transform: translateY(-1px); background: rgb(25,25,25);
-    }
-    .filters .filter-btn .count { opacity: .8; margin-left: .35rem; font-weight: 400; font-variant-numeric: tabular-nums; }
+        .page-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0 0 .5rem;
+        }
 
-    .filters .search-wrap {
-      margin-left: auto; display: flex; align-items: center; gap: .5rem; flex: 1 1 260px;
-    }
-    .filters input[type="search"] {
-      width: 100%; background: #1b1b1b; color: #fff; border: 1px solid #545454; border-radius: 6px; padding: .6rem .8rem; outline: none;
-    }
+        .page-subtitle {
+            opacity: .8;
+            max-width: 75ch;
+        }
 
-    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-    .section-heading small { opacity: .8; }
-    .badge { display: inline-block; padding: .15rem .5rem; border-radius: 4px; border: 1px solid #545454; font-size: .75rem; margin-top: .5rem; opacity: .9; }
-    .project-card[role="button"] { cursor: pointer; }
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
 
-    /* denser grid on wide screens (minimal.css already sets 1–3 cols responsively) */
-    @media (min-width: 1200px) {
-      .projects-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-  </style>
+        .filters .filter-btn {
+            background: #252525;
+            border: 1px solid #545454;
+            padding: .5rem .9rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+        }
+
+        .filters .filter-btn.active,
+        .filters .filter-btn:hover {
+            border-color: #b30000;
+            box-shadow: 0 3px 0 #b30000;
+            transform: translateY(-1px);
+            background: rgb(25, 25, 25);
+        }
+
+        .filters .filter-btn .count {
+            opacity: .8;
+            margin-left: .35rem;
+            font-weight: 400;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .filters .search-wrap {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            flex: 1 1 260px;
+        }
+
+        .filters input[type="search"] {
+            width: 100%;
+            background: #1b1b1b;
+            color: #fff;
+            border: 1px solid #545454;
+            border-radius: 6px;
+            padding: .6rem .8rem;
+            outline: none;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .section-heading small {
+            opacity: .8;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: .15rem .5rem;
+            border-radius: 4px;
+            border: 1px solid #545454;
+            font-size: .75rem;
+            margin-top: .5rem;
+            opacity: .9;
+        }
+
+        .project-card[role="button"] {
+            cursor: pointer;
+        }
+
+        /* denser grid on wide screens (minimal.css already sets 1–3 cols responsively) */
+        @media (min-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
 
-  <!-- Particles background (your script.js expects this + the particles lib) -->
-  <div id="particles-js"></div>
+    <!-- Particles background (your script.js expects this + the particles lib) -->
+    <div id="particles-js"></div>
 
-  <div class="container">
-    <nav class="hero-nav" aria-label="Primary">
-      <div class="logo">
-        <a href="index.html" class="navbtn">Vinit Rao</a>
-      </div>
-      <div class="hero-buttons">
-        <a href="index.html#about" class="navbtn">About</a>
-        <a href="projects.html" class="navbtn">Projects</a>
-        <a href="resume.html" class="navbtn">Resume</a>
-      </div>
-    </nav>
+    <div class="container">
+        <nav class="hero-nav" aria-label="Primary">
+            <div class="logo">
+                <a href="index.html" class="navbtn">Vinit Rao</a>
+            </div>
+            <div class="hero-buttons">
+                <a href="index.html#about" class="navbtn">About</a>
+                <a href="projects.html" class="navbtn">Projects</a>
+                <a href="resume.html" class="navbtn">Resume</a>
+            </div>
+        </nav>
 
-    <header class="page-header">
-      <h1 class="page-title">Projects</h1>
-      <p class="page-subtitle">Browse a curated selection of my video edits, motion graphics, 3D/animation work, and coding projects. Click any card to see details and links.</p>
+        <header class="page-header">
+            <h1 class="page-title">Projects</h1>
+            <p class="page-subtitle">Browse a curated selection of my video edits, motion graphics, 3D/animation work,
+                and coding projects. Click any card to see details and links.</p>
 
-      <!-- Filters / Search -->
-      <div class="filters" role="group" aria-label="Project filters">
-        <button class="filter-btn active" data-filter="all" aria-pressed="true">All <span class="count" id="count-all"></span></button>
-        <button class="filter-btn" data-filter="video" aria-pressed="false">Video <span class="count" id="count-video"></span></button>
-        <button class="filter-btn" data-filter="graphics" aria-pressed="false">Graphics <span class="count" id="count-graphics"></span></button>
-        <button class="filter-btn" data-filter="code" aria-pressed="false">Code <span class="count" id="count-code"></span></button>
+            <!-- Filters / Search -->
+            <div class="filters" role="group" aria-label="Project filters">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All <span class="count"
+                        id="count-all"></span></button>
+                <button class="filter-btn" data-filter="video" aria-pressed="false">Video <span class="count"
+                        id="count-video"></span></button>
+                <button class="filter-btn" data-filter="graphics" aria-pressed="false">Graphics <span class="count"
+                        id="count-graphics"></span></button>
+                <button class="filter-btn" data-filter="code" aria-pressed="false">Code <span class="count"
+                        id="count-code"></span></button>
 
-        <div class="search-wrap">
-          <label for="projectSearch" class="visually-hidden">Search projects</label>
-          <input type="search" id="projectSearch" placeholder="Search by title or description…" autocomplete="off" />
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </div>
-      </div>
-    </header>
+                <div class="search-wrap">
+                    <label for="projectSearch" class="visually-hidden">Search projects</label>
+                    <input type="search" id="projectSearch" placeholder="Search by title or description…"
+                        autocomplete="off" />
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+        </header>
 
-    <main>
-      <!-- VIDEO -->
-      <section id="video">
-        <div class="section-heading">
-          <h2>Video</h2>
-          <small>Edits, commercials, and event highlights</small>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card" role="button" tabindex="0"
-            data-category="video"
-            data-title="Wendy's Commercial"
-            data-description="Short keyframed animation showcasing trending burgers — made in After Effects 2025 using Pixabay assets."
-            data-link="https://www.youtube.com/watch?v=VhibQHSWPOE"
-            data-popup-image="images/project_7.1.gif">
-            <img src="images/project_7.gif" alt="Wendy's animated commercial preview">
-            <h3>Wendy's Commercial</h3>
-            <p>Fun animated commercial spot.</p>
-            <span class="badge">After Effects</span>
-          </article>
+        <main>
+            <!-- VIDEO -->
+            <section id="video">
+                <div class="section-heading">
+                    <h2>Video</h2>
+                    <small>Edits, commercials, and event highlights</small>
+                </div>
+                <div class="projects-grid">
 
-          <article class="project-card" role="button" tabindex="0"
-            data-category="video"
-            data-title="Branduci Troll Edit"
-            data-description="Fast-paced music edit for Branduci — cut in CapCut for maximum chaos."
-            data-link="https://www.youtube.com/watch?v=qA-Iq-SZ5Ts">
-            <img src="images/project_4.gif" alt="Branduci troll edit preview">
-            <h3>Branduci Troll Edit</h3>
-            <p>Energetic meme-style cut.</p>
-            <span class="badge">CapCut</span>
-          </article>
+                    <article class="project-card" role="button" tabindex="0" data-category="video"
+                        data-title="Stills Video Assignment"
+                        data-description="IMD2003 assignment: curated photos composed into a cohesive visual story."
+                        data-link="https://www.youtube.com/watch?v=DOs879L4MvE" data-popup-image="images/project_8.gif">
+                        <img src="images/project_8.gif" alt="Stills assignment preview">
+                        <h3>Stills Video Assignment</h3>
+                        <p>Composition & pacing exercise.</p>
+                        <span class="badge">Premiere Pro</span>
+                    </article>
 
-          <article class="project-card" role="button" tabindex="0"
-            data-category="video"
-            data-title="Global Nurse Initiative"
-            data-description="Event highlights and interviews edited in Premiere Pro with AE compositions."
-            data-link="https://www.youtube.com/watch?v=RRANPGpEcV0">
-            <img src="images/project_10.gif" alt="Global Nurse Initiative highlight preview">
-            <h3>Global Nurse Initiative</h3>
-            <p>Event recap & interviews.</p>
-            <span class="badge">Premiere Pro</span>
-          </article>
+                    <article class="project-card" role="button" tabindex="0" data-category="video"
+                        data-title="Global Nurse Initiative"
+                        data-description="Event highlights and interviews edited in Premiere Pro with AE compositions."
+                        data-link="https://www.youtube.com/watch?v=RRANPGpEcV0">
+                        <img src="images/project_10.gif" alt="Global Nurse Initiative highlight preview">
+                        <h3>Global Nurse Initiative</h3>
+                        <p>Event recap & interviews.</p>
+                        <span class="badge">Premiere Pro</span>
+                    </article>
 
-          <article class="project-card" role="button" tabindex="0"
-            data-category="video"
-            data-title="Stills Video Assignment"
-            data-description="IMD2003 assignment: curated photos composed into a cohesive visual story."
-            data-link="https://www.youtube.com/watch?v=DOs879L4MvE"
-            data-popup-image="images/project_8.gif">
-            <img src="images/project_8.gif" alt="Stills assignment preview">
-            <h3>Stills Video Assignment</h3>
-            <p>Composition & pacing exercise.</p>
-            <span class="badge">Premiere Pro</span>
-          </article>
+                    <article class="project-card" role="button" tabindex="0" data-category="video"
+                        data-title="Music Video Project"
+                        data-description="Full music video for Branduci — edited in Premiere Pro with AE comps."
+                        data-link="https://www.youtube.com/watch?v=mRWqT6rZetQ">
+                        <img src="images/project_5.gif" alt="Music video preview">
+                        <h3>Music Video Project</h3>
+                        <p>Performance + motion graphics.</p>
+                        <span class="badge">Premiere Pro</span>
+                    </article>
 
-          <article class="project-card" role="button" tabindex="0"
-            data-category="video"
-            data-title="Music Video Project"
-            data-description="Full music video for Branduci — edited in Premiere Pro with AE comps."
-            data-link="https://www.youtube.com/watch?v=mRWqT6rZetQ">
-            <img src="images/project_5.gif" alt="Music video preview">
-            <h3>Music Video Project</h3>
-            <p>Performance + motion graphics.</p>
-            <span class="badge">Premiere Pro</span>
-          </article>
-        </div>
-      </section>
+                    <article class="project-card" role="button" tabindex="0" data-category="video"
+                        data-title="Branduci Troll Edit"
+                        data-description="Fast-paced music edit for Branduci — cut in CapCut for maximum chaos."
+                        data-link="https://www.youtube.com/watch?v=qA-Iq-SZ5Ts">
+                        <img src="images/project_4.gif" alt="Branduci troll edit preview">
+                        <h3>Branduci Troll Edit</h3>
+                        <p>Energetic meme-style cut.</p>
+                        <span class="badge">CapCut</span>
+                    </article>
+                </div>
+            </section>
 
-      <!-- GRAPHICS / 3D / ANIMATION -->
-      <section id="graphics">
-        <div class="section-heading">
-          <h2>Graphics &amp; Animation</h2>
-        <small>Motion graphics, 3D, and experimental animations</small>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card" role="button" tabindex="0"
-            data-category="graphics"
-            data-title="Introducing RAVO"
-            data-description="10-second motion graphics intro created for a videography brand (earlier version)."
-            data-link="https://www.youtube.com/watch?v=7FCf5Rhu4Zw"
-            data-popup-image="images/project_1.gif">
-            <img src="images/project_1.1.gif" alt="RAVO intro motion graphics preview">
-            <h3>Introducing RAVO</h3>
-            <p>Slick brand opener.</p>
-            <span class="badge">After Effects</span>
-          </article>
+            <!-- GRAPHICS / 3D / ANIMATION -->
+            <section id="graphics">
+                <div class="section-heading">
+                    <h2>Graphics &amp; Animation</h2>
+                    <small>Motion graphics, 3D, and experimental animations</small>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card" role="button" tabindex="0" data-category="graphics"
+                        data-title="Wendy's Commercial"
+                        data-description="Short keyframed animation showcasing trending burgers — made in After Effects 2025 using Pixabay assets."
+                        data-link="https://www.youtube.com/watch?v=VhibQHSWPOE"
+                        data-popup-image="images/project_7.1.gif">
+                        <img src="images/project_7.gif" alt="Wendy's animated commercial preview">
+                        <h3>Wendy's Commercial</h3>
+                        <p>Fun animated commercial spot.</p>
+                        <span class="badge">After Effects</span>
+                    </article>
 
-          <article class="project-card" role="button" tabindex="0"
-            data-category="graphics"
-            data-title="Walking Animation Test"
-            data-description="Practice in Blender — modeling, rigging, and a basic walk cycle."
-            data-link="https://www.youtube.com/watch?v=_4oRm1HuIbo">
-            <img src="images/project_3.gif" alt="Blender walking animation preview">
-            <h3>Walking Animation Test</h3>
-            <p>3D walk cycle practice.</p>
-            <span class="badge">Blender</span>
-          </article>
+                    <article class="project-card" role="button" tabindex="0" data-category="graphics"
+                        data-title="Introducing RAVO"
+                        data-description="10-second motion graphics intro created for a videography brand (earlier version)."
+                        data-link="https://www.youtube.com/watch?v=7FCf5Rhu4Zw" data-popup-image="images/project_1.gif">
+                        <img src="images/project_1.1.gif" alt="RAVO intro motion graphics preview">
+                        <h3>Introducing RAVO</h3>
+                        <p>Slick brand opener.</p>
+                        <span class="badge">After Effects</span>
+                    </article>
 
-          <article class="project-card" role="button" tabindex="0"
-            data-category="graphics"
-            data-title="The Button Animation"
-            data-description="Sprite-based animation with custom art and sound."
-            data-link="https://www.youtube.com/watch?v=7xYjZKmTmC8">
-            <img src="images/project_6.gif" alt="Sprite-based button animation preview">
-            <h3>The Button Animation</h3>
-            <p>Playful motion study.</p>
-            <span class="badge">After Effects</span>
-          </article>
+                    <article class="project-card" role="button" tabindex="0" data-category="graphics"
+                        data-title="Text Morph Animation Test"
+                        data-description="After Effects experiment using graph editors for smooth morphs."
+                        data-link="https://www.youtube.com/watch?v=ML7khUEzdOY">
+                        <img src="images/project_2.gif" alt="Text morph experiment preview">
+                        <h3>Text Morph Animation Test</h3>
+                        <p>Type morph exploration.</p>
+                        <span class="badge">After Effects</span>
+                    </article>
 
-          <article class="project-card" role="button" tabindex="0"
-            data-category="graphics"
-            data-title="Text Morph Animation Test"
-            data-description="After Effects experiment using graph editors for smooth morphs."
-            data-link="https://www.youtube.com/watch?v=ML7khUEzdOY">
-            <img src="images/project_2.gif" alt="Text morph experiment preview">
-            <h3>Text Morph Animation Test</h3>
-            <p>Type morph exploration.</p>
-            <span class="badge">After Effects</span>
-          </article>
-        </div>
-      </section>
+                    <article class="project-card" role="button" tabindex="0" data-category="graphics"
+                        data-title="The Button Animation"
+                        data-description="Sprite-based animation with custom art and sound."
+                        data-link="https://www.youtube.com/watch?v=7xYjZKmTmC8">
+                        <img src="images/project_6.gif" alt="Sprite-based button animation preview">
+                        <h3>The Button Animation</h3>
+                        <p>Playful motion study.</p>
+                        <span class="badge">After Effects</span>
+                    </article>
 
-      <!-- CODE -->
-      <section id="code">
-        <div class="section-heading">
-          <h2>Code</h2>
-          <small>Software and interactive experiments</small>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card" role="button" tabindex="0"
-            data-category="code"
-            data-title="Go Fish Game"
-            data-description="Java-based matching game. Tools: Apache NetBeans IDE 18. Artwork via Canva & Adobe Photoshop 23."
-            data-link="https://www.youtube.com/watch?v=6Rl1UXpWMZY&t=4s">
-            <img src="images/project_9.gif" alt="Go Fish game demo preview">
-            <h3>Go Fish Game</h3>
-            <p>Classic card game implementation.</p>
-            <span class="badge">Java</span>
-          </article>
-        </div>
-      </section>
-    </main>
+                    <article class="project-card" role="button" tabindex="0" data-category="graphics"
+                        data-title="Walking Animation Test"
+                        data-description="Practice in Blender — modeling, rigging, and a basic walk cycle."
+                        data-link="https://www.youtube.com/watch?v=_4oRm1HuIbo">
+                        <img src="images/project_3.gif" alt="Blender walking animation preview">
+                        <h3>Walking Animation Test</h3>
+                        <p>3D walk cycle practice.</p>
+                        <span class="badge">Blender</span>
+                    </article>
 
-    <footer style="background-color: #111; color: white; padding: 40px 0; text-align: center;">
-      <div>
-        <p>© 2025 Vinit Rao | All Rights Reserved</p>
-        <div>
-          <a href="https://www.linkedin.com/in/vinitrao1/" style="color: white; text-decoration: none; margin: 0 10px;" target="_blank">LinkedIn <i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/vinit-rao" style="color: white; text-decoration: none; margin: 0 10px;" target="_blank">GitHub <i class="fab fa-github"></i></a>
-          <a href="https://www.youtube.com/@OfficialVinitRao" style="color: white; text-decoration: none; margin: 0 10px;" target="_blank">YouTube <i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </footer>
-  </div>
 
-  <!-- scripts (particles first, then your site JS) -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="js/script.js"></script>
+                </div>
+            </section>
 
-  <!-- Filter + search logic (page-scoped) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = Array.from(document.querySelectorAll('.project-card'));
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const searchInput = document.getElementById('projectSearch');
+            <!-- CODE -->
+            <section id="code">
+                <div class="section-heading">
+                    <h2>Code</h2>
+                    <small>Software and interactive experiments</small>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card" role="button" tabindex="0" data-category="code"
+                        data-title="Go Fish Game"
+                        data-description="Java-based matching game. Tools: Apache NetBeans IDE 18. Artwork via Canva & Adobe Photoshop 23."
+                        data-link="https://www.youtube.com/watch?v=6Rl1UXpWMZY&t=4s">
+                        <img src="images/project_9.gif" alt="Go Fish game demo preview">
+                        <h3>Go Fish Game</h3>
+                        <p>Classic card game implementation.</p>
+                        <span class="badge">Java</span>
+                    </article>
+                </div>
+            </section>
+        </main>
 
-      const counters = {
-        all: document.getElementById('count-all'),
-        video: document.getElementById('count-video'),
-        graphics: document.getElementById('count-graphics'),
-        code: document.getElementById('count-code')
-      };
-
-      function updateCounters() {
-        const totals = { all: cards.length, video: 0, graphics: 0, code: 0 };
-        cards.forEach(c => { const cat = c.dataset.category; if (totals[cat] !== undefined) totals[cat]++; });
-        counters.all.textContent = totals.all;
-        counters.video.textContent = totals.video;
-        counters.graphics.textContent = totals.graphics;
-        counters.code.textContent = totals.code;
-      }
-
-      let activeFilter = 'all';
-      function applyFilters() {
-        const term = (searchInput.value || '').trim().toLowerCase();
-        cards.forEach(card => {
-          const matchesCategory = (activeFilter === 'all') || (card.dataset.category === activeFilter);
-          const haystack = (card.dataset.title + ' ' + (card.dataset.description || '')).toLowerCase();
-          const matchesSearch = !term || haystack.includes(term);
-          card.classList.toggle('hidden', !(matchesCategory && matchesSearch));
-        });
-      }
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
-          btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
-          activeFilter = btn.dataset.filter;
-          if (activeFilter !== 'all') {
-            const section = document.getElementById(activeFilter);
-            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-          applyFilters();
-        });
-      });
-
-      searchInput.addEventListener('input', applyFilters);
-      updateCounters(); applyFilters();
-
-      // Keyboard accessibility for cards (open popup on Enter/Space)
-      cards.forEach(card => {
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            card.click();
-          }
-        });
-      });
-    });
-  </script>
-
-  <!-- Project Detail Popup (your script.js expects these IDs) -->
-  <div id="project-popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-description">
-    <div class="popup-content">
-      <span class="popup-close" id="popup-close">×</span>
-      <img id="popup-image" src="" alt="" class="popup-image">
-      <h3 id="popup-title"></h3>
-      <p id="popup-description"></p>
-      <a id="popup-link" href="#" target="_blank" rel="noopener">Open project ↗</a>
+        <footer style="background-color: #111; color: white; padding: 40px 0; text-align: center;">
+            <div>
+                <p>© 2025 Vinit Rao | All Rights Reserved</p>
+                <div>
+                    <a href="https://www.linkedin.com/in/vinitrao1/"
+                        style="color: white; text-decoration: none; margin: 0 10px;" target="_blank">LinkedIn <i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/vinit-rao" style="color: white; text-decoration: none; margin: 0 10px;"
+                        target="_blank">GitHub <i class="fab fa-github"></i></a>
+                    <a href="https://www.youtube.com/@OfficialVinitRao"
+                        style="color: white; text-decoration: none; margin: 0 10px;" target="_blank">YouTube <i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
     </div>
-  </div>
+
+    <!-- scripts (particles first, then your site JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Filter + search logic (page-scoped) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = Array.from(document.querySelectorAll('.project-card'));
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('projectSearch');
+
+            const counters = {
+                all: document.getElementById('count-all'),
+                video: document.getElementById('count-video'),
+                graphics: document.getElementById('count-graphics'),
+                code: document.getElementById('count-code')
+            };
+
+            function updateCounters() {
+                const totals = { all: cards.length, video: 0, graphics: 0, code: 0 };
+                cards.forEach(c => { const cat = c.dataset.category; if (totals[cat] !== undefined) totals[cat]++; });
+                counters.all.textContent = totals.all;
+                counters.video.textContent = totals.video;
+                counters.graphics.textContent = totals.graphics;
+                counters.code.textContent = totals.code;
+            }
+
+            let activeFilter = 'all';
+            function applyFilters() {
+                const term = (searchInput.value || '').trim().toLowerCase();
+                cards.forEach(card => {
+                    const matchesCategory = (activeFilter === 'all') || (card.dataset.category === activeFilter);
+                    const haystack = (card.dataset.title + ' ' + (card.dataset.description || '')).toLowerCase();
+                    const matchesSearch = !term || haystack.includes(term);
+                    card.classList.toggle('hidden', !(matchesCategory && matchesSearch));
+                });
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+                    btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
+                    activeFilter = btn.dataset.filter;
+                    if (activeFilter !== 'all') {
+                        const section = document.getElementById(activeFilter);
+                        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    applyFilters();
+                });
+            });
+
+            searchInput.addEventListener('input', applyFilters);
+            updateCounters(); applyFilters();
+
+            // Keyboard accessibility for cards (open popup on Enter/Space)
+            cards.forEach(card => {
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Project Detail Popup (your script.js expects these IDs) -->
+    <div id="project-popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title"
+        aria-describedby="popup-description">
+        <div class="popup-content">
+            <span class="popup-close" id="popup-close">×</span>
+            <img id="popup-image" src="" alt="" class="popup-image">
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+            <a id="popup-link" href="#" target="_blank" rel="noopener">Open project ↗</a>
+        </div>
+    </div>
 </body>
+
 </html>
