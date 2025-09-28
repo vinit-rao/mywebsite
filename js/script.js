@@ -108,3 +108,5 @@ particlesJS('particles-js', {
   retina_detect: true
 });
 
+const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("visible", e.isIntersecting)), {threshold:.25});
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
