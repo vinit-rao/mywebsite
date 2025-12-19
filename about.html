@@ -53,8 +53,13 @@
     }
 
     @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
     }
 
     .video-container {
@@ -133,8 +138,13 @@
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     /* Stats */
@@ -213,11 +223,11 @@
         flex-direction: row;
         align-items: flex-start;
       }
-      
+
       .about-text {
         flex: 1;
       }
-      
+
       .about-image {
         flex-shrink: 0;
       }
@@ -294,14 +304,20 @@
       <!-- Bio -->
       <section class="about-section">
         <!-- <h2 class="section-heading reveal">Who I Am</h2> -->
-        
+
         <div class="about-flex reveal">
           <div class="about-text">
-            <p>Hello! I'm Vinit. an aspiring Multimedia Editor and Interactive Media Design student at Carleton University. I bridge the gap between creative storytelling and technical execution, working with everything from Visual Studio Code to After Effects.</p>
-            
-            <p>My work spans video production, motion graphics, and software development. I help my dad with videography and video editing for weddings, housewarmings, and corporate events—handling both filming and post-production.</p>
-            
-            <p>When I'm not creating, you'll find me on the tennis court, playing guitar, or exploring new programming languages and design tools. I believe the best work comes from combining technical skill with creative vision.</p>
+            <p>Hello! I'm Vinit. an aspiring Multimedia Editor and Interactive Media Design student at Carleton
+              University. I bridge the gap between creative storytelling and technical execution, working with
+              everything from programming to animation.</p>
+
+            <p>My work spans video production, motion graphics, and software development. I help my dad with videography
+              and video editing for weddings, housewarmings, and corporate events—handling both filming and
+              post-production.</p>
+
+            <p>When I'm not creating, you'll find me on the tennis court, playing guitar, or exploring new programming
+              languages and design tools. I believe the best work comes from combining technical skill with creative
+              vision.</p>
           </div>
           <div class="about-image">
             <img src="images/mysurupalace_1.jpg" alt="Vinit Rao">
@@ -371,7 +387,7 @@
               <i class="fab fa-youtube"></i> Visit Channel
             </a>
           </div>
-          
+
           <div id="video-content">
             <div class="video-loading">
               <div class="spinner"></div>
@@ -381,24 +397,29 @@
         </div>
       </section>
 
-      
 
-      
+
+
 
     </main>
 
     <!-- Footer -->
-    <footer style="background-color: #0a0a0a; color: white; padding: 2.5rem 0; text-align: center; margin-top: 6rem; border-top: 1px solid #545454;">
+    <footer
+      style="background-color: #0a0a0a; color: white; padding: 2.5rem 0; text-align: center; margin-top: 6rem; border-top: 1px solid #545454;">
       <div>
-        <p style="font-size: 1rem; margin-bottom: 1.25rem; font-weight: 500; color: #aaa;">Let's create something amazing together</p>
+        <p style="font-size: 1rem; margin-bottom: 1.25rem; font-weight: 500; color: #aaa;">Let's create something
+          amazing together</p>
         <div style="margin: 1.25rem 0;">
-          <a href="https://www.linkedin.com/in/vinitrao1/" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+          <a href="https://www.linkedin.com/in/vinitrao1/"
+            style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="https://github.com/vinit-rao" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+          <a href="https://github.com/vinit-rao"
+            style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.youtube.com/@OfficialVinitRao" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+          <a href="https://www.youtube.com/@OfficialVinitRao"
+            style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
             <i class="fab fa-youtube"></i>
           </a>
         </div>
@@ -416,15 +437,15 @@
     async function loadLatestVideo() {
       const videoContent = document.getElementById('video-content');
       const videoDate = document.getElementById('video-date');
-      
+
       try {
         const channelId = 'UCrHG7FQnHXhR8Fvdz-nuiHQ';
         const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
         const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-        
+
         const response = await fetch(apiUrl);
         const data = await response.json();
-        
+
         if (data.status === 'ok' && data.items && data.items.length > 0) {
           const latestVideo = data.items[0];
           const videoId = latestVideo.link.split('v=')[1];
@@ -434,7 +455,7 @@
             month: 'long',
             day: 'numeric'
           });
-          
+
           videoContent.innerHTML = `
             <div class="video-container">
               <iframe 
@@ -444,16 +465,16 @@
               </iframe>
             </div>
           `;
-          
+
           videoDate.textContent = `${videoTitle} • ${uploadDate}`;
         } else {
           throw new Error('No videos found');
         }
-        
+
       } catch (error) {
         console.error('Error loading video:', error);
         const fallbackVideoId = 'Co7ycAHEKb4';
-        
+
         videoContent.innerHTML = `
           <div class="video-container">
             <iframe 
