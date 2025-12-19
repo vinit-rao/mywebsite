@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Vinit Rao</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/minimal.css" />
+  <style>
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .page-title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .page-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Latest Video */
+    .latest-video-section {
+      background: linear-gradient(135deg, rgba(179, 0, 0, 0.05), rgba(37, 37, 37, 0.3));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .latest-video-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary));
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .video-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .video-meta {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .channel-link {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .channel-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(179, 0, 0, 0.4);
+    }
+
+    .video-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+    }
+
+    .spinner {
+      border: 3px solid var(--border);
+      border-top: 3px solid var(--primary);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-right: 1rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 30px rgba(179, 0, 0, 0.2);
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    /* About Content */
+    .about-section {
+      margin: 4rem 0;
+    }
+
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .about-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin: 3rem 0;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (min-width: 768px) {
+      .about-flex {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      
+      .about-text {
+        flex: 1;
+      }
+      
+      .about-image {
+        flex-shrink: 0;
+      }
+    }
+
+    /* Tech Stack */
+    .tech-stack-wrapper {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .tech-stack-title {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .tech-stack {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tech-icon {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tech-icon i {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .tech-icon:hover {
+      transform: translateY(-10px) rotate(5deg);
+    }
+
+    .tech-icon:hover i {
+      color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#top" class="back-to-top" id="backToTop">↑</a>
+  <div id="particles-js"></div>
+
+  <div class="container" id="top">
+    <!-- Navigation -->
+    <nav class="hero-nav">
+      <div class="logo">
+        <a href="index.html" class="navbtn">Vinit Rao</a>
+      </div>
+      <div class="hero-buttons">
+        <a href="about.html" class="navbtn">About</a>
+        <a href="resume.html" class="navbtn">Resume</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="page-header">
+      <h1 class="page-title">About Me</h1>
+      <p class="page-subtitle">Student, creator, and problem solver bridging creativity with technology</p>
+    </div>
+
+    <main>
+      <!-- Bio -->
+      <section class="about-section">
+        <h2 class="section-heading reveal">Who I Am</h2>
+        
+        <div class="about-flex reveal">
+          <div class="about-text">
+            <p>Hi, I'm Vinit, a passionate Multimedia Editor and Interactive Media Design student at Carleton University. I bridge the gap between creative storytelling and technical execution, working with everything from Visual Studio Code to After Effects.</p>
+            
+            <p>My work spans video production, motion graphics, and software development. I help my dad with videography and video editing for weddings, housewarmings, and corporate events—handling both filming and post-production.</p>
+            
+            <p>When I'm not creating, you'll find me on the tennis court, playing guitar, or exploring new programming languages and design tools. I believe the best work comes from combining technical skill with creative vision.</p>
+          </div>
+          <div class="about-image">
+            <img src="images/mysurupalace_1.jpg" alt="Vinit Rao">
+          </div>
+        </div>
+        <!-- <div class="tech-stack-wrapper reveal">
+          <p class="tech-stack-title">Programming Languages</p>
+          <div class="tech-stack">
+            <span class="tech-icon python" title="Python"><i class="fab fa-python"></i></span>
+            <span class="tech-icon html5" title="HTML5"><i class="fab fa-html5"></i></span>
+            <span class="tech-icon css" title="CSS3"><i class="fab fa-css3-alt"></i></span>
+            <span class="tech-icon js" title="JavaScript"><i class="fab fa-js-square"></i></span>
+            <span class="tech-icon django" title="Django"><i class="fab fa-python"></i></span>
+            <span class="tech-icon java" title="Java"><i class="fab fa-java"></i></span>
+            <span class="tech-icon cpp" title="C++"><i class="fas fa-code"></i></span>
+          </div>
+        </div>
+
+        <div class="tech-stack-wrapper reveal">
+          <p class="tech-stack-title">Creative Applications</p>
+          <div class="tech-stack">
+            <span class="tech-icon photoshop" title="Photoshop"><i class="fas fa-image"></i></span>
+            <span class="tech-icon ae" title="After Effects"><i class="fas fa-film"></i></span>
+            <span class="tech-icon illustrator" title="Illustrator"><i class="fas fa-pen-nib"></i></span>
+            <span class="tech-icon indesign" title="InDesign"><i class="fas fa-newspaper"></i></span>
+            <span class="tech-icon figma" title="Figma"><i class="fab fa-figma"></i></span>
+            <span class="tech-icon premiere" title="Premiere Pro"><i class="fas fa-video"></i></span>
+            <span class="tech-icon davinci" title="DaVinci Resolve"><i class="fas fa-palette"></i></span>
+            <span class="tech-icon fl" title="FL Studio"><i class="fas fa-music"></i></span>
+            <span class="tech-icon blender" title="Blender"><i class="fas fa-cube"></i></span>
+            <span class="tech-icon unreal" title="Unreal Engine"><i class="fas fa-gamepad"></i></span>
+          </div>
+        </div> -->
+      </section>
+
+      <!-- Stats -->
+      <section class="reveal">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">9+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Creative Ideas</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest YouTube Video -->
+      <section>
+        <div class="latest-video-section reveal">
+          <div class="video-header">
+            <div>
+              <h2 class="video-title">Latest from YouTube</h2>
+              <p class="video-meta" id="video-date">Loading latest video...</p>
+            </div>
+            <a href="https://www.youtube.com/@OfficialVinitRao" class="channel-link" target="_blank">
+              <i class="fab fa-youtube"></i> Visit Channel
+            </a>
+          </div>
+          
+          <div id="video-content">
+            <div class="video-loading">
+              <div class="spinner"></div>
+              <span>Loading video...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #0a0a0a; color: white; padding: 2.5rem 0; text-align: center; margin-top: 6rem; border-top: 1px solid #545454;">
+      <div>
+        <p style="font-size: 1rem; margin-bottom: 1.25rem; font-weight: 500; color: #aaa;">Let's create something amazing together</p>
+        <div style="margin: 1.25rem 0;">
+          <a href="https://www.linkedin.com/in/vinitrao1/" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/vinit-rao" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.youtube.com/@OfficialVinitRao" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <p style="color: #666; font-size: 0.85rem; margin-top: 1rem;">© 2025 Vinit Rao | All Rights Reserved</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- YouTube Integration -->
+  <script>
+    async function loadLatestVideo() {
+      const videoContent = document.getElementById('video-content');
+      const videoDate = document.getElementById('video-date');
+      
+      try {
+        const channelId = 'UCrHG7FQnHXhR8Fvdz-nuiHQ';
+        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+          const latestVideo = data.items[0];
+          const videoId = latestVideo.link.split('v=')[1];
+          const videoTitle = latestVideo.title;
+          const uploadDate = new Date(latestVideo.pubDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+          
+          videoContent.innerHTML = `
+            <div class="video-container">
+              <iframe 
+                src="https://www.youtube.com/embed/${videoId}" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          `;
+          
+          videoDate.textContent = `${videoTitle} • ${uploadDate}`;
+        } else {
+          throw new Error('No videos found');
+        }
+        
+      } catch (error) {
+        console.error('Error loading video:', error);
+        const fallbackVideoId = '3i4h8ERBTiQ';
+        
+        videoContent.innerHTML = `
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/${fallbackVideoId}" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        `;
+        videoDate.textContent = 'Featured video from my channel';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadLatestVideo);
+  </script>
+
+</body>
+
+</html>

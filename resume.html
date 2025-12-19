@@ -5,81 +5,241 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume - Vinit Rao</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/minimal.css" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111;
+            background-color: rgb(25, 25, 25);
             color: #fff;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
-        .container {
-            text-align: center;
-            max-width: 900px;
+        /* Particles behind everything */
+        #particles-js {
+            position: fixed;
             width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -10 !important;
+            pointer-events: none;
+        }
+
+        /* Container on top */
+        .resume-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 20px;
         }
 
-        .pdf-container {
-            width: 100%;
-            height: 80vh;
-            border: 2px solid #fff;
-            margin-bottom: 20px;
+        /* Use global navbar from minimal.css - remove custom styling */
+
+        /* Resume content */
+        .resume-header {
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            z-index: 10;
         }
 
-        .back-btn {
-            padding: 10px 20px;
-            background-color: #007BFF;
+        .resume-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .resume-header p {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .action-btn {
+            padding: 14px 28px;
+            background: transparent;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s;
-            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #b30000;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
         }
 
-        .back-btn:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+        .action-btn:hover {
+            background-color: #b30000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(179, 0, 0, 0.3);
+        }
+
+        .action-btn.secondary {
+            border-color: #545454;
+        }
+
+        .action-btn.secondary:hover {
+            border-color: #b30000;
+            background-color: rgba(179, 0, 0, 0.1);
+        }
+
+        /* PDF viewer on top of particles */
+        .pdf-viewer {
+            width: 100%;
+            background: #1b1b1b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 2px solid #545454;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 85vh;
+            min-height: 700px;
+            border: none;
+            display: block;
+        }
+
+        .pdf-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .pdf-fallback i {
+            font-size: 5rem;
+            color: #b30000;
+            margin-bottom: 2rem;
+        }
+
+        .pdf-fallback h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .pdf-fallback p {
+            color: #aaa;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-viewer iframe {
+                height: 70vh;
+                min-height: 500px;
+            }
+
+            .hero-buttons {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
 
+    <a href="#top" class="back-to-top" id="backToTop">↑</a>
+    
+    <!-- Particles in background -->
+    <div id="particles-js"></div>
+
+    <div class="resume-container" id="top">
+        <!-- Navigation -->
         <nav class="hero-nav">
             <div class="logo">
-              <!-- <img src="images/logo.png" alt="Vinit Rao Logo" style="height: 40px;"> -->
-              <a href="index.html" style="color: white;" class="navbtn">Vinit Rao</a>
+                <a href="index.html">Vinit Rao</a>
             </div>
-      
             <div class="hero-buttons">
-              <a href="#about" class="navbtn">About</a>
-              <a href="projects.html" class="navbtn">Projects</a>
-              <a href="resume.html" class="navbtn">Resume</a>
+                <a href="index.html#about" class="navbtn">About</a>
+                <a href="resume.html" class="navbtn">Resume</a>
             </div>
-      
-      
-          </nav>
-        <div class="pdf-container">
-            <!-- Embed the PDF here -->
-            <embed src="resume/resume.pdf" type="application/pdf" width="100%" height="100%" />
+        </nav>
+
+        <!-- Header -->
+        <div class="resume-header">
+            <h1>My Resume</h1>
+            <p>Download or view my professional resume</p>
+            
+            <div class="resume-actions">
+                <a href="resume/resume.pdf" download class="action-btn">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+                <a href="index.html" class="action-btn secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <a href="about.html" class="action-btn secondary">
+                    <i class="fas fa-user"></i> About Me
+                </a>
+            </div>
         </div>
 
+        <!-- PDF Viewer -->
+        <div class="pdf-viewer" id="pdf-viewer">
+            <!-- PDF loads here -->
+        </div>
     </div>
-    
-</body>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        // Simple, stable PDF loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfViewer = document.getElementById('pdf-viewer');
+            const pdfPath = 'resume/resume.pdf';
+
+            // Load PDF in iframe
+            pdfViewer.innerHTML = `
+                <iframe src="${pdfPath}#toolbar=0&navpanes=0&scrollbar=1"></iframe>
+            `;
+
+            // Fallback check
+            setTimeout(() => {
+                const iframe = pdfViewer.querySelector('iframe');
+                if (!iframe) {
+                    showFallback();
+                }
+            }, 3000);
+
+            function showFallback() {
+                pdfViewer.innerHTML = `
+                    <div class="pdf-fallback">
+                        <i class="fas fa-file-pdf"></i>
+                        <h2>Resume Preview</h2>
+                        <p>Your browser doesn't support inline PDF viewing.<br>Please download the PDF to view it.</p>
+                        <a href="${pdfPath}" download class="action-btn">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
 
 </html>
