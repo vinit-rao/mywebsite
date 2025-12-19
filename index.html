@@ -353,57 +353,86 @@
     </footer>
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts - ORDER MATTERS! -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/projects.js"></script>
+  <script src="js/projects.js"></script> <!-- Load projects FIRST -->
 
   <script>
-    const grid = document.getElementById('work-grid');
-    const searchInput = document.getElementById('projectSearch');
-    const filterBtns = document.querySelectorAll('.filter-pill');
-    const noResults = document.getElementById('no-results');
-    let activeFilter = 'all';
-
-    function createCard(project) {
-      const badges = project.badges.map(b => `<span class="badge">${b}</span>`).join('');
-      return `
-        <article class="project-card" 
-          data-category="${project.category}"
-          data-title="${project.title}"
-          data-description="${project.description}"
-          data-link="${project.link}"
-          data-popup-image="${project.popupImage || project.image}"
-          role="button" tabindex="0">
-          <img src="${project.image}" alt="${project.title}">
-          <div class="project-overlay">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            ${badges}
-          </div>
-        </article>
-      `;
-    }
-
-    function loadProjects() {
-      grid.innerHTML = projects.map(createCard).join('');
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded');
+      console.log('Projects defined?', typeof projects);
+      console.log('Projects array:', typeof projects !== 'undefined' ? projects : 'NOT DEFINED');
       
-      document.getElementById('count-all').textContent = ` (${projects.length})`;
-      document.getElementById('count-video').textContent = ` (${projects.filter(p => p.category === 'video').length})`;
-      document.getElementById('count-photos').textContent = ` (${projects.filter(p => p.category === 'photos').length})`;
-      document.getElementById('count-graphics').textContent = ` (${projects.filter(p => p.category === 'graphics').length})`;
-      document.getElementById('count-code').textContent = ` (${projects.filter(p => p.category === 'code').length})`;
+      // Check if projects is actually an array
+      if (typeof projects === 'undefined') {
+        console.error('CRITICAL: projects is not defined!');
+        document.getElementById('work-grid').innerHTML = `
+          <div style="grid-column: 1/-1; padding: 4rem; text-align: center; color: #aaa;">
+            <h3>⚠️ Projects Not Loading</h3>
+            <p>The projects.js file is not loading correctly.</p>
+            <p>Check that js/projects.js exists and the path is correct.</p>
+          </div>
+        `;
+        return;
+      }
 
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', () => openPopup(card));
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openPopup(card);
-          }
+      if (!Array.isArray(projects)) {
+        console.error('CRITICAL: projects is not an array!', projects);
+        return;
+      }
+
+      console.log('✅ Projects loaded successfully:', projects.length, 'projects');
+      
+      const grid = document.getElementById('work-grid');
+      const searchInput = document.getElementById('projectSearch');
+      const filterBtns = document.querySelectorAll('.filter-pill');
+      const noResults = document.getElementById('no-results');
+      let activeFilter = 'all';
+
+      function createCard(project) {
+        const badges = project.badges.map(b => `<span class="badge">${b}</span>`).join('');
+        return `
+          <article class="project-card" 
+            data-category="${project.category}"
+            data-title="${project.title}"
+            data-description="${project.description}"
+            data-link="${project.link}"
+            data-popup-image="${project.popupImage || project.image}"
+            role="button" tabindex="0">
+            <img src="${project.image}" alt="${project.title}">
+            <div class="project-overlay">
+              <h3>${project.title}</h3>
+              <p>${project.description}</p>
+              ${badges}
+            </div>
+          </article>
+        `;
+      }
+
+      function loadProjects() {
+        console.log('Loading', projects.length, 'projects into grid...');
+        grid.innerHTML = projects.map(createCard).join('');
+        console.log('✅ Grid populated');
+        
+        document.getElementById('count-all').textContent = ` (${projects.length})`;
+        document.getElementById('count-video').textContent = ` (${projects.filter(p => p.category === 'video').length})`;
+        document.getElementById('count-photos').textContent = ` (${projects.filter(p => p.category === 'photos').length})`;
+        document.getElementById('count-graphics').textContent = ` (${projects.filter(p => p.category === 'graphics').length})`;
+        document.getElementById('count-code').textContent = ` (${projects.filter(p => p.category === 'code').length})`;
+
+        document.querySelectorAll('.project-card').forEach(card => {
+          card.addEventListener('click', () => openPopup(card));
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openPopup(card);
+            }
+          });
         });
-      });
-    }
+        
+        console.log('✅ Event listeners attached');
+      }
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -456,8 +485,29 @@
       document.body.classList.remove('popup-open');
     }
 
+    // Close on X button
+    document.getElementById('popup-close').addEventListener('click', closePopup);
+
+    // Close on outside click
+    document.getElementById('project-popup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePopup();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const popup = document.getElementById('project-popup');
+        if (!popup.classList.contains('hidden')) {
+          closePopup();
+        }
+      }
+    });
+
     loadProjects();
     applyFilters();
+    }); // End DOMContentLoaded
   </script>
 
   <!-- Popup -->

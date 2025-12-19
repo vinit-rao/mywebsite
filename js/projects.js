@@ -5,11 +5,11 @@ const projects = [
     // ==================== VIDEO PROJECTS ====================
     {
         category: 'video',
-        title: 'Lighting Assignment',
-        description: 'Cinematic lighting study featuring three professional techniques: three-point, low-key, and high-key lighting.',
+        title: 'Lighting Showcase',
+        description: 'Cinematic lighting study featuring three professional techniques: three-point, high-contrast, and back lighting.',
         link: 'https://www.youtube.com/watch?v=3i4h8ERBTiQ',
         image: 'images/project_11.gif',
-        badges: ['Premiere Pro']
+        badges: ['| Premiere Pro | School |']
     },
     {
         category: 'video',
@@ -17,69 +17,62 @@ const projects = [
         description: 'Professional event coverage with interviews, edited in Premiere Pro with After Effects compositions.',
         link: 'https://www.youtube.com/watch?v=RRANPGpEcV0',
         image: 'images/project_10.gif',
-        badges: ['Premiere Pro', 'After Effects', 'Event']
+        badges: ['| Premiere Pro | After Effects | Event |']
     },
     {
         category: 'video',
-        title: 'Nuit Blanche 2024',
-        description: 'Recap of Ottawa\'s all-night art festival showcasing cultural vibrancy.',
-        link: 'https://www.youtube.com/watch?v=Qp58TQwpZ94',
-        image: 'images/project_4.gif',
-        badges: ['Premiere Pro', 'Documentary']
-    },
-    {
-        category: 'video',
-        title: 'Nuit Blanche Slow-Mo',
+        title: 'Music Video',
         description: 'Artistic slow-motion edit emphasizing movement and emotion.',
-        link: 'https://www.youtube.com/watch?v=7XCyAr0yxJk',
+        link: 'https://www.youtube.com/watch?v=mRWqT6rZetQ',
         image: 'images/project_5.gif',
-        badges: ['Premiere Pro', 'Artistic']
+        badges: ['| Premiere Pro | After Effects | Personal |']
     },
-    {
-        category: 'video',
-        title: 'Forza 5 Gaming Edit',
-        description: 'High-energy gaming montage with dynamic cuts and stylized transitions.',
-        link: 'https://www.youtube.com/watch?v=u_CmJaKlpHg',
-        image: 'images/project_12.gif',
-        badges: ['CapCut', 'Gaming']
-    },
+    
 
     // ==================== PHOTOGRAPHY ====================
+    {
+        category: 'photos',
+        title: 'Late Night Hangout',
+        description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
+        link: '',
+        image: 'images/project_12.gif',
+        badges: ['| Lightroom | Personal |']
+    },
     {
         category: 'photos',
         title: 'Stills Video Project',
         description: 'Curated photography sequence exploring composition, pacing, and visual storytelling.',
         link: 'https://www.youtube.com/watch?v=DOs879L4MvE',
         image: 'images/project_8.gif',
-        badges: ['Photography', 'Composition']
+        badges: ['| Premiere Pro | School |']
     },
 
     // ==================== GRAPHICS & ANIMATION ====================
     {
         category: 'graphics',
         title: 'Wendy\'s Commercial',
-        description: '30-second animated commercial with dynamic keyframes and motion graphics.',
+        description: '15-second animated commercial with dynamic keyframes and motion graphics.',
         link: 'https://www.youtube.com/watch?v=VhibQHSWPOE',
         image: 'images/project_7.gif',
         popupImage: 'images/project_7.1.gif',
-        badges: ['After Effects', 'Animation']
+        badges: ['| After Effects | Personal |']
     },
     {
         category: 'graphics',
-        title: 'RAVO Brand Intro',
-        description: 'Sleek 10-second motion graphics opener for videography brand.',
-        link: 'https://www.youtube.com/watch?v=7FCf5Rhu4Zw',
+        title: 'Introducing RAVO',
+        description: 'Sleek motion graphics opener for videography brand.',
+        link: 'https://www.youtube.com/watch?v=4LNe7tF2YQ8',
         image: 'images/project_1.1.gif',
         popupImage: 'images/project_1.gif',
-        badges: ['After Effects', 'Branding']
+        badges: ['| After Effects | Personal |']
     },
     {
         category: 'graphics',
-        title: 'Text Morph Animation',
+        title: 'Text Morph',
         description: 'Experimental typography using graph editors for smooth morphing transitions.',
         link: 'https://www.youtube.com/watch?v=ML7khUEzdOY',
         image: 'images/project_2.gif',
-        badges: ['After Effects', 'Typography']
+        badges: ['| After Effects | Personal |']
     },
     {
         category: 'graphics',
@@ -87,7 +80,7 @@ const projects = [
         description: 'Sprite-based character animation with custom artwork and sound design.',
         link: 'https://www.youtube.com/watch?v=7xYjZKmTmC8',
         image: 'images/project_6.gif',
-        badges: ['After Effects', 'Character']
+        badges: ['| After Effects | School |']
     },
     {
         category: 'graphics',
@@ -95,7 +88,7 @@ const projects = [
         description: '3D character animation practice in Blender with rigging and walk cycle.',
         link: 'https://www.youtube.com/watch?v=_4oRm1HuIbo',
         image: 'images/project_3.gif',
-        badges: ['Blender', '3D Animation']
+        badges: ['| Blender | Personal']
     },
 
     // ==================== CODE PROJECTS ====================
@@ -105,7 +98,7 @@ const projects = [
         description: 'Object-oriented Java card game with custom UI and strategic AI gameplay.',
         link: 'https://www.youtube.com/watch?v=6Rl1UXpWMZY',
         image: 'images/project_9.gif',
-        badges: ['Java', 'NetBeans', 'OOP']
+        badges: ['| Java | NetBeans | School |']
     },
 
     // ==================== ADD YOUR NEW PROJECTS BELOW ====================
