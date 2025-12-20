@@ -2,52 +2,21 @@
 // TO ADD A NEW PROJECT: Just add a new object to this array!
 
 const projects = [
-    // ==================== VIDEO PROJECTS ====================
-    {
-        category: 'video',
-        title: 'Lighting Showcase',
-        description: 'Cinematic lighting study featuring three professional techniques: three-point, high-contrast, and back lighting.',
-        link: 'https://www.youtube.com/watch?v=3i4h8ERBTiQ',
-        image: 'images/project_11.gif',
-        badges: ['| Premiere Pro | School |']
-    },
-    {
-        category: 'video',
-        title: 'Global Nurse Initiative',
-        description: 'Professional event coverage with interviews, edited in Premiere Pro with After Effects compositions.',
-        link: 'https://www.youtube.com/watch?v=RRANPGpEcV0',
-        image: 'images/project_10.gif',
-        badges: ['| Premiere Pro | After Effects | Event |']
-    },
-    {
-        category: 'video',
-        title: 'Music Video',
-        description: 'Artistic slow-motion edit emphasizing movement and emotion.',
-        link: 'https://www.youtube.com/watch?v=mRWqT6rZetQ',
-        image: 'images/project_5.gif',
-        badges: ['| Premiere Pro | After Effects | Personal |']
-    },
+    
     
 
-    // ==================== PHOTOGRAPHY ====================
-    {
-        category: 'photos',
-        title: 'Late Night Hangout',
-        description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
-        link: '',
-        image: 'images/project_12.gif',
-        badges: ['| Lightroom | Personal |']
-    },
-    {
-        category: 'photos',
-        title: 'Stills Video Project',
-        description: 'Curated photography sequence exploring composition, pacing, and visual storytelling.',
-        link: 'https://www.youtube.com/watch?v=DOs879L4MvE',
-        image: 'images/project_8.gif',
-        badges: ['| Premiere Pro | School |']
-    },
+    
 
     // ==================== GRAPHICS & ANIMATION ====================
+    {
+        category: 'graphics',
+        title: 'CU Hacking Animation',
+        description: 'Short intro animation revealing new CU Hacking colors and branding.',
+        link: 'https://www.youtube.com/watch?v=IrP4P2sCuQY',
+        image: 'images/project_13.gif',
+        popupImage: 'images/project_13.gif',
+        badges: ['| After Effects | Club |']
+    },
     {
         category: 'graphics',
         title: 'Wendy\'s Commercial',
@@ -90,7 +59,48 @@ const projects = [
         image: 'images/project_3.gif',
         badges: ['| Blender | Personal']
     },
-
+    // ==================== VIDEO PROJECTS ====================
+    {
+        category: 'video',
+        title: 'Lighting Showcase',
+        description: 'Cinematic lighting study featuring three professional techniques: three-point, high-contrast, and back lighting.',
+        link: 'https://www.youtube.com/watch?v=3i4h8ERBTiQ',
+        image: 'images/project_11.gif',
+        badges: ['| Premiere Pro | School |']
+    },
+    {
+        category: 'video',
+        title: 'Global Nurse Initiative',
+        description: 'Professional event coverage with interviews, edited in Premiere Pro with After Effects compositions.',
+        link: 'https://www.youtube.com/watch?v=RRANPGpEcV0',
+        image: 'images/project_10.gif',
+        badges: ['| Premiere Pro | After Effects | Event |']
+    },
+    {
+        category: 'video',
+        title: 'Music Video',
+        description: 'Artistic slow-motion edit emphasizing movement and emotion.',
+        link: 'https://www.youtube.com/watch?v=mRWqT6rZetQ',
+        image: 'images/project_5.gif',
+        badges: ['| Premiere Pro | After Effects | Personal |']
+    },
+    // ==================== PHOTOGRAPHY ====================
+    {
+        category: 'photos',
+        title: 'Late Night Hangout',
+        description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
+        link: '',
+        image: 'images/project_12.gif',
+        badges: ['| Lightroom | Personal |']
+    },
+    {
+        category: 'photos',
+        title: 'Stills Video Project',
+        description: 'Curated photography sequence exploring composition, pacing, and visual storytelling.',
+        link: 'https://www.youtube.com/watch?v=DOs879L4MvE',
+        image: 'images/project_8.gif',
+        badges: ['| Premiere Pro | School |']
+    },
     // ==================== CODE PROJECTS ====================
     {
         category: 'code',
