@@ -10,6 +10,15 @@ const projects = [
     // ==================== GRAPHICS & ANIMATION ====================
     {
         category: 'graphics',
+        title: 'AE Exercises #1',
+        description: 'Practicing going through tutorials learning texturing and animating fake 3D shapes.',
+        link: 'https://www.youtube.com/shorts/5S7Uq2qFkgY',
+        image: 'images/project_14.gif',
+        popupImage: 'images/project_14.gif',
+        badges: ['| After Effects | Personal |']
+    },
+    {
+        category: 'graphics',
         title: 'CU Hacking Animation',
         description: 'Short intro animation revealing new CU Hacking colors and branding.',
         link: 'https://www.youtube.com/watch?v=IrP4P2sCuQY',
