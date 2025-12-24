@@ -10,6 +10,15 @@ const projects = [
     // ==================== GRAPHICS & ANIMATION ====================
     {
         category: 'graphics',
+        title: 'Mad Typography Edit',
+        description: 'Typographic modern style animation with various effects and animation techniques.',
+        link: 'https://www.youtube.com/shorts/3JITY32alVM',
+        image: 'images/project_15.gif',
+        popupImage: 'images/project_15.gif',
+        badges: ['| After Effects | Personal |']
+    },
+    {
+        category: 'graphics',
         title: 'AE Exercises #1',
         description: 'Practicing going through tutorials learning texturing and animating fake 3D shapes.',
         link: 'https://www.youtube.com/shorts/5S7Uq2qFkgY',
