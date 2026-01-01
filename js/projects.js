@@ -10,6 +10,24 @@ const projects = [
     // ==================== GRAPHICS & ANIMATION ====================
     {
         category: 'graphics',
+        title: 'Forest Video',
+        description: 'Blender made animation to test out simple analog horror',
+        link: 'https://www.youtube.com/watch?v=lrCLhPRmp-g',
+        image: 'images/project_17.gif',
+        popupImage: 'images/project_17.gif',
+        badges: ['| Blender | Personal |']
+    },
+    {
+        category: 'graphics',
+        title: 'Pinterest Animation',
+        description: 'Created motion graphics from a static graphic found on Pinterest',
+        link: 'https://www.youtube.com/shorts/Nse5BKR48dE',
+        image: 'images/project_16.gif',
+        popupImage: 'images/project_16.gif',
+        badges: ['| After Effects | Personal |']
+    },
+    {
+        category: 'graphics',
         title: 'Mad Typography Edit',
         description: 'Typographic modern style animation with various effects and animation techniques.',
         link: 'https://www.youtube.com/shorts/3JITY32alVM',
