@@ -11,7 +11,7 @@ const projects = [
     {
         category: 'graphics',
         title: 'Forest Video',
-        description: 'Blender made animation to test out simple analog horror',
+        description: 'Blender made animation to test out simple analog horror.',
         link: 'https://www.youtube.com/watch?v=lrCLhPRmp-g',
         image: 'images/project_17.gif',
         popupImage: 'images/project_17.gif',
@@ -20,7 +20,7 @@ const projects = [
     {
         category: 'graphics',
         title: 'Pinterest Animation',
-        description: 'Created motion graphics from a static graphic found on Pinterest',
+        description: 'Created motion graphics from a static graphic found on Pinterest.',
         link: 'https://www.youtube.com/shorts/Nse5BKR48dE',
         image: 'images/project_16.gif',
         popupImage: 'images/project_16.gif',
@@ -96,6 +96,14 @@ const projects = [
         badges: ['| Blender | Personal']
     },
     // ==================== VIDEO PROJECTS ====================
+    {
+        category: 'video',
+        title: 'Wedding Reception Highlight',
+        description: 'Wedding reception highlight with various film techniques.',
+        link: 'https://www.youtube.com/watch?v=oekmYU2RsI8',
+        image: 'images/project_18.gif',
+        badges: ['| Premiere Pro | Personal |']
+    },
     {
         category: 'video',
         title: 'Lighting Showcase',
