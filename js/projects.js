@@ -10,6 +10,15 @@ const projects = [
     // ==================== GRAPHICS & ANIMATION ====================
     {
         category: 'graphics',
+        title: 'Retro Adventure Trailer',
+        description: 'After effects animated trailer for a friend!',
+        link: 'https://www.youtube.com/watch?v=9wGekC8UZN4',
+        image: 'images/project_20.gif',
+        popupImage: 'images/project_20.gif',
+        badges: ['| After Effects | Personal |']
+    },
+    {
+        category: 'graphics',
         title: 'Forest Video',
         description: 'Blender made animation to test out simple analog horror.',
         link: 'https://www.youtube.com/watch?v=lrCLhPRmp-g',
@@ -98,11 +107,19 @@ const projects = [
     // ==================== VIDEO PROJECTS ====================
     {
         category: 'video',
+        title: 'Wedding Puja Highlight',
+        description: 'Wedding puja highlight with simple editing techniques.',
+        link: 'https://www.youtube.com/watch?v=-lmDa3Hinbw',
+        image: 'images/project_19.gif',
+        badges: ['| Premiere Pro | Work |']
+    },
+    {
+        category: 'video',
         title: 'Wedding Reception Highlight',
         description: 'Wedding reception highlight with various film techniques.',
         link: 'https://www.youtube.com/watch?v=oekmYU2RsI8',
         image: 'images/project_18.gif',
-        badges: ['| Premiere Pro | Personal |']
+        badges: ['| Premiere Pro | Work |']
     },
     {
         category: 'video',
@@ -118,7 +135,7 @@ const projects = [
         description: 'Professional event coverage with interviews, edited in Premiere Pro with After Effects compositions.',
         link: 'https://www.youtube.com/watch?v=RRANPGpEcV0',
         image: 'images/project_10.gif',
-        badges: ['| Premiere Pro | After Effects | Event |']
+        badges: ['| Premiere Pro | After Effects | Work |']
     },
     {
         category: 'video',
