@@ -10,6 +10,15 @@ const projects = [
     // ==================== GRAPHICS & ANIMATION ====================
     {
         category: 'graphics',
+        title: 'Club Promotional Reel',
+        description: 'Fun reel mixed with Minecraft assets!',
+        link: 'https://www.instagram.com/reel/DT_e7HMAaOB/?igsh=MWN3ZnB3NHRuMnEwOQ==',
+        image: 'images/project_21.1.gif',
+        popupImage: 'images/project_21.1.gif',
+        badges: ['| After Effects | Club |']
+    },
+    {
+        category: 'graphics',
         title: 'Retro Adventure Trailer',
         description: 'After effects animated trailer for a friend!',
         link: 'https://www.youtube.com/watch?v=9wGekC8UZN4',
