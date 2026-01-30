@@ -1,13 +1,10 @@
-/Build/*.js.gz
+/acornz/Build/*.js.gz
   Content-Type: application/javascript
   Content-Encoding: gzip
 
-/Build/*.wasm.gz
-  Content-Type: application/xml
+/acornz/Build/*.wasm.gz
+  Content-Type: application/wasm
   Content-Encoding: gzip
 
-/Build/*.data.gz
-  Content-Encoding: gzip
-
-/Build/*.symbols.json.gz
+/acornz/Build/*.data.gz
   Content-Encoding: gzip
