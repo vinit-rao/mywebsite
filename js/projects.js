@@ -174,6 +174,14 @@ const projects = [
     // ==================== CODE PROJECTS ====================
     {
         category: 'code',
+        title: 'Acorn Catcher Game',
+        description: 'Game made in Unity where the player catches falling acorns while avoiding spikey acorns.',
+        link: 'https://www.youtube.com/watch?v=p6OpZmpUm80',
+        image: 'images/project_22.gif',
+        badges: ['| Unity | Blender | School |']
+    },
+    {
+        category: 'code',
         title: 'Go Fish Game',
         description: 'Object-oriented Java card game with custom UI and strategic AI gameplay.',
         link: 'https://www.youtube.com/watch?v=6Rl1UXpWMZY',
