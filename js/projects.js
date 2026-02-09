@@ -177,7 +177,8 @@ const projects = [
         category: 'photos',
         title: 'Late Night Hangout',
         description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
-        link: 'https://www.smugmug.com/gallery/n-2ZbFMs',
+        iframe: "https://www.smugmug.com/frame/slideshow?key=hxvKgw&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
+        link: 'https://www.smugmug.com/gallery/n-9J8VRh',
         image: 'images/project_12.gif',
         badges: ['| Lightroom | Personal |']
     },
