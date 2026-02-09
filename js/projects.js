@@ -37,6 +37,15 @@ const projects = [
     },
     {
         category: 'graphics',
+        title: 'Beach Diorama',
+        description: 'Blender animated water cool animation!',
+        link: 'https://www.youtube.com/watch?v=Co7ycAHEKb4',
+        image: 'images/project_23.gif',
+        popupImage: 'images/project_23.gif',
+        badges: ['| Blender | Personal |']
+    },
+    {
+        category: 'graphics',
         title: 'Pinterest Animation',
         description: 'Created motion graphics from a static graphic found on Pinterest.',
         link: 'https://www.youtube.com/shorts/Nse5BKR48dE',
