@@ -11,6 +11,12 @@
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/minimal.css" />
   <style>
+    .project-card .iframe-wrapper iframe {
+      width: 125% !important;
+      height: 125% !important;
+      margin-left: -13%;
+    }
+
     /* Compact Hero */
     .hero-section {
       min-height: 50vh;
@@ -188,7 +194,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
       opacity: 0;
       transition: opacity 0.4s ease;
       display: flex;
@@ -210,7 +216,7 @@
     }
 
     .project-overlay p {
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 1rem;
@@ -277,7 +283,7 @@
       <div>
         <h1 class="hero-name">VINIT RAO</h1>
         <p class="hero-tagline">Multimedia Editor × Interactive Media Designer</p>
-        
+
         <div class="hero-links">
           <a href="https://github.com/vinit-rao" class="hero-link" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
@@ -325,7 +331,7 @@
 
       <!-- Grid -->
       <div class="work-grid" id="work-grid"></div>
-      
+
       <div id="no-results" class="empty-state hidden">
         <i class="fas fa-search"></i>
         <h3>No projects found</h3>
@@ -334,17 +340,22 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background-color: #0a0a0a; color: white; padding: 2.5rem 0; text-align: center; margin-top: 6rem; border-top: 1px solid #545454;">
+    <footer
+      style="background-color: #0a0a0a; color: white; padding: 2.5rem 0; text-align: center; margin-top: 6rem; border-top: 1px solid #545454;">
       <div>
-        <p style="font-size: 1rem; margin-bottom: 1.25rem; font-weight: 500; color: #aaa;">Let's create something amazing together</p>
+        <p style="font-size: 1rem; margin-bottom: 1.25rem; font-weight: 500; color: #aaa;">Let's create something
+          amazing together</p>
         <div style="margin: 1.25rem 0;">
-          <a href="https://www.linkedin.com/in/vinitrao1/" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+          <a href="https://www.linkedin.com/in/vinitrao1/"
+            style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="https://github.com/vinit-rao" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+          <a href="https://github.com/vinit-rao"
+            style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.youtube.com/@OfficialVinitRao" style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
+          <a href="https://www.youtube.com/@OfficialVinitRao"
+            style="color: white; margin: 0 15px; font-size: 1.5rem; transition: color 0.3s;" target="_blank">
             <i class="fab fa-youtube"></i>
           </a>
         </div>
@@ -359,11 +370,11 @@
   <script src="js/projects.js"></script> <!-- Load projects FIRST -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       console.log('DOM loaded');
       console.log('Projects defined?', typeof projects);
       console.log('Projects array:', typeof projects !== 'undefined' ? projects : 'NOT DEFINED');
-      
+
       // Check if projects is actually an array
       if (typeof projects === 'undefined') {
         console.error('CRITICAL: projects is not defined!');
@@ -383,7 +394,7 @@
       }
 
       console.log('✅ Projects loaded successfully:', projects.length, 'projects');
-      
+
       const grid = document.getElementById('work-grid');
       const searchInput = document.getElementById('projectSearch');
       const filterBtns = document.querySelectorAll('.filter-pill');
@@ -392,29 +403,39 @@
 
       function createCard(project) {
         const badges = project.badges.map(b => `<span class="badge">${b}</span>`).join('');
+
+        // Logic to handle the iframe preview without black bars
+        const mediaHTML = project.iframe
+          ? `<div class="iframe-wrapper" style="width:100%; height:100%; overflow:hidden;">
+         <iframe src="${project.iframe}" style="width:100%; height:100%; border:none; pointer-events:none; transform: scale(1.1); transform-origin: center;"></iframe>
+       </div>`
+          : `<img src="${project.image}" alt="${project.title}">`;
+
         return `
-          <article class="project-card" 
-            data-category="${project.category}"
-            data-title="${project.title}"
-            data-description="${project.description}"
-            data-link="${project.link}"
-            data-popup-image="${project.popupImage || project.image}"
-            role="button" tabindex="0">
-            <img src="${project.image}" alt="${project.title}">
-            <div class="project-overlay">
-              <h3>${project.title}</h3>
-              <p>${project.description}</p>
-              ${badges}
-            </div>
-          </article>
-        `;
+    <article class="project-card" 
+      data-category="${project.category}"
+      data-title="${project.title}"
+      data-description="${project.description}"
+      data-link="${project.link}"
+      data-popup-image="${project.popupImage || project.image}"
+      ${project.iframe ? `data-iframe="${project.iframe}"` : ''} 
+      role="button" tabindex="0">
+      ${mediaHTML}
+      <div class="project-overlay">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        ${badges}
+      </div>
+    </article>
+  `;
       }
+
 
       function loadProjects() {
         console.log('Loading', projects.length, 'projects into grid...');
         grid.innerHTML = projects.map(createCard).join('');
         console.log('✅ Grid populated');
-        
+
         document.getElementById('count-all').textContent = ` (${projects.length})`;
         document.getElementById('count-video').textContent = ` (${projects.filter(p => p.category === 'video').length})`;
         document.getElementById('count-photos').textContent = ` (${projects.filter(p => p.category === 'photos').length})`;
@@ -430,83 +451,120 @@
             }
           });
         });
-        
+
         console.log('✅ Event listeners attached');
       }
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        activeFilter = btn.dataset.filter;
-        applyFilters();
-      });
-    });
-
-    searchInput.addEventListener('input', applyFilters);
-
-    function applyFilters() {
-      const term = searchInput.value.toLowerCase().trim();
-      const cards = document.querySelectorAll('.project-card');
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const category = card.dataset.category;
-        const title = card.dataset.title.toLowerCase();
-        const desc = card.dataset.description.toLowerCase();
-        
-        const matchesFilter = activeFilter === 'all' || category === activeFilter;
-        const matchesSearch = !term || title.includes(term) || desc.includes(term);
-        const isVisible = matchesFilter && matchesSearch;
-        
-        card.classList.toggle('hidden', !isVisible);
-        if (isVisible) visibleCount++;
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.dataset.filter;
+          applyFilters();
+        });
       });
 
-      noResults.classList.toggle('hidden', visibleCount > 0);
-    }
+      searchInput.addEventListener('input', applyFilters);
 
-    function openPopup(card) {
-      const popup = document.getElementById('project-popup');
-      document.getElementById('popup-title').textContent = card.dataset.title;
-      document.getElementById('popup-description').textContent = card.dataset.description;
-      document.getElementById('popup-link').href = card.dataset.link;
-      document.getElementById('popup-image').src = card.dataset.popupImage;
-      
-      popup.classList.remove('hidden');
-      popup.classList.add('show');
-      document.body.classList.add('popup-open');
-    }
+      function applyFilters() {
+        const term = searchInput.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('.project-card');
+        let visibleCount = 0;
 
-    function closePopup() {
-      const popup = document.getElementById('project-popup');
-      popup.classList.remove('show');
-      popup.classList.add('hidden');
-      document.body.classList.remove('popup-open');
-    }
+        cards.forEach(card => {
+          const category = card.dataset.category;
+          const title = card.dataset.title.toLowerCase();
+          const desc = card.dataset.description.toLowerCase();
 
-    // Close on X button
-    document.getElementById('popup-close').addEventListener('click', closePopup);
+          const matchesFilter = activeFilter === 'all' || category === activeFilter;
+          const matchesSearch = !term || title.includes(term) || desc.includes(term);
+          const isVisible = matchesFilter && matchesSearch;
 
-    // Close on outside click
-    document.getElementById('project-popup').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closePopup();
+          card.classList.toggle('hidden', !isVisible);
+          if (isVisible) visibleCount++;
+        });
+
+        noResults.classList.toggle('hidden', visibleCount > 0);
       }
-    });
 
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
+      function openPopup(card) {
         const popup = document.getElementById('project-popup');
-        if (!popup.classList.contains('hidden')) {
+        const popupImg = document.getElementById('popup-image');
+
+        // Set text content
+        document.getElementById('popup-title').textContent = card.dataset.title;
+        document.getElementById('popup-description').textContent = card.dataset.description;
+        document.getElementById('popup-link').href = card.dataset.link;
+
+        // Handle Media: Iframe vs Image
+        if (card.dataset.iframe) {
+          // Hide the default image
+          popupImg.style.display = 'none';
+
+          // Check if an iframe already exists in the popup to avoid duplicates
+          let popupIframe = document.getElementById('popup-iframe');
+          if (!popupIframe) {
+            popupIframe = document.createElement('iframe');
+            popupIframe.id = 'popup-iframe';
+            popupIframe.width = "100%";
+            popupIframe.height = "500px"; // Increased height for better viewing
+            popupIframe.frameBorder = "0";
+            popupIframe.style.borderRadius = "8px";
+            popupImg.parentNode.insertBefore(popupIframe, popupImg);
+          }
+
+          popupIframe.src = card.dataset.iframe;
+          popupIframe.style.display = 'block';
+        } else {
+          // If it's a regular project, hide iframe and show image
+          const popupIframe = document.getElementById('popup-iframe');
+          if (popupIframe) popupIframe.style.display = 'none';
+
+          popupImg.src = card.dataset.popupImage;
+          popupImg.style.display = 'block';
+        }
+
+        popup.classList.remove('hidden');
+        popup.classList.add('show');
+        document.body.classList.add('popup-open');
+      }
+
+      function closePopup() {
+        const popup = document.getElementById('project-popup');
+        const popupIframe = document.getElementById('popup-iframe');
+
+        // Stop the slideshow when closing
+        if (popupIframe) {
+          popupIframe.src = "";
+        }
+
+        popup.classList.remove('show');
+        popup.classList.add('hidden');
+        document.body.classList.remove('popup-open');
+      }
+
+      // Close on X button
+      document.getElementById('popup-close').addEventListener('click', closePopup);
+
+      // Close on outside click
+      document.getElementById('project-popup').addEventListener('click', function (e) {
+        if (e.target === this) {
           closePopup();
         }
-      }
-    });
+      });
 
-    loadProjects();
-    applyFilters();
+      // Close on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          const popup = document.getElementById('project-popup');
+          if (!popup.classList.contains('hidden')) {
+            closePopup();
+          }
+        }
+      });
+
+      loadProjects();
+      applyFilters();
     }); // End DOMContentLoaded
   </script>
 

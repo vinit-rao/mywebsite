@@ -157,9 +157,18 @@ const projects = [
     // ==================== PHOTOGRAPHY ====================
     {
         category: 'photos',
+        title: 'Iron Lung Movie Night',
+        description: 'Fun movie night with friends. Photos captured using Sony A7III 28mm F2.0',
+        iframe: "https://www.smugmug.com/frame/slideshow?key=g2SCzt&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
+        link: 'https://www.smugmug.com/gallery/n-2ZbFMs',
+        image: 'images/project_12.gif',
+        badges: ['| Lightroom | Personal |']
+    },
+    {
+        category: 'photos',
         title: 'Late Night Hangout',
         description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
-        link: '',
+        link: 'https://www.smugmug.com/gallery/n-2ZbFMs',
         image: 'images/project_12.gif',
         badges: ['| Lightroom | Personal |']
     },

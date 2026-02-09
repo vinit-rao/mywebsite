@@ -546,4 +546,8 @@ a:hover {
   .popup-content {
     padding: 2rem;
   }
+
+  #popup-iframe {
+    height: 300px !important;
+  }
 }
