@@ -7,7 +7,24 @@ const projects = [
 
     
 
-    // ==================== GRAPHICS & ANIMATION ====================
+    // ==================== GRAPHICS & ANIMATION ==================
+    {
+        category: 'photos',
+        title: 'Iron Lung Movie Night',
+        description: 'Fun movie night with friends. Photos captured using Sony A7III 28mm F2.0',
+        iframe: "https://www.smugmug.com/frame/slideshow?key=g2SCzt&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
+        link: 'https://www.smugmug.com/gallery/n-2ZbFMs',
+        image: 'images/project_12.gif',
+        badges: ['| Lightroom | Personal |']
+    },
+    {
+        category: 'code',
+        title: 'Acorn Catcher Game',
+        description: 'Game made in Unity where the player catches falling acorns while avoiding spikey acorns.',
+        link: 'https://www.youtube.com/watch?v=p6OpZmpUm80',
+        image: 'images/project_22.gif',
+        badges: ['| Unity | Blender | School |']
+    },
     {
         category: 'graphics',
         title: 'Club Promotional Reel',
@@ -25,6 +42,22 @@ const projects = [
         image: 'images/project_20.gif',
         popupImage: 'images/project_20.gif',
         badges: ['| After Effects | Personal |']
+    },
+    {
+        category: 'video',
+        title: 'Wedding Puja Highlight',
+        description: 'Wedding puja highlight with simple editing techniques.',
+        link: 'https://www.youtube.com/watch?v=-lmDa3Hinbw',
+        image: 'images/project_19.gif',
+        badges: ['| Premiere Pro | Work |']
+    },
+    {
+        category: 'video',
+        title: 'Wedding Reception Highlight',
+        description: 'Wedding reception highlight with various film techniques.',
+        link: 'https://www.youtube.com/watch?v=oekmYU2RsI8',
+        image: 'images/project_18.gif',
+        badges: ['| Premiere Pro | Work |']
     },
     {
         category: 'graphics',
@@ -72,6 +105,15 @@ const projects = [
         badges: ['| After Effects | Personal |']
     },
     {
+        category: 'photos',
+        title: 'Late Night Hangout',
+        description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
+        iframe: "https://www.smugmug.com/frame/slideshow?key=hxvKgw&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
+        link: 'https://www.smugmug.com/gallery/n-9J8VRh',
+        image: 'images/project_12.gif',
+        badges: ['| Lightroom | Personal |']
+    },
+    {
         category: 'graphics',
         title: 'CU Hacking Animation',
         description: 'Short intro animation revealing new CU Hacking colors and branding.',
@@ -79,6 +121,22 @@ const projects = [
         image: 'images/project_13.gif',
         popupImage: 'images/project_13.gif',
         badges: ['| After Effects | Club |']
+    },
+    {
+        category: 'video',
+        title: 'Lighting Showcase',
+        description: 'Cinematic lighting study featuring three professional techniques: three-point, high-contrast, and back lighting.',
+        link: 'https://www.youtube.com/watch?v=3i4h8ERBTiQ',
+        image: 'images/project_11.gif',
+        badges: ['| Premiere Pro | School |']
+    },
+    {
+        category: 'photos',
+        title: 'Stills Video Project',
+        description: 'Curated photography sequence exploring composition, pacing, and visual storytelling.',
+        link: 'https://www.youtube.com/watch?v=DOs879L4MvE',
+        image: 'images/project_8.gif',
+        badges: ['| Premiere Pro | School |']
     },
     {
         category: 'graphics',
@@ -115,39 +173,6 @@ const projects = [
         badges: ['| After Effects | School |']
     },
     {
-        category: 'graphics',
-        title: 'Walk Cycle',
-        description: '3D character animation practice in Blender with rigging and walk cycle.',
-        link: 'https://www.youtube.com/watch?v=_4oRm1HuIbo',
-        image: 'images/project_3.gif',
-        badges: ['| Blender | Personal']
-    },
-    // ==================== VIDEO PROJECTS ====================
-    {
-        category: 'video',
-        title: 'Wedding Puja Highlight',
-        description: 'Wedding puja highlight with simple editing techniques.',
-        link: 'https://www.youtube.com/watch?v=-lmDa3Hinbw',
-        image: 'images/project_19.gif',
-        badges: ['| Premiere Pro | Work |']
-    },
-    {
-        category: 'video',
-        title: 'Wedding Reception Highlight',
-        description: 'Wedding reception highlight with various film techniques.',
-        link: 'https://www.youtube.com/watch?v=oekmYU2RsI8',
-        image: 'images/project_18.gif',
-        badges: ['| Premiere Pro | Work |']
-    },
-    {
-        category: 'video',
-        title: 'Lighting Showcase',
-        description: 'Cinematic lighting study featuring three professional techniques: three-point, high-contrast, and back lighting.',
-        link: 'https://www.youtube.com/watch?v=3i4h8ERBTiQ',
-        image: 'images/project_11.gif',
-        badges: ['| Premiere Pro | School |']
-    },
-    {
         category: 'video',
         title: 'Global Nurse Initiative',
         description: 'Professional event coverage with interviews, edited in Premiere Pro with After Effects compositions.',
@@ -163,42 +188,6 @@ const projects = [
         image: 'images/project_5.gif',
         badges: ['| Premiere Pro | After Effects | Personal |']
     },
-    // ==================== PHOTOGRAPHY ====================
-    {
-        category: 'photos',
-        title: 'Iron Lung Movie Night',
-        description: 'Fun movie night with friends. Photos captured using Sony A7III 28mm F2.0',
-        iframe: "https://www.smugmug.com/frame/slideshow?key=g2SCzt&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
-        link: 'https://www.smugmug.com/gallery/n-2ZbFMs',
-        image: 'images/project_12.gif',
-        badges: ['| Lightroom | Personal |']
-    },
-    {
-        category: 'photos',
-        title: 'Late Night Hangout',
-        description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
-        iframe: "https://www.smugmug.com/frame/slideshow?key=hxvKgw&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
-        link: 'https://www.smugmug.com/gallery/n-9J8VRh',
-        image: 'images/project_12.gif',
-        badges: ['| Lightroom | Personal |']
-    },
-    {
-        category: 'photos',
-        title: 'Stills Video Project',
-        description: 'Curated photography sequence exploring composition, pacing, and visual storytelling.',
-        link: 'https://www.youtube.com/watch?v=DOs879L4MvE',
-        image: 'images/project_8.gif',
-        badges: ['| Premiere Pro | School |']
-    },
-    // ==================== CODE PROJECTS ====================
-    {
-        category: 'code',
-        title: 'Acorn Catcher Game',
-        description: 'Game made in Unity where the player catches falling acorns while avoiding spikey acorns.',
-        link: 'https://www.youtube.com/watch?v=p6OpZmpUm80',
-        image: 'images/project_22.gif',
-        badges: ['| Unity | Blender | School |']
-    },
     {
         category: 'code',
         title: 'Go Fish Game',
@@ -206,6 +195,14 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=6Rl1UXpWMZY',
         image: 'images/project_9.gif',
         badges: ['| Java | NetBeans | School |']
+    },
+    {
+        category: 'graphics',
+        title: 'Walk Cycle',
+        description: '3D character animation practice in Blender with rigging and walk cycle.',
+        link: 'https://www.youtube.com/watch?v=_4oRm1HuIbo',
+        image: 'images/project_3.gif',
+        badges: ['| Blender | Personal']
     },
 
     // ==================== ADD YOUR NEW PROJECTS BELOW ====================
