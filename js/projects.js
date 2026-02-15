@@ -6,8 +6,14 @@ const projects = [
     
 
     
-
-    // ==================== GRAPHICS & ANIMATION ==================
+    {
+        category: 'graphics',
+        title: 'Sachin Rao Intro',
+        description: 'Advertisment to promote Sachin Rao photography business. Made using After Effects with custom assets.',
+        link: 'https://www.youtube.com/watch?v=dOJTkZ3NaNs',
+        image: 'images/project_24.gif',
+        badges: ['| After Effects | Work |']
+    },
     {
         category: 'photos',
         title: 'Iron Lung Movie Night',
