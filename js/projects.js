@@ -7,6 +7,15 @@ const projects = [
 
     
     {
+        category: 'photos',
+        title: 'Pomelo Soda 02/15',
+        description: 'Band performace showcasing their new originals and covers at a bar.',
+        iframe: "https://www.smugmug.com/frame/slideshow?key=S7zpk4&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&transitionSpeed=2",
+        link: 'https://www.smugmug.com/gallery/n-hXFjj8',
+        image: 'images/project_12.gif',
+        badges: ['| Lightroom | Personal |']
+    },
+    {
         category: 'graphics',
         title: 'Sachin Rao Intro',
         description: 'Advertisment to promote Sachin Rao photography business. Made using After Effects with custom assets.',
@@ -18,7 +27,7 @@ const projects = [
         category: 'photos',
         title: 'Iron Lung Movie Night',
         description: 'Fun movie night with friends. Photos captured using Sony A7III 28mm F2.0',
-        iframe: "https://www.smugmug.com/frame/slideshow?key=g2SCzt&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
+        iframe: "https://www.smugmug.com/frame/slideshow?key=g2SCzt&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&transitionSpeed=2",
         link: 'https://www.smugmug.com/gallery/n-2ZbFMs',
         image: 'images/project_12.gif',
         badges: ['| Lightroom | Personal |']
@@ -114,7 +123,7 @@ const projects = [
         category: 'photos',
         title: 'Late Night Hangout',
         description: 'Chill hangout with friends. Photos captured using Sony A7III 28-75mm F2.8',
-        iframe: "https://www.smugmug.com/frame/slideshow?key=hxvKgw&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&transitionSpeed=2",
+        iframe: "https://www.smugmug.com/frame/slideshow?key=hxvKgw&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&transitionSpeed=2",
         link: 'https://www.smugmug.com/gallery/n-9J8VRh',
         image: 'images/project_12.gif',
         badges: ['| Lightroom | Personal |']
