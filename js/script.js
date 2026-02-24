@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             nightSky.appendChild(ss);
             setTimeout(() => ss.remove(), 2100);
-        }, 1000);
+        }, 700);
     }
 
     window.addEventListener('scroll', () => {
