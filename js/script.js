@@ -1,112 +1,56 @@
-// Back to Top Button Logic
-document.addEventListener('DOMContentLoaded', function () {
-  const backToTop = document.getElementById('backToTop');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
-});
 document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('project-popup');
-  const popupTitle = document.getElementById('popup-title');
-  const popupDescription = document.getElementById('popup-description');
-  const popupLink = document.getElementById('popup-link');
-  const popupImage = document.getElementById('popup-image');
-  const popupClose = document.getElementById('popup-close');
+    const nightSky = document.getElementById('night-sky');
+    
+    // 1. STAR GENERATOR (Static & Parallax)
+    if (nightSky) {
+        nightSky.innerHTML = '';
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            const size = Math.random() * 2 + 0.5;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.opacity = Math.random();
+            nightSky.appendChild(star);
+        }
 
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => {
-      popupTitle.textContent = card.dataset.title;
-      popupDescription.textContent = card.dataset.description;
-      popupLink.href = card.dataset.link;
+        // 2. SHOOTING STAR GENERATOR
+        setInterval(() => {
+            const shootingStar = document.createElement('div');
+            shootingStar.className = 'shooting-star';
+            shootingStar.style.left = `${Math.random() * 100}%`;
+            shootingStar.style.top = `${Math.random() * 30}%`;
+            nightSky.appendChild(shootingStar);
+            
+            setTimeout(() => shootingStar.remove(), 2500);
+        }, 4000); 
+    }
 
-      // Use popup image if available; otherwise, fall back to the card image
-      popupImage.src = card.dataset.popupImage || card.querySelector('img').src;
-      popupImage.alt = card.querySelector('img').alt;
+    // 3. COLOR SHIFT & PARALLAX
+    const heroTitle = document.querySelector('.hero-title');
+    const nameOverlay = document.querySelector('.hero-text-overlay');
+    const bioOverlay = document.querySelector('.hero-bio');
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        if (nightSky) {
+            nightSky.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
 
-      popup.classList.remove('hidden');
-      popup.classList.add('show');
+        // Parallax only on large screens
+        if (window.innerWidth > 1024) {
+            const yOffset = scrolled * 0.2;
+            if (nameOverlay) nameOverlay.style.transform = `translateY(${yOffset}px)`;
+            if (bioOverlay) bioOverlay.style.transform = `translateY(${yOffset}px)`;
+        }
+
+        // Hero title color shift
+        if (heroTitle) {
+            if (scrolled > 400) heroTitle.classList.add('active-color');
+            else heroTitle.classList.remove('active-color');
+        }
     });
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.classList.add('hidden');
-      popup.classList.remove('show');
-    }
-  });
 });
-
-particlesJS('particles-js', {
-  particles: {
-    number: {
-      value: 1, // Number of particles
-      density: {
-        enable: true,
-        value_area: 200 // Density area
-      }
-    },
-    color: {
-      value: '#252525' // Color of particles
-    },
-    shape: {
-      type: 'triangle', // Shape of particles
-      stroke: {
-        width: 1,
-        color: '#b20000'
-      }
-    },
-    opacity: {
-      value: 0.5, // Opacity of particles
-      anim: {
-        enable: true,
-        speed: 1,
-        opacity_min: 0.1
-      }
-    },
-    size: {
-      value: 10, // Size of particles
-      anim: {
-        enable: true,
-        speed: 40,
-        size_min: 0.1
-      }
-    },
-    line_linked: {
-      enable: true,
-      distance: 150, // Link particles at this distance
-      color: '#ffffff',
-      opacity: 0.4,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 30,
-      direction: 'none',
-      random: false,
-      straight: false,
-      out_mode: 'out'
-    }
-  },
-  interactivity: {
-    detect_on: 'canvas',
-    events: {
-      onhover: {
-        enable: true,
-        mode: 'repulse'
-      },
-      onclick: {
-        enable: true,
-        mode: 'push'
-      }
-    }
-  },
-  retina_detect: true
-});
-
-const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("visible", e.isIntersecting)), {threshold:.25});
-document.querySelectorAll(".reveal").forEach(el => io.observe(el));

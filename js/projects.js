@@ -108,7 +108,8 @@ const projects = [
         link: 'https://www.youtube.com/shorts/3JITY32alVM',
         image: 'images/project_15.gif',
         popupImage: 'images/project_15.gif',
-        badges: ['| After Effects | Personal |']
+        badges: ['| After Effects | Personal |'],
+        featured: true
     },
     {
         category: 'graphics',
@@ -135,7 +136,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=IrP4P2sCuQY',
         image: 'images/project_13.gif',
         popupImage: 'images/project_13.gif',
-        badges: ['| After Effects | Club |']
+        badges: ['| After Effects | Club |'],
+        featured: true
     },
     {
         category: 'video',
@@ -160,7 +162,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=VhibQHSWPOE',
         image: 'images/project_7.gif',
         popupImage: 'images/project_7.1.gif',
-        badges: ['| After Effects | Personal |']
+        badges: ['| After Effects | Personal |'],
+        featured: true
     },
     {
         category: 'graphics',
