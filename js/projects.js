@@ -13,7 +13,8 @@ const projects = [
         iframe: "https://www.smugmug.com/frame/slideshow?key=S7zpk4&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&transitionSpeed=2",
         link: 'https://www.smugmug.com/gallery/n-hXFjj8',
         image: 'images/project_12.gif',
-        badges: ['| Lightroom | Personal |']
+        badges: ['| Lightroom | Personal |'],
+        featured: true
     },
     {
         category: 'graphics',
@@ -38,7 +39,8 @@ const projects = [
         description: 'Game made in Unity where the player catches falling acorns while avoiding spikey acorns.',
         link: 'https://www.youtube.com/watch?v=p6OpZmpUm80',
         image: 'images/project_22.gif',
-        badges: ['| Unity | Blender | School |']
+        badges: ['| Unity | Blender | School |'],
+        featured: true
     },
     {
         category: 'graphics',
@@ -76,12 +78,13 @@ const projects = [
     },
     {
         category: 'graphics',
-        title: 'Forest Video',
+        title: 'Forest Animation',
         description: 'Blender made animation to test out simple analog horror.',
         link: 'https://www.youtube.com/watch?v=lrCLhPRmp-g',
         image: 'images/project_17.gif',
         popupImage: 'images/project_17.gif',
-        badges: ['| Blender | Personal |']
+        badges: ['| Blender | Personal |'],
+        featured: true
     },
     {
         category: 'graphics',

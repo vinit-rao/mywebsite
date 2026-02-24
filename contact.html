@@ -1,81 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Vinit Rao</title>
-  <link rel="stylesheet" href="css/minimal.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Vinit Rao</title>
+    <link rel="stylesheet" href="css/minimal.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-  <div id="night-sky"></div>
-  
-  <nav class="container hero-nav">
-    <div class="logo"><a href="index.html">VINIT RAO</a></div>
-    <div class="hero-buttons">
-      <a href="about.html" class="navbtn">About</a>
-      <a href="resume.html" class="navbtn">Resume</a>
-      <a href="contact.html" class="navbtn">Contact</a>
-    </div>
-  </nav>
+    <div id="night-sky"></div>
 
-  <header class="container" style="padding: 100px 0 60px; text-align: center;">
-    <h1 class="contact-title">CONTACT ME</h1>
-  </header>
+    <nav class="hero-nav">
+        <div class="container nav-wrapper">
+            <div class="logo"><a href="index.html">VINIT RAO</a></div>
+            <div class="hero-buttons">
+                <a href="about.html" class="navbtn">About</a>
+                <a href="resume.html" class="navbtn">Resume</a>
+                <a href="contact.html" class="navbtn">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <section class="full-width-section">
+    <header class="container" style="padding: 100px 0 60px; text-align: center;">
+        <h1 class="contact-title">CONTACT</h1>
+    </header>
+
     <div class="container" style="display: flex; flex-direction: column; align-items: center;">
-      
-      <div class="section-header inquiry-header" style="text-align: center;">
-        <h2>Direct Inquiries</h2>
-      </div>
-      
-      <div class="contact-sidebar" style="text-align: center; max-width: 600px; margin-bottom: 40px;">
-        <p>Currently open to new opportunities, freelance projects, or collaborations. Reach out via the form below or at <strong>vinitrao@gmail.com</strong>.</p>
-      </div>
+        <div
+            style="display: flex; justify-content: center; gap: 40px; margin-top: 60px; border-top: 1px solid var(--border); padding-top: 60px; width: 100%;">
+            <a href="https://linkedin.com/in/vinitrao1/" target="_blank"
+                style="color: white; font-size: 2rem; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'"
+                onmouseout="this.style.color='white'">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com/instavinitgram/" target="_blank"
+                style="color: white; font-size: 2rem; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'"
+                onmouseout="this.style.color='white'">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/vinit-rao" target="_blank"
+                style="color: white; font-size: 2rem; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'"
+                onmouseout="this.style.color='white'">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://youtube.com/@OfficialVinitRao" target="_blank"
+                style="color: white; font-size: 2rem; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'"
+                onmouseout="this.style.color='white'">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <br>
+        <div class="section-header inquiry-header" style="text-align: center;">
+            <h2>Direct Inquiries</h2>
+        </div>
 
-      <div class="form-layout-wrapper" style="display: block; width: 100%; max-width: 800px;">
-        <form id="contact-form" action="https://formspree.io/f/mojnppzg" method="POST" class="inquiry-form">
-          <input type="text" name="name" placeholder="NAME" required>
-          <input type="email" name="email" placeholder="EMAIL" required>
-          <textarea name="message" rows="6" placeholder="MESSAGE" required></textarea>
-          <button type="submit" class="submit-btn">Send_</button>
-        </form>
-      </div>
+        <div class="contact-sidebar" style="text-align: center; max-width: 600px; margin-bottom: 40px;">
+            <p>Currently open to new opportunities, freelance projects, or collaborations. Reach out via the form
+                below or at <strong>vinitrao@gmail.com</strong>.</p>
+        </div>
 
-      <div class="work-grid social-row" style="margin-top: 80px; width: 100%;">
-        <div class="project-card small-icon-card" onclick="window.open('https://linkedin.com/in/vinitrao1/')">
-          <div class="media-container center-icon"><i class="fab fa-linkedin"></i></div>
+        <div class="form-layout-wrapper" style="display: block; width: 100%; max-width: 800px;">
+            <form id="contact-form" action="https://formspree.io/f/mojnppzg" method="POST" class="inquiry-form">
+                <input type="text" name="name" placeholder="NAME" required>
+                <input type="email" name="email" placeholder="EMAIL" required>
+                <textarea name="message" rows="6" placeholder="MESSAGE" required></textarea>
+                <button type="submit" class="submit-btn">Send_</button>
+            </form>
         </div>
-        <div class="project-card small-icon-card" onclick="window.open('https://instagram.com/instavinitgram/')">
-          <div class="media-container center-icon"><i class="fab fa-instagram"></i></div>
-        </div>
-        <div class="project-card small-icon-card" onclick="window.open('https://github.com/vinit-rao')">
-          <div class="media-container center-icon"><i class="fab fa-github"></i></div>
-        </div>
-        <div class="project-card small-icon-card" onclick="window.open('https://youtube.com/@OfficialVinitRao')">
-          <div class="media-container center-icon"><i class="fab fa-youtube"></i></div>
-        </div>
-      </div>
+
+
     </div>
-  </section>
 
-  <footer class="full-width-section" style="margin-top: 120px; padding: 60px 0;">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <div class="footer-left">
-        <p style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; color: var(--text-dim);">
-          © 2026 VINIT RAO // ALL RIGHTS RESERVED
-        </p>
-      </div>
-      <div class="footer-right">
-        <a href="#" style="text-decoration: none; font-family: var(--font-mono); font-size: 0.65rem; color: white; letter-spacing: 2px; text-transform: uppercase;">
-          Back to Top ↑
-        </a>
-      </div>
-    </div>
-  </footer>
+    <footer class="full-width-section" style="margin-top: 120px; padding: 60px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="footer-left">
+                <p
+                    style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; color: var(--text-dim);">
+                    © 2026 VINIT RAO // ALL RIGHTS RESERVED
+                </p>
+            </div>
+            <div class="footer-right">
+                <a href="#"
+                    style="text-decoration: none; font-family: var(--font-mono); font-size: 0.65rem; color: white; letter-spacing: 2px; text-transform: uppercase;">
+                    Back to Top ↑
+                </a>
+            </div>
+        </div>
+    </footer>
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

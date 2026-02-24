@@ -11,14 +11,16 @@
 <body>
   <div id="night-sky"></div>
 
-  <nav class="container hero-nav">
+  <nav class="hero-nav">
+  <div class="container nav-wrapper">
     <div class="logo"><a href="index.html">VINIT RAO</a></div>
     <div class="hero-buttons">
       <a href="about.html" class="navbtn">About</a>
       <a href="resume.html" class="navbtn">Resume</a>
       <a href="contact.html" class="navbtn">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <header class="hero-section">
     <div class="hero-stack">
@@ -26,8 +28,11 @@
         <h1 class="hero-title">VINIT<br>RAO</h1>
       </div>
       <div class="spline-wrapper">
-         <spline-viewer url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" loading="lazy" hint="hidden"></spline-viewer>
-      </div>
+   <spline-viewer 
+  url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" 
+  loading-reveal="hidden">
+</spline-viewer>
+</div>
       <div class="hero-bio">
         <p>STUDENT @ CARLETON UNIVERSITY<br>INTERACTIVE MULTIMEDIA DESIGNER<br>MOTION // 3D // PHOTO // VIDEO // CODE</p>
       </div>
@@ -119,6 +124,9 @@
         renderW(projects.filter(p => p.title.toLowerCase().includes(term) || p.description.toLowerCase().includes(term)));
       });
     });
+
+    
   </script>
+  
 </body>
 </html>
