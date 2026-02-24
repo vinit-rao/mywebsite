@@ -13,7 +13,7 @@ nav.hero-nav { width: 100%; z-index: 1000; position: relative; padding-top: 30px
 /* HERO SYSTEM (Fixed Layering) */
 .hero-section { position: relative; height: 95vh; width: 100%; overflow: hidden; isolation: isolate; }
 .hero-stack { position: relative; width: 100%; height: 100%; max-width: 1600px; margin: 0 auto; }
-.spline-wrapper { position: absolute; top: -10%; left: -50vw; width: 200vw; height: 110%; z-index: 10; pointer-events: auto; }
+.spline-wrapper { position: absolute; top: -325px; left: -70vw; width: 200vw; height: 110%; z-index: 10; pointer-events: auto; }
 .hero-text-overlay { position: absolute; bottom: 25%; left: 45px; z-index: 5; pointer-events: none; }
 .hero-title { font-family: var(--font-header); font-size: clamp(5rem, 22vw, 13rem); font-weight: 800; letter-spacing: -5px; line-height: 0.72; text-transform: uppercase; color: var(--text-dim); transition: color .6s ease; }
 .hero-title.active-color { color: var(--primary); }
@@ -76,7 +76,6 @@ spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [i
   .spline-wrapper { 
     pointer-events: none !important; 
     z-index: 15 !important;
-    /* Move model up to touch the navbar */
     top: -325px; 
     left: -70vw; 
     width: 200vw;
@@ -84,7 +83,7 @@ spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [i
   
   .hero-text-overlay { 
     z-index: 5 !important; 
-    bottom: 20%; /* Adjusted slightly for mobile balance */
+    bottom: 25%; /* Adjusted slightly for mobile balance */
   }
 }
 
@@ -94,11 +93,11 @@ spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [i
   
   /* Aggressive shift to fill top gap on mobile phones */
   .spline-wrapper { 
+    height: calc(100% + 120px);
+    z-index: 15 !important;
     top: -325px; 
     left: -100vw; 
     width: 200vw;
-    height: calc(100% + 120px);
-    z-index: 15 !important;
   }
 
   .nav-wrapper { flex-direction: column; gap: 15px; text-align: center; } 
