@@ -4,23 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vinit Rao | Portfolio</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/minimal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.60/build/spline-viewer.js"></script>
 </head>
 <body>
+  <div id="bg-glow"></div>
   <div id="night-sky"></div>
 
   <nav class="hero-nav">
-  <div class="container nav-wrapper">
-    <div class="logo"><a href="index.html">VINIT RAO</a></div>
-    <div class="hero-buttons">
-      <a href="about.html" class="navbtn">About</a>
-      <a href="resume.html" class="navbtn">Resume</a>
-      <a href="contact.html" class="navbtn">Contact</a>
+    <div class="container nav-wrapper">
+      <div class="logo"><a href="index.html">VINIT RAO</a></div>
+      
+      <div class="hamburger" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="hero-buttons" id="nav-links">
+        <a href="about.html" class="navbtn">About</a>
+        <a href="resume.html" class="navbtn">Resume</a>
+        <a href="contact.html" class="navbtn">Contact</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <header class="hero-section">
     <div class="hero-stack">
@@ -28,18 +37,22 @@
         <h1 class="hero-title">VINIT<br>RAO</h1>
       </div>
       <div class="spline-wrapper">
-   <spline-viewer 
-  url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" 
-  loading-reveal="hidden">
-</spline-viewer>
-</div>
+        <spline-viewer 
+          url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" 
+          loading-reveal="hidden">
+        </spline-viewer>
+      </div>
       <div class="hero-bio">
         <p>STUDENT @ CARLETON UNIVERSITY<br>INTERACTIVE MULTIMEDIA DESIGNER<br>MOTION // 3D // PHOTO // VIDEO // CODE</p>
       </div>
+      
+      <a href="#all-projects" class="scroll-down-btn">
+        PROJECTS <i class="fas fa-arrow-down"></i>
+      </a>
     </div>
   </header>
 
-  <section class="full-width-section" style="margin-top: 40px;">
+  <section id="featured-projects" class="full-width-section" style="margin-top: 40px;">
     <div class="container">
       <div class="section-header">
         <br><br>
@@ -50,7 +63,7 @@
     </div>
   </section>
 
-  <section class="full-width-section" style="margin-top: 60px; margin-bottom: 80px;">
+  <section id="all-projects" class="full-width-section" style="margin-top: 60px; margin-bottom: 80px;">
     <div class="container">
       <div class="archive-controls">
         <div class="filter-group">
@@ -70,44 +83,210 @@
         </div>
       </div>
       <div id="work-grid" class="work-grid"></div>
+      
+      <div id="pagination-controls" class="pagination-container"></div>
     </div>
   </section>
+
+  <section class="full-width-section" style="margin-top: 60px; margin-bottom: 80px;">
+    <div class="container">
+      <div class="section-header" style="padding: 0 0 20px;">
+        <br>
+        <h2 style="color: var(--font-mono);">Latest Updates</h2>
+      </div>
+      <div class="linkedin-embed-container" style="display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px;">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7447751953352343553?collapsed=1" 
+          height="628" 
+          width="100%" 
+          frameborder="0" 
+          allowfullscreen="" 
+          title="Embedded post" 
+          style="border: 1px solid var(--border); background: #fff; min-width: 350px; max-width: 504px;">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
   <footer class="full-width-section" style="margin-top: 120px; padding: 60px 0;">
-  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-    <div class="footer-left">
-      <p style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; color: var(--font-mono);">
-        © 2026 VINIT RAO // ALL RIGHTS RESERVED
-      </p>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="footer-left">
+        <p style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; color: var(--font-mono);">
+          © 2026 VINIT RAO // ALL RIGHTS RESERVED
+        </p>
+      </div>
+      <div class="footer-right">
+        <a href="#" style="text-decoration: none; font-family: var(--font-mono); font-size: 0.65rem; color: white; letter-spacing: 2px; text-transform: uppercase;">
+          Back to Top ↑
+        </a>
+      </div>
     </div>
-    <div class="footer-right">
-      <a href="#" style="text-decoration: none; font-family: var(--font-mono); font-size: 0.65rem; color: white; letter-spacing: 2px; text-transform: uppercase;">
-        Back to Top ↑
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
+
   <script src="js/projects.js"></script>
   <script src="js/script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Background and Scroll Parallax
+      const nightSky = document.getElementById('night-sky');
+      const heroTitle = document.querySelector('.hero-title');
+      const nameOverlay = document.querySelector('.hero-text-overlay');
+      const bioOverlay = document.querySelector('.hero-bio');
+      const bgGlow = document.getElementById('bg-glow'); 
+
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        if (bgGlow) {
+          let opacity = 1 - ((scrolled - 200) / 500);
+          opacity = Math.max(0, Math.min(1, opacity));
+          bgGlow.style.opacity = opacity;
+        }
+
+        if (nightSky) nightSky.style.transform = `translateY(${scrolled * 0.1}px)`;
+        if (window.innerWidth > 1024) {
+          const y = scrolled * 0.2;
+          if (nameOverlay) nameOverlay.style.transform = `translateY(${y}px)`;
+          if (bioOverlay) bioOverlay.style.transform = `translateY(${y}px)`;
+        }
+        if (heroTitle) heroTitle.classList.toggle('active-color', scrolled > 400);
+      });
+
+      // Hamburger Menu Logic
+      const hamburger = document.getElementById('hamburger-menu');
+      const navLinks = document.getElementById('nav-links');
+      
+      if(hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          const icon = hamburger.querySelector('i');
+          if(icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      }
+
+      // Projects Grid & Pagination Logic
       const fGrid = document.getElementById('featured-grid');
       const wGrid = document.getElementById('work-grid');
+      const pagContainer = document.getElementById('pagination-controls');
       
-      const createCard = (p) => `
-        <div class="project-card" onclick="window.open('${p.link}', '_blank')" data-category="${p.category}">
-          <div class="media-container">${p.iframe ? `<iframe src="${p.iframe}" loading="lazy"></iframe>` : `<img src="${p.image}" loading="lazy">`}</div>
-          <div class="card-content"><h3>${p.title}</h3><p>${p.description}</p></div>
-        </div>`;
+      let currentPage = 1;
+      const itemsPerPage = 6; 
+      let currentFilteredData = projects; 
+
+      const getActionHTML = (type) => {
+        const actions = {
+          'github': '<i class="fab fa-github"></i> View Code',
+          'youtube': '<i class="fab fa-youtube"></i> Watch Video',
+          'game': '<i class="fas fa-gamepad"></i> Play Game',
+          'website': '<i class="fas fa-globe"></i> Visit Site',
+          'photo': '<i class="fas fa-camera-retro"></i> View Gallery'
+        };
+        return actions[type] || '<i class="fas fa-arrow-right"></i> View Project';
+      };
+
+      const createCard = (p) => {
+        let badgeHTML = '';
+        if (p.badges && p.badges.length > 0) {
+          const badgeList = p.badges[0].split('|').filter(b => b.trim() !== '');
+          badgeHTML = badgeList.map(b => `<span class="badge">${b.trim()}</span>`).join('');
+        }
+
+        // REMOVED the inline onclick here, replaced with data-link
+        return `
+          <div class="project-card" data-link="${p.link}" data-category="${p.category}">
+            <div class="media-container">
+              ${p.iframe ? `<iframe src="${p.iframe}" loading="lazy"></iframe>` : `<img src="${p.image}" loading="lazy">`}
+              <div class="image-overlay"></div>
+            </div>
+            
+            <div class="hover-action-btn">
+              ${getActionHTML(p.linkType)}
+            </div>
+
+            <div class="card-content">
+              <h3>${p.title}</h3>
+              <p>${p.description}</p>
+              <div class="badge-container">${badgeHTML}</div>
+            </div>
+          </div>`;
+      };
       
+      // Tap-to-Hover / Double-Tap-to-Open logic for Mobile/Tablet
+      document.addEventListener('click', (e) => {
+        const card = e.target.closest('.project-card');
+        
+        // Check if the user is on a touch device
+        const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+
+        if (card) {
+          if (isTouchDevice) {
+            // If card already has the 'touch-hover' class, the user tapped it twice. Open the link!
+            if (card.classList.contains('touch-hover')) {
+              window.open(card.dataset.link, '_blank');
+            } else {
+              // It's their first tap. Remove the class from other cards and apply it to this one.
+              document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
+              card.classList.add('touch-hover');
+            }
+          } else {
+            // If they are on a desktop with a mouse, just open the link immediately.
+            window.open(card.dataset.link, '_blank');
+          }
+        } else {
+          // If they click on the background, remove all hover states to clean up the screen
+          document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
+        }
+      });
+
       const renderF = () => {
         const rand = projects.filter(p => p.featured).sort(() => 0.5 - Math.random());
         const count = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
         fGrid.innerHTML = rand.slice(0, count).map(createCard).join('');
       };
       
-      const renderW = (data) => wGrid.innerHTML = data.map(createCard).join('');
-      
-      renderF(); renderW(projects);
+      const renderW = () => {
+        const totalPages = Math.ceil(currentFilteredData.length / itemsPerPage);
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const paginatedData = currentFilteredData.slice(startIndex, startIndex + itemsPerPage);
+        
+        wGrid.innerHTML = paginatedData.map(createCard).join('');
+        renderPaginationUI(totalPages);
+      };
+
+      const renderPaginationUI = (totalPages) => {
+        pagContainer.innerHTML = ''; 
+        if (totalPages <= 1) return; 
+
+        const createBtn = (text, pageNum, isActive, isDisabled) => {
+          const btn = document.createElement('button');
+          btn.className = `page-btn ${isActive ? 'active' : ''}`;
+          btn.textContent = text;
+          btn.disabled = isDisabled;
+          
+          if (!isDisabled && !isActive) {
+            btn.addEventListener('click', () => {
+              currentPage = pageNum;
+              renderW();
+              document.querySelector('.archive-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+          }
+          return btn;
+        };
+
+        pagContainer.appendChild(createBtn('PREV', currentPage - 1, false, currentPage === 1));
+        for (let i = 1; i <= totalPages; i++) {
+          pagContainer.appendChild(createBtn(i, i, currentPage === i, false));
+        }
+        pagContainer.appendChild(createBtn('NEXT', currentPage + 1, false, currentPage === totalPages));
+      };
+
+      renderF(); 
+      renderW();
       window.addEventListener('resize', renderF);
 
       const searchInput = document.getElementById('projectSearch');
@@ -117,18 +296,26 @@
         btn.addEventListener('click', () => {
           filterBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          renderW(btn.dataset.filter === 'all' ? projects : projects.filter(p => p.category === btn.dataset.filter));
+          
+          if (btn.dataset.filter === 'all') {
+            currentFilteredData = projects;
+          } else {
+            currentFilteredData = projects.filter(p => p.category === btn.dataset.filter);
+          }
+          currentPage = 1; 
+          renderW();
         });
       });
 
       searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
-        renderW(projects.filter(p => p.title.toLowerCase().includes(term) || p.description.toLowerCase().includes(term)));
+        currentFilteredData = projects.filter(p => 
+          p.title.toLowerCase().includes(term) || p.description.toLowerCase().includes(term)
+        );
+        currentPage = 1; 
+        renderW();
       });
     });
-
-    
   </script>
-  
 </body>
 </html>
