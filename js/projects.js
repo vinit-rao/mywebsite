@@ -19,7 +19,7 @@ const projects = [
         category: 'code',
         title: 'QueueUp - Lobby System Application',
         description: 'Frontend & Backend Django application for a lobby system where users can create and join lobbies, chat, hangout together.',
-        link: 'https://queueup-bigteam.onrender.com/',
+        link: 'https://github.com/vinit-rao/queueup-django',
         linkType: 'github',
         image: 'images/project_26.gif',
         badges: ['| After Effects | Work |']
