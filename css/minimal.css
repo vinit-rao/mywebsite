@@ -7,7 +7,7 @@
   --font-header: 'Syne', sans-serif; 
   --font-mono: 'JetBrains Mono', monospace; 
   --font-body: 'Inter', sans-serif;
-  --bg: radial-gradient(circle at 5% 300%, #9b0000 10%, #9e1111 50%, #000000 90%);
+  --bg: radial-gradient(circle at 5% 300%, #fa1c1c 50%, #7d2323 30%, #000000 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
