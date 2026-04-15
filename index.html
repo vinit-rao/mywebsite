@@ -81,7 +81,6 @@
         </div>
       </div>
       <div id="work-grid" class="work-grid"></div>
-      
       <div id="pagination-controls" class="pagination-container"></div>
     </div>
   </section>
@@ -167,12 +166,12 @@
           badgeHTML = badgeList.map(b => `<span class="badge">${b.trim()}</span>`).join('');
         }
 
-        // NEW: Smart media loader. Checks for iframe, then video, then falls back to image.
         let mediaHTML = '';
         if (p.iframe) {
           mediaHTML = `<iframe src="${p.iframe}" loading="lazy"></iframe>`;
         } else if (p.video) {
-          mediaHTML = `<video src="${p.video}" autoplay loop muted playsinline disablePictureInPicture></video>`;
+          // Uses the poster attribute!
+          mediaHTML = `<video src="${p.video}" poster="${p.image || ''}" autoplay loop muted playsinline disablePictureInPicture></video>`;
         } else {
           mediaHTML = `<img src="${p.image}" loading="lazy">`;
         }
@@ -223,7 +222,7 @@
       const renderF = () => {
         const rand = projects.filter(p => p.featured).sort(() => 0.5 - Math.random());
         const count = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
-        fGrid.innerHTML = rand.slice(0, count).map(createCard).join('');
+        fGrid.innerHTML = rand.slice(0, count).map(p => createCard(p)).join('');
       };
       
       const renderW = () => {
@@ -231,7 +230,7 @@
         const startIndex = (currentPage - 1) * itemsPerPage;
         const paginatedData = currentFilteredData.slice(startIndex, startIndex + itemsPerPage);
         
-        wGrid.innerHTML = paginatedData.map(createCard).join('');
+        wGrid.innerHTML = paginatedData.map(p => createCard(p)).join('');
         renderPaginationUI(totalPages);
       };
 

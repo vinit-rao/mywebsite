@@ -153,12 +153,11 @@
 
       if (randomProject) {
         
-        // Smart media loader for the featured about section
         let mediaHTML = '';
         if (randomProject.iframe) {
           mediaHTML = `<iframe src="${randomProject.iframe}" loading="lazy"></iframe>`;
         } else if (randomProject.video) {
-          mediaHTML = `<video src="${randomProject.video}" autoplay loop muted playsinline disablePictureInPicture></video>`;
+          mediaHTML = `<video src="${randomProject.video}" poster="${randomProject.image || ''}" autoplay loop muted playsinline disablePictureInPicture></video>`;
         } else {
           mediaHTML = `<img src="${randomProject.image}" loading="lazy">`;
         }
