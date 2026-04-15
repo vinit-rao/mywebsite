@@ -4,25 +4,33 @@
 
 const projects = [
     
-    
     {
         category: 'code',
         title: 'Bennys Frozen Adventure',
         description: 'Unity made 3D game where the player trys to catch falling scoops and complete orders.',
         link: 'https://github.com/vinit-rao/bennys-frozen-adventure',
         linkType: 'github',
-        image: 'images/project_25.gif',
-        badges: ['| Unity | School |'],
+        video: 'videos/project_25.mp4',
+        badges: ['| C# | Unity | After Effects | School |'],
         featured: true
+    },
+    {
+        category: 'video',
+        title: 'WhyDNA Trial Edit',
+        description: 'Trial edit for Youtuber "WhyDNA" using provided footage and assets.',
+        link: 'https://www.youtube.com/watch?v=r1J8bAHEH4U',
+        linkType: 'youtube',
+        video: 'videos/project_34.mp4',
+        badges: ['| Premiere Pro | After Effects | Personal |'],
     },
     {
         category: 'code',
         title: 'QueueUp - Lobby System Application',
-        description: 'Frontend & Backend Django application for a lobby system where users can create and join lobbies, chat, hangout together.',
+        description: 'Frontend & Backend Django Lobby Application.',
         link: 'https://github.com/vinit-rao/queueup-django',
         linkType: 'github',
-        image: 'images/project_26.gif',
-        badges: ['| After Effects | Work |']
+        video: 'videos/project_26.mp4',
+        badges: ['| Python | Django | School |']
     },
     {
         category: 'photos',
@@ -41,7 +49,7 @@ const projects = [
         description: 'Advertisment to promote Sachin Rao photography business. Made using After Effects with custom assets.',
         link: 'https://www.youtube.com/watch?v=dOJTkZ3NaNs',
         linkType: 'youtube',
-        image: 'images/project_24.gif',
+        video: 'videos/project_24.mp4',
         badges: ['| After Effects | Work |']
     },
     {
@@ -60,8 +68,8 @@ const projects = [
         description: 'Game made in Unity where the player catches falling acorns while avoiding spikey acorns.',
         link: 'https://www.youtube.com/watch?v=p6OpZmpUm80',
         linkType: 'youtube',
-        image: 'images/project_22.gif',
-        badges: ['| Unity | Blender | School |'],
+        video: 'videos/project_22.mp4',
+        badges: ['| C# | Unity | Blender | School |'],
         featured: true
     },
     {
@@ -69,8 +77,7 @@ const projects = [
         title: 'Club Promotional Reel',
         description: 'Fun reel mixed with Minecraft assets!',
         link: 'https://www.instagram.com/reel/DT_e7HMAaOB/?igsh=MWN3ZnB3NHRuMnEwOQ==',
-        image: 'images/project_21.1.gif',
-        popupImage: 'images/project_21.1.gif',
+        video: 'videos/project_21.mp4',
         badges: ['| After Effects | Club |']
     },
     {
@@ -79,8 +86,7 @@ const projects = [
         description: 'After effects animated trailer for a friend!',
         link: 'https://www.youtube.com/watch?v=9wGekC8UZN4',
         linkType: 'youtube',
-        image: 'images/project_20.gif',
-        popupImage: 'images/project_20.gif',
+        video: 'videos/project_20.mp4',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -89,7 +95,7 @@ const projects = [
         description: 'Wedding puja highlight with simple editing techniques.',
         link: 'https://www.youtube.com/watch?v=-lmDa3Hinbw',
         linkType: 'youtube',
-        image: 'images/project_19.gif',
+        video: 'videos/project_19.mp4',
         badges: ['| Premiere Pro | Work |']
     },
     {
@@ -98,7 +104,7 @@ const projects = [
         description: 'Wedding reception highlight with various film techniques.',
         link: 'https://www.youtube.com/watch?v=oekmYU2RsI8',
         linkType: 'youtube',
-        image: 'images/project_18.gif',
+        video: 'videos/project_18.mp4',
         badges: ['| Premiere Pro | Work |']
     },
     {
@@ -107,8 +113,7 @@ const projects = [
         description: 'Blender made animation to test out simple analog horror.',
         link: 'https://www.youtube.com/watch?v=lrCLhPRmp-g',
         linkType: 'youtube',
-        image: 'images/project_17.gif',
-        popupImage: 'images/project_17.gif',
+        video: 'videos/project_17.mp4',
         badges: ['| Blender | Personal |'],
         featured: true
     },
@@ -118,8 +123,7 @@ const projects = [
         description: 'Blender animated water cool animation!',
         link: 'https://www.youtube.com/watch?v=Co7ycAHEKb4',
         linkType: 'youtube',
-        image: 'images/project_23.gif',
-        popupImage: 'images/project_23.gif',
+        video: 'videos/project_23.mp4',
         badges: ['| Blender | Personal |']
     },
     {
@@ -128,8 +132,7 @@ const projects = [
         description: 'Created motion graphics from a static graphic found on Pinterest.',
         link: 'https://www.youtube.com/shorts/Nse5BKR48dE',
         linkType: 'youtube',
-        image: 'images/project_16.gif',
-        popupImage: 'images/project_16.gif',
+        video: 'videos/project_16.mp4',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -138,8 +141,7 @@ const projects = [
         description: 'Typographic modern style animation with various effects and animation techniques.',
         link: 'https://www.youtube.com/shorts/3JITY32alVM',
         linkType: 'youtube',
-        image: 'images/project_15.gif',
-        popupImage: 'images/project_15.gif',
+        video: 'videos/project_15.mp4',
         badges: ['| After Effects | Personal |'],
         featured: true
     },
@@ -149,8 +151,16 @@ const projects = [
         description: 'Practicing going through tutorials learning texturing and animating fake 3D shapes.',
         link: 'https://www.youtube.com/shorts/5S7Uq2qFkgY',
         linkType: 'youtube',
-        image: 'images/project_14.gif',
-        popupImage: 'images/project_14.gif',
+        video: 'videos/project_14.mp4',
+        badges: ['| After Effects | Personal |']
+    },
+    {
+        category: 'graphics',
+        title: 'Soupcan Test',
+        description: 'Animation practice with Soupcan plugin in AE.',
+        link: 'https://www.youtube.com/shorts/mpm4THyTKfw',
+        linkType: 'youtube',
+        video: 'videos/project_29.mp4',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -165,14 +175,30 @@ const projects = [
     },
     {
         category: 'graphics',
+        title: 'Bubblz Animation',
+        description: 'More After Effects practice with a fun bubbly animation.',
+        link: 'https://www.youtube.com/watch?v=8WFianh_Bko',
+        linkType: 'youtube',
+        video: 'videos/project_30.mp4',
+        badges: ['| After Effects | Personal |'],
+    },
+    {
+        category: 'graphics',
         title: 'CU Hacking Animation',
         description: 'Short intro animation revealing new CU Hacking colors and branding.',
         link: 'https://www.youtube.com/watch?v=IrP4P2sCuQY',
         linkType: 'youtube',
-        image: 'images/project_13.gif',
-        popupImage: 'images/project_13.gif',
+        video: 'videos/project_13.mp4',
         badges: ['| After Effects | Club |'],
-        featured: true
+    },
+    {
+        category: 'graphics',
+        title: 'Heartless Edit',
+        description: 'Fun edit of the song Heartless by The Weeknd with various effects and techniques.',
+        link: 'https://www.youtube.com/shorts/0y-5EnI4KO8',
+        linkType: 'youtube',
+        video: 'videos/project_32.mp4',
+        badges: ['| After Effects | Personal |']
     },
     {
         category: 'video',
@@ -180,8 +206,9 @@ const projects = [
         description: 'Cinematic lighting study featuring three professional techniques: three-point, high-contrast, and back lighting.',
         link: 'https://www.youtube.com/watch?v=3i4h8ERBTiQ',
         linkType: 'youtube',
-        image: 'images/project_11.gif',
-        badges: ['| Premiere Pro | School |']
+        video: 'videos/project_11.mp4',
+        badges: ['| Premiere Pro | School |'],
+        featured: true
     },
     {
         category: 'photos',
@@ -189,8 +216,17 @@ const projects = [
         description: 'Curated photography sequence exploring composition, pacing, and visual storytelling.',
         link: 'https://www.youtube.com/watch?v=DOs879L4MvE',
         linkType: 'youtube',
-        image: 'images/project_8.gif',
+        video: 'videos/project_8.mp4',
         badges: ['| Premiere Pro | School |']
+    },
+    {
+        category: 'code',
+        title: 'Cheese Touch Game',
+        description: 'Platformer game built with Godot engine.',
+        link: 'https://github.com/vinit-rao/2dplatformer-godot',
+        linkType: 'github',
+        video: 'videos/project_33.mp4',
+        badges: ['| C++ | Godot | Personal |']
     },
     {
         category: 'graphics',
@@ -198,10 +234,8 @@ const projects = [
         description: '15-second animated commercial with dynamic keyframes and motion graphics.',
         link: 'https://www.youtube.com/watch?v=VhibQHSWPOE',
         linkType: 'youtube',
-        image: 'images/project_7.gif',
-        popupImage: 'images/project_7.1.gif',
+        video: 'videos/project_7.mp4',
         badges: ['| After Effects | Personal |'],
-        featured: true
     },
     {
         category: 'graphics',
@@ -209,9 +243,17 @@ const projects = [
         description: 'Sleek motion graphics opener for videography brand.',
         link: 'https://www.youtube.com/watch?v=4LNe7tF2YQ8',
         linkType: 'youtube',
-        image: 'images/project_1.1.gif',
-        popupImage: 'images/project_1.gif',
+        video: 'videos/project_1.mp4',
         badges: ['| After Effects | Personal |']
+    },
+    {
+        category: 'video',
+        title: 'NiuNiuBox Video',
+        description: 'Promotional video for NiuNiuBox company.',
+        link: 'https://www.youtube.com/watch?v=8Q6uj5gckwI',
+        linkType: 'youtube',
+        video: 'videos/project_35.mp4',
+        badges: ['| Premiere Pro | After Effects | Work |']
     },
     {
         category: 'graphics',
@@ -219,7 +261,7 @@ const projects = [
         description: 'Experimental typography using graph editors for smooth morphing transitions.',
         link: 'https://www.youtube.com/watch?v=ML7khUEzdOY',
         linkType: 'youtube',
-        image: 'images/project_2.gif',
+        video: 'videos/project_2.mp4',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -228,7 +270,7 @@ const projects = [
         description: 'Sprite-based character animation with custom artwork and sound design.',
         link: 'https://www.youtube.com/watch?v=7xYjZKmTmC8',
         linkType: 'youtube',
-        image: 'images/project_6.gif',
+        video: 'videos/project_6.mp4',
         badges: ['| After Effects | School |']
     },
     {
@@ -237,7 +279,7 @@ const projects = [
         description: 'Professional event coverage with interviews, edited in Premiere Pro with After Effects compositions.',
         link: 'https://www.youtube.com/watch?v=RRANPGpEcV0',
         linkType: 'youtube',
-        image: 'images/project_10.gif',
+        video: 'videos/project_10.mp4',
         badges: ['| Premiere Pro | After Effects | Work |']
     },
     {
@@ -246,7 +288,7 @@ const projects = [
         description: 'Artistic slow-motion edit emphasizing movement and emotion.',
         link: 'https://www.youtube.com/watch?v=mRWqT6rZetQ',
         linkType: 'youtube',
-        image: 'images/project_5.gif',
+        video: 'videos/project_5.mp4',
         badges: ['| Premiere Pro | After Effects | Personal |']
     },
     {
@@ -255,8 +297,26 @@ const projects = [
         description: 'Object-oriented Java card game with custom UI and strategic AI gameplay.',
         link: 'https://www.youtube.com/watch?v=6Rl1UXpWMZY',
         linkType: 'youtube',
-        image: 'images/project_9.gif',
+        video: 'videos/project_9.mp4',
         badges: ['| Java | NetBeans | School |']
+    },
+    {
+        category: 'code',
+        title: 'Pyth-Art Art Application',
+        description: 'Drawing application made with Python.',
+        link: '#',
+        linkType: 'github',
+        video: 'videos/project_27.mp4',
+        badges: ['| Python | School']
+    },
+    {
+        category: 'video',
+        title: 'Environmental Impact Video',
+        description: 'Informative video on environmental issues with motion graphics and data visualization.',
+        link: 'https://www.youtube.com/watch?v=JGQL1EyGY1w',
+        linkType: 'youtube',
+        video: 'videos/project_31.mp4',
+        badges: ['| Premiere Pro | School']
     },
     {
         category: 'graphics',
@@ -264,8 +324,17 @@ const projects = [
         description: '3D character animation practice in Blender with rigging and walk cycle.',
         link: 'https://www.youtube.com/watch?v=_4oRm1HuIbo',
         linkType: 'youtube',
-        image: 'images/project_3.gif',
+        video: 'videos/project_3.mp4',
         badges: ['| Blender | Personal']
+    },
+    {
+        category: 'video',
+        title: 'Mannequin Challenge',
+        description: 'Fun mannequin challenge video with creative camera movements and editing techniques.',
+        link: 'https://www.youtube.com/watch?v=ocfZhbex0U0',
+        linkType: 'youtube',
+        video: 'videos/project_28.mp4',
+        badges: ['| Final Cut | Personal']
     },
 
     // ==================== ADD YOUR NEW PROJECTS BELOW ====================
@@ -276,8 +345,8 @@ const projects = [
         title: 'Your Project Title',
         description: 'Detailed description of your project.',
         link: 'https://youtube.com/watch?v=YOUR_VIDEO_ID',
-        image: 'images/your-image.gif',
-        popupImage: 'images/your-popup-image.gif',  // Optional - different image for popup
+        video: 'images/your-video.mp4', // Use this for mp4s
+        image: 'images/your-image.gif', // Use this for gifs/images
         badges: ['Tool 1', 'Tool 2', 'Skill']
     },
     */

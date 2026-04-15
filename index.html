@@ -18,11 +18,9 @@
   <nav class="hero-nav">
     <div class="container nav-wrapper">
       <div class="logo"><a href="index.html">VINIT RAO</a></div>
-      
       <div class="hamburger" id="hamburger-menu">
         <i class="fas fa-bars"></i>
       </div>
-
       <div class="hero-buttons" id="nav-links">
         <a href="about.html" class="navbtn">About</a>
         <a href="resume.html" class="navbtn">Resume</a>
@@ -79,7 +77,7 @@
           </div>
         </div>
         <div class="search-wrapper">
-          <input type="text" id="projectSearch" placeholder="SEARCH_">
+          <input type="text" id="projectSearch" placeholder="SEARCH">
         </div>
       </div>
       <div id="work-grid" class="work-grid"></div>
@@ -107,6 +105,13 @@
     </div>
   </section>
 
+  <section class="full-width-section massive-cta-section" style="margin-bottom: 0;">
+    <a href="contact.html" class="massive-cta">
+      <p>Summer 2026 Co-op Search Active</p>
+      <h2>INITIATE<br>CONTACT</h2>
+    </a>
+  </section>
+
   <footer class="full-width-section" style="margin-top: 120px; padding: 60px 0;">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
       <div class="footer-left">
@@ -126,50 +131,6 @@
   <script src="js/script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Background and Scroll Parallax
-      const nightSky = document.getElementById('night-sky');
-      const heroTitle = document.querySelector('.hero-title');
-      const nameOverlay = document.querySelector('.hero-text-overlay');
-      const bioOverlay = document.querySelector('.hero-bio');
-      const bgGlow = document.getElementById('bg-glow'); 
-
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        
-        if (bgGlow) {
-          let opacity = 1 - ((scrolled - 200) / 500);
-          opacity = Math.max(0, Math.min(1, opacity));
-          bgGlow.style.opacity = opacity;
-        }
-
-        if (nightSky) nightSky.style.transform = `translateY(${scrolled * 0.1}px)`;
-        if (window.innerWidth > 1024) {
-          const y = scrolled * 0.2;
-          if (nameOverlay) nameOverlay.style.transform = `translateY(${y}px)`;
-          if (bioOverlay) bioOverlay.style.transform = `translateY(${y}px)`;
-        }
-        if (heroTitle) heroTitle.classList.toggle('active-color', scrolled > 400);
-      });
-
-      // Hamburger Menu Logic
-      const hamburger = document.getElementById('hamburger-menu');
-      const navLinks = document.getElementById('nav-links');
-      
-      if(hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-          const icon = hamburger.querySelector('i');
-          if(icon.classList.contains('fa-bars')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      }
-
-      // Projects Grid & Pagination Logic
       const fGrid = document.getElementById('featured-grid');
       const wGrid = document.getElementById('work-grid');
       const pagContainer = document.getElementById('pagination-controls');
@@ -189,6 +150,16 @@
         return actions[type] || '<i class="fas fa-arrow-right"></i> View Project';
       };
 
+      const getCategoryTag = (cat) => {
+        const tags = {
+          'code': '<i class="fas fa-code"></i> CODE',
+          'graphics': '<i class="fas fa-shapes"></i> GRAPHICS',
+          'video': '<i class="fas fa-video"></i> VIDEO',
+          'photos': '<i class="fas fa-camera"></i> PHOTO'
+        };
+        return tags[cat] || '<i class="fas fa-folder"></i> PROJECT';
+      };
+
       const createCard = (p) => {
         let badgeHTML = '';
         if (p.badges && p.badges.length > 0) {
@@ -196,14 +167,27 @@
           badgeHTML = badgeList.map(b => `<span class="badge">${b.trim()}</span>`).join('');
         }
 
-        // REMOVED the inline onclick here, replaced with data-link
+        // NEW: Smart media loader. Checks for iframe, then video, then falls back to image.
+        let mediaHTML = '';
+        if (p.iframe) {
+          mediaHTML = `<iframe src="${p.iframe}" loading="lazy"></iframe>`;
+        } else if (p.video) {
+          mediaHTML = `<video src="${p.video}" autoplay loop muted playsinline disablePictureInPicture></video>`;
+        } else {
+          mediaHTML = `<img src="${p.image}" loading="lazy">`;
+        }
+
         return `
           <div class="project-card" data-link="${p.link}" data-category="${p.category}">
             <div class="media-container">
-              ${p.iframe ? `<iframe src="${p.iframe}" loading="lazy"></iframe>` : `<img src="${p.image}" loading="lazy">`}
+              ${mediaHTML}
               <div class="image-overlay"></div>
             </div>
             
+            <div class="category-tag cat-${p.category}">
+              ${getCategoryTag(p.category)}
+            </div>
+
             <div class="hover-action-btn">
               ${getActionHTML(p.linkType)}
             </div>
@@ -216,29 +200,22 @@
           </div>`;
       };
       
-      // Tap-to-Hover / Double-Tap-to-Open logic for Mobile/Tablet
       document.addEventListener('click', (e) => {
         const card = e.target.closest('.project-card');
-        
-        // Check if the user is on a touch device
         const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
         if (card) {
           if (isTouchDevice) {
-            // If card already has the 'touch-hover' class, the user tapped it twice. Open the link!
             if (card.classList.contains('touch-hover')) {
               window.open(card.dataset.link, '_blank');
             } else {
-              // It's their first tap. Remove the class from other cards and apply it to this one.
               document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
               card.classList.add('touch-hover');
             }
           } else {
-            // If they are on a desktop with a mouse, just open the link immediately.
             window.open(card.dataset.link, '_blank');
           }
         } else {
-          // If they click on the background, remove all hover states to clean up the screen
           document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
         }
       });

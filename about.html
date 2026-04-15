@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,11 +18,9 @@
   <nav class="hero-nav">
     <div class="container nav-wrapper">
       <div class="logo"><a href="index.html">VINIT RAO</a></div>
-      
       <div class="hamburger" id="hamburger-menu">
         <i class="fas fa-bars"></i>
       </div>
-
       <div class="hero-buttons" id="nav-links">
         <a href="about.html" class="navbtn">About</a>
         <a href="resume.html" class="navbtn">Resume</a>
@@ -32,42 +29,94 @@
     </div>
   </nav>
 
-  <header class="container" style="padding: 120px 0 60px; text-align: center;">
-    <h1 class="contact-title">About</h1>
-  </header>
-
-  <section class="full-width-section">
+  <section class="full-width-section" style="border-top: none; margin-top: 60px;">
     <div class="container">
-      <div style="max-width: 900px; margin: 40px auto 80px; text-align: center;">
-        <div class="contact-sidebar" style="max-width: 100%;">
-          <p>
-            I am an Interactive Multimedia and Design student at Carleton University, blending cinematic visual
-            storytelling with technical engineering. My background spans from S-Log video production and motion graphics
-            to C# systems in Unity and physical computing with Arduino.
-          </p>
-          <p style="margin-top: 20px;">
-            I specialize in bridging the gap between high-fidelity aesthetic design and functional, interactive code.
-            Currently seeking a Summer 2026 Co-op placement where I can apply my range in multimedia design and
-            development.
-          </p>
-          <div class="availability-tag">
-            <span></span> Based in Ottawa, Canada // Summer 2026 Co-op Search Active
+      
+      <div class="bento-grid">
+        
+        <div class="bento-item bento-bio">
+          <h2>About Me</h2>
+          <p>I am an Interactive Multimedia and Design student at Carleton University, blending cinematic visual storytelling with technical engineering. My background spans from S-Log video production and motion graphics to C# systems in Unity and physical computing with Arduino.</p>
+          <p>I specialize in bridging the gap between high-fidelity aesthetic design and functional, interactive code. Currently seeking a Summer 2026 Co-op placement where I can apply my range in multimedia design and development.</p>
+        </div>
+
+        <div class="bento-item bento-academic">
+          <div class="bento-title">Education</div>
+          <h3>BIT, IMD</h3>
+          <p>Carleton University<br>Algonquin College<br>Class of 2029 // GPA 9.73/12</p>
+        </div>
+
+        <div class="bento-item bento-status">
+          <h3>Active</h3>
+          <p>Based in Ottawa, ON<br>Summer '26 Co-op Search</p>
+        </div>
+
+        <a href="contact.html" class="bento-item bento-contact">
+          <h3>INITIATE CONTACT <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></h3>
+        </a>
+
+        <div class="bento-item bento-ticker">
+          <div class="ticker-wrap">
+            C# <span>•</span> Python <span>•</span> Java <span>•</span> Swift <span>•</span> SQL <span>•</span> HTML/CSS/JS <span>•</span> Unity <span>•</span> Unreal Engine <span>•</span> Godot <span>•</span> Django <span>•</span> After Effects <span>•</span> Premiere Pro <span>•</span> Blender <span>•</span> Figma <span>•</span> C# <span>•</span> Python <span>•</span> Java <span>•</span> Swift <span>•</span> SQL <span>•</span> HTML/CSS/JS <span>•</span> Unity <span>•</span> Unreal Engine <span>•</span> Godot <span>•</span> Django <span>•</span> After Effects <span>•</span> Premiere Pro <span>•</span> Blender <span>•</span> Figma <span>•</span>
           </div>
         </div>
+
+        <div class="bento-item bento-experience">
+          <div class="bento-title">Selected Experience</div>
+          <ul class="experience-list">
+            <li>
+              <div class="exp-top">
+                <span class="exp-role">UX/UI Designer & Motion Animator</span>
+                <span class="exp-date">2025 — PRES</span>
+              </div>
+              <span class="exp-company">CU Hacking</span>
+            </li>
+            <li>
+              <div class="exp-top">
+                <span class="exp-role">Multimedia Designer & Videographer</span>
+                <span class="exp-date">2020 — PRES</span>
+              </div>
+              <span class="exp-company">Sachin Rao</span>
+            </li>
+            <li>
+              <div class="exp-top">
+                <span class="exp-role">Freelance Video Editor</span>
+                <span class="exp-date">2024 — 2024</span>
+              </div>
+              <span class="exp-company">WhyDNA</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bento-item bento-analog">
+          <div class="bento-title">Core Disciplines</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Full-Stack Dev</span>
+            <span class="skill-tag">Game Design</span>
+            <span class="skill-tag">Motion Graphics</span>
+            <span class="skill-tag">UI/UX Layout</span>
+            <span class="skill-tag">Videography</span>
+          </div>
+          <div class="bento-title" style="margin-top: 10px;">Hardware / Analog Specs</div>
+          <ul>
+            <li>Arduino / Physical Computing</li>
+            <li>Custom Hardware Controllers</li>
+            <li>Sony Cameras (FX30, A7III, A7RIII)</li>
+            <li>Canon FTb QL (35mm Film)</li>
+            <li>YoloBox Pro (Live Streaming)</li>
+          </ul>
+        </div>
+
       </div>
+    </div>
+
+    <div class="container">
+        <div class="section-header" style="padding: 0 0 10px;">
+            <h2 style="color: var(--font-mono);">Featured Showcase</h2>
+        </div>
+        <div id="about-featured-slot" class="work-grid" style="grid-template-columns: 1fr;"></div>
     </div>
   </section>
-
-  <!-- <section id="featured-projects" class="full-width-section" style="margin-top: 40px;">
-    <div class="container">
-      <div class="section-header">
-        <br><br>
-        <h2 style="color: var(--font-mono);">Featured Projects</h2>
-        <br>
-      </div>
-      <div id="featured-grid" class="work-grid"></div>
-    </div>
-  </section> -->
 
   <footer class="full-width-section" style="margin-top: 120px; padding: 60px 0;">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
@@ -88,46 +137,42 @@
   <script src="js/script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Hamburger Menu Logic
-      const hamburger = document.getElementById('hamburger-menu');
-      const navLinks = document.getElementById('nav-links');
-      
-      if(hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-          const icon = hamburger.querySelector('i');
-          if(icon.classList.contains('fa-bars')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      }
+      const getCategoryTag = (cat) => {
+        const tags = {
+          'code': '<i class="fas fa-code"></i> CODE',
+          'graphics': '<i class="fas fa-shapes"></i> GRAPHICS',
+          'video': '<i class="fas fa-video"></i> VIDEO',
+          'photos': '<i class="fas fa-camera"></i> PHOTO'
+        };
+        return tags[cat] || '<i class="fas fa-folder"></i> PROJECT';
+      };
 
-      // Background Fade Logic
-      const bgGlow = document.getElementById('bg-glow'); 
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        if (bgGlow) {
-          let opacity = 1 - ((scrolled - 200) / 500);
-          opacity = Math.max(0, Math.min(1, opacity));
-          bgGlow.style.opacity = opacity;
-        }
-      });
-
-      // Featured Project Slot
       const slot = document.getElementById('about-featured-slot');
       const featuredProjects = projects.filter(p => p.featured);
       const randomProject = featuredProjects[Math.floor(Math.random() * featuredProjects.length)];
 
       if (randomProject) {
+        
+        // Smart media loader for the featured about section
+        let mediaHTML = '';
+        if (randomProject.iframe) {
+          mediaHTML = `<iframe src="${randomProject.iframe}" loading="lazy"></iframe>`;
+        } else if (randomProject.video) {
+          mediaHTML = `<video src="${randomProject.video}" autoplay loop muted playsinline disablePictureInPicture></video>`;
+        } else {
+          mediaHTML = `<img src="${randomProject.image}" loading="lazy">`;
+        }
+
         slot.innerHTML = `
-          <div class="project-card" style="aspect-ratio: 21/9; border-bottom: none;" onclick="window.open('${randomProject.link}', '_blank')">
+          <div class="project-card" style="aspect-ratio: 21/9;" onclick="window.open('${randomProject.link}', '_blank')">
             <div class="media-container">
-              ${randomProject.iframe ? `<iframe src="${randomProject.iframe}" loading="lazy"></iframe>` : `<img src="${randomProject.image}" loading="lazy">`}
+              ${mediaHTML}
             </div>
+            
+            <div class="category-tag cat-${randomProject.category}">
+              ${getCategoryTag(randomProject.category)}
+            </div>
+
             <div class="card-content" style="transform: translateY(0); height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
               <h3>${randomProject.title}</h3>
               <p>${randomProject.description}</p>
@@ -137,5 +182,4 @@
     });
   </script>
 </body>
-
 </html>

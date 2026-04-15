@@ -17,11 +17,9 @@
   <nav class="hero-nav">
     <div class="container nav-wrapper">
       <div class="logo"><a href="index.html">VINIT RAO</a></div>
-      
       <div class="hamburger" id="hamburger-menu">
         <i class="fas fa-bars"></i>
       </div>
-
       <div class="hero-buttons" id="nav-links">
         <a href="about.html" class="navbtn">About</a>
         <a href="resume.html" class="navbtn">Resume</a>
@@ -30,17 +28,24 @@
     </div>
   </nav>
 
-  <header class="container" style="padding: 120px 0 60px; text-align: center;">
-    <h1 class="contact-title">Resume</h1>
-    <div style="margin-top: 20px;">
-        <a href="resume/resume.pdf" download class="filter-pill active" style="text-decoration: none; display: inline-block;">Download_PDF</a>
-    </div>
-  </header>
+  <section class="full-width-section" style="border-top: none; margin-top: 60px;">
+    <div class="container">
+      
+      <div class="bento-grid" style="grid-template-rows: auto 85vh;">
+        
+        <div class="bento-item bento-bio" style="grid-column: span 3; grid-row: span 1; justify-content: center;">
+            <h2 style="margin-bottom: 5px;">RESUME</h2>
+            <p style="margin-bottom: 0;">VINIT RAO // INTERACTIVE MULTIMEDIA DESIGNER</p>
+        </div>
 
-  <section class="full-width-section">
-    <div class="container" style="padding-top: 60px; padding-bottom: 60px;">
-      <div style="max-width: 1000px; margin: 0 auto; border: 1px solid var(--border); background: #000; height: 85vh; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-        <iframe src="resume/resume.pdf#toolbar=0&navpanes=0" style="width: 100%; height: 100%; border: none;"></iframe>
+        <a href="resume/resume.pdf" download class="bento-item bento-contact" style="grid-column: span 1; grid-row: span 1; padding: 25px; border-color: var(--primary);">
+            <h3 style="margin: 0; font-size: 0.9rem;">DOWNLOAD PDF <i class="fas fa-download" style="margin-left: 8px;"></i></h3>
+        </a>
+
+        <div class="bento-item" style="grid-column: span 4; padding: 0; background: #000;">
+            <iframe src="resume/resume.pdf#toolbar=0&navpanes=0" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+
       </div>
     </div>
   </section>
@@ -61,37 +66,5 @@
   </footer>
 
   <script src="js/script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Hamburger Menu Logic
-      const hamburger = document.getElementById('hamburger-menu');
-      const navLinks = document.getElementById('nav-links');
-      
-      if(hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-          const icon = hamburger.querySelector('i');
-          if(icon.classList.contains('fa-bars')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      }
-
-      // Background Fade Logic
-      const bgGlow = document.getElementById('bg-glow'); 
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        if (bgGlow) {
-          let opacity = 1 - ((scrolled - 200) / 500);
-          opacity = Math.max(0, Math.min(1, opacity));
-          bgGlow.style.opacity = opacity;
-        }
-      });
-    });
-  </script>
 </body>
 </html>
