@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vinit Rao | Portfolio</title>
-  
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/minimal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -21,6 +20,7 @@
         <i class="fas fa-bars"></i>
       </div>
       <div class="hero-buttons" id="nav-links">
+        <a href="projects.html" class="navbtn">Projects</a>
         <a href="about.html" class="navbtn">About</a>
         <a href="resume.html" class="navbtn">Resume</a>
         <a href="contact.html" class="navbtn">Contact</a>
@@ -29,20 +29,19 @@
   </nav>
 
   <header class="hero-section">
-    
-    <div class="hero-banner"></div>
-
     <div class="hero-stack">
+      <div class="spline-wrapper" id="spline-container"></div>
+      
       <div class="hero-text-overlay">
         <h1 class="hero-title">VINIT<br>RAO</h1>
       </div>
+      
       <div class="hero-bio">
         <p>STUDENT @ CARLETON UNIVERSITY<br>INTERACTIVE MULTIMEDIA DESIGNER<br>MOTION // 3D // PHOTO // VIDEO // CODE</p>
       </div>
       
-      <a href="#all-projects" class="scroll-down-btn">
-        PROJECTS <i class="fas fa-arrow-down"></i>
-      </a>
+      <a href="projects.html" class="hero-cta cliff-cta">VIEW PROJECTS <i class="fas fa-arrow-right"></i></a>
+      
     </div>
   </header>
 
@@ -50,53 +49,28 @@
     <div class="container">
       <div class="section-header">
         <br><br>
-        <h2 style="color: var(--font-mono);">Featured Projects</h2>
+        <h2 style="color: var(--font-mono);">Featured Showcase</h2>
         <br>
       </div>
       <div id="featured-grid" class="work-grid"></div>
-    </div>
-  </section>
-
-  <section id="all-projects" class="full-width-section" style="margin-top: 60px; margin-bottom: 80px;">
-    <div class="container">
-      <div class="archive-controls">
-        <div class="filter-group">
-          <div class="section-header" style="padding: 0 0 10px;">
-            <h2 style="color: var(--font-mono);">All Projects</h2>
-          </div>
-          <div class="filter-pills">
-            <button class="filter-pill active" data-filter="all">ALL</button>
-            <button class="filter-pill" data-filter="graphics">GRAPHICS</button>
-            <button class="filter-pill" data-filter="video">VIDEO</button>
-            <button class="filter-pill" data-filter="photos">PHOTO</button>
-            <button class="filter-pill" data-filter="code">CODE</button>
-          </div>
-        </div>
-        <div class="search-wrapper">
-          <input type="text" id="projectSearch" placeholder="SEARCH">
-        </div>
+      
+      <div style="display: flex; justify-content: center; margin-top: 50px;">
+        <a href="projects.html" class="hero-cta" style="padding: 18px 36px; border: 1px solid rgba(255, 255, 255, 0.4); font-size: 0.85rem;">
+          VIEW ALL PROJECTS <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      <div id="work-grid" class="work-grid"></div>
-      <div id="pagination-controls" class="pagination-container"></div>
+      
     </div>
   </section>
 
-  <section class="full-width-section" style="margin-top: 60px; margin-bottom: 80px;">
+  <section class="full-width-section" style="margin-top: 80px; margin-bottom: 80px;">
     <div class="container">
       <div class="section-header" style="padding: 0 0 20px;">
-        <br><br>
+        <br>
         <h2 style="color: var(--font-mono);">Latest Updates</h2>
       </div>
       <div class="linkedin-embed-container" style="display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px;">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7447751953352343553?collapsed=1" 
-          height="628" 
-          width="100%" 
-          frameborder="0" 
-          allowfullscreen="" 
-          loading="lazy"
-          title="Embedded post" 
-          style="border: 1px solid var(--border); background: #fff; min-width: 350px; max-width: 504px;">
-        </iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7447751953352343553?collapsed=1" height="628" width="100%" frameborder="0" loading="lazy" style="border: 1px solid var(--border); background: #fff; min-width: 350px; max-width: 504px;"></iframe>
       </div>
     </div>
   </section>
@@ -128,171 +102,59 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const fGrid = document.getElementById('featured-grid');
-      const wGrid = document.getElementById('work-grid');
-      const pagContainer = document.getElementById('pagination-controls');
-      
-      let currentPage = 1;
-      const itemsPerPage = 6; 
-      let currentFilteredData = projects; 
 
       const getActionHTML = (type) => {
-        const actions = {
-          'github': '<i class="fab fa-github"></i> View Code',
-          'youtube': '<i class="fab fa-youtube"></i> Watch Video',
-          'game': '<i class="fas fa-gamepad"></i> Play Game',
-          'website': '<i class="fas fa-globe"></i> Visit Site',
-          'photo': '<i class="fas fa-camera-retro"></i> View Gallery'
-        };
+        const actions = { 'github': '<i class="fab fa-github"></i> View Code', 'youtube': '<i class="fab fa-youtube"></i> Watch Video', 'game': '<i class="fas fa-gamepad"></i> Play Game', 'website': '<i class="fas fa-globe"></i> Visit Site', 'photo': '<i class="fas fa-camera-retro"></i> View Gallery' };
         return actions[type] || '<i class="fas fa-arrow-right"></i> View Project';
       };
 
       const getCategoryTag = (cat) => {
-        const tags = {
-          'code': '<i class="fas fa-code"></i> CODE',
-          'graphics': '<i class="fas fa-shapes"></i> GRAPHICS',
-          'video': '<i class="fas fa-video"></i> VIDEO',
-          'photos': '<i class="fas fa-camera"></i> PHOTO'
-        };
+        const tags = { 'code': '<i class="fas fa-code"></i> CODE', 'graphics': '<i class="fas fa-shapes"></i> GRAPHICS', 'video': '<i class="fas fa-video"></i> VIDEO', 'photos': '<i class="fas fa-camera"></i> PHOTO' };
         return tags[cat] || '<i class="fas fa-folder"></i> PROJECT';
       };
 
       const createCard = (p) => {
-        let badgeHTML = '';
-        if (p.badges && p.badges.length > 0) {
-          const badgeList = p.badges[0].split('|').filter(b => b.trim() !== '');
-          badgeHTML = badgeList.map(b => `<span class="badge">${b.trim()}</span>`).join('');
-        }
-
-        let mediaHTML = '';
-        let videoDataAttr = '';
-        let hoverEvents = '';
+        let badgeHTML = p.badges && p.badges.length > 0 ? p.badges[0].split('|').filter(b => b.trim() !== '').map(b => `<span class="badge">${b.trim()}</span>`).join('') : '';
+        let mediaHTML = '', videoDataAttr = '', hoverEvents = '';
         
         if (p.video) {
           mediaHTML = `<img src="${p.image || ''}" loading="lazy">`;
           videoDataAttr = `data-video="${p.video}"`;
-          hoverEvents = `
-               onmouseenter="if(this.dataset.video){ const c = this.querySelector('.media-container'); if(!c.querySelector('video')){ const v = document.createElement('video'); v.src = this.dataset.video; v.autoplay = true; v.loop = true; v.muted = true; v.playsInline = true; v.style.position = 'absolute'; v.style.top = '0'; v.style.left = '0'; v.style.width = '100%'; v.style.height = '100%'; v.style.objectFit = 'cover'; c.insertBefore(v, c.querySelector('.image-overlay')); } }"
-               onmouseleave="const v = this.querySelector('video'); if(v){ v.pause(); v.removeAttribute('src'); v.load(); v.remove(); }"
-          `;
+          hoverEvents = `onmouseenter="if(this.dataset.video){ const c = this.querySelector('.media-container'); if(!c.querySelector('video')){ const v = document.createElement('video'); v.src = this.dataset.video; v.autoplay = true; v.loop = true; v.muted = true; v.playsInline = true; v.style.position = 'absolute'; v.style.top = '0'; v.style.left = '0'; v.style.width = '100%'; v.style.height = '100%'; v.style.objectFit = 'cover'; c.insertBefore(v, c.querySelector('.image-overlay')); } }" onmouseleave="const v = this.querySelector('video'); if(v){ v.pause(); v.removeAttribute('src'); v.load(); v.remove(); }"`;
         } else {
           mediaHTML = `<img src="${p.image}" loading="lazy">`;
         }
 
         return `
           <div class="project-card" data-link="${p.link}" data-category="${p.category}" ${videoDataAttr} ${hoverEvents}>
-            <div class="media-container">
-              ${mediaHTML}
-              <div class="image-overlay"></div>
-            </div>
-            
-            <div class="category-tag cat-${p.category}">
-              ${getCategoryTag(p.category)}
-            </div>
-
-            <div class="hover-action-btn">
-              ${getActionHTML(p.linkType)}
-            </div>
-
+            <div class="media-container">${mediaHTML}<div class="image-overlay"></div></div>
+            <div class="category-tag cat-${p.category}">${getCategoryTag(p.category)}</div>
+            <div class="hover-action-btn">${getActionHTML(p.linkType)}</div>
             <div class="card-content">
-              <h3>${p.title}</h3>
-              <p>${p.description}</p>
-              <div class="badge-container">${badgeHTML}</div>
+              <h3>${p.title}</h3><p>${p.description}</p><div class="badge-container">${badgeHTML}</div>
             </div>
           </div>`;
       };
       
-      document.addEventListener('click', (e) => {
-        const card = e.target.closest('.project-card');
-        const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-
-        if (card) {
-          if (isTouchDevice) {
-            if (card.classList.contains('touch-hover')) {
-              window.open(card.dataset.link, '_blank');
-            } else {
-              document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
-              card.classList.add('touch-hover');
-            }
-          } else {
-            window.open(card.dataset.link, '_blank');
-          }
-        } else {
-          document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
-        }
-      });
-
       const renderF = () => {
+        if(!fGrid) return;
         const rand = projects.filter(p => p.featured).sort(() => 0.5 - Math.random());
         const count = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
         fGrid.innerHTML = rand.slice(0, count).map(p => createCard(p)).join('');
       };
-      
-      const renderW = () => {
-        const totalPages = Math.ceil(currentFilteredData.length / itemsPerPage);
-        const startIndex = (currentPage - 1) * itemsPerPage;
-        const paginatedData = currentFilteredData.slice(startIndex, startIndex + itemsPerPage);
-        
-        wGrid.innerHTML = paginatedData.map(p => createCard(p)).join('');
-        renderPaginationUI(totalPages);
-      };
 
-      const renderPaginationUI = (totalPages) => {
-        pagContainer.innerHTML = ''; 
-        if (totalPages <= 1) return; 
-
-        const createBtn = (text, pageNum, isActive, isDisabled) => {
-          const btn = document.createElement('button');
-          btn.className = `page-btn ${isActive ? 'active' : ''}`;
-          btn.textContent = text;
-          btn.disabled = isDisabled;
-          
-          if (!isDisabled && !isActive) {
-            btn.addEventListener('click', () => {
-              currentPage = pageNum;
-              renderW();
-              document.querySelector('.archive-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-          }
-          return btn;
-        };
-
-        pagContainer.appendChild(createBtn('PREV', currentPage - 1, false, currentPage === 1));
-        for (let i = 1; i <= totalPages; i++) {
-          pagContainer.appendChild(createBtn(i, i, currentPage === i, false));
-        }
-        pagContainer.appendChild(createBtn('NEXT', currentPage + 1, false, currentPage === totalPages));
-      };
+      document.addEventListener('click', (e) => {
+        const card = e.target.closest('.project-card');
+        if (card) {
+          if (('ontouchstart' in window) || navigator.maxTouchPoints > 0) {
+            if (card.classList.contains('touch-hover')) window.open(card.dataset.link, '_blank');
+            else { document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover')); card.classList.add('touch-hover'); }
+          } else window.open(card.dataset.link, '_blank');
+        } else document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
+      });
 
       renderF(); 
-      renderW();
       window.addEventListener('resize', renderF);
-
-      const searchInput = document.getElementById('projectSearch');
-      const filterBtns = document.querySelectorAll('.filter-pill');
-      
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          
-          if (btn.dataset.filter === 'all') {
-            currentFilteredData = projects;
-          } else {
-            currentFilteredData = projects.filter(p => p.category === btn.dataset.filter);
-          }
-          currentPage = 1; 
-          renderW();
-        });
-      });
-
-      searchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-        currentFilteredData = projects.filter(p => 
-          p.title.toLowerCase().includes(term) || p.description.toLowerCase().includes(term)
-        );
-        currentPage = 1; 
-        renderW();
-      });
     });
   </script>
 </body>

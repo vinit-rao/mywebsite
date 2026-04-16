@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. NIGHT SKY OPTIMIZED (Reduced to 75 stars) ---
+    // --- 1. NIGHT SKY & SHOOTING STARS ---
     const nightSky = document.getElementById('night-sky');
     if (nightSky) {
         nightSky.innerHTML = '';
-        for (let i = 0; i < 75; i++) {
+        for (let i = 0; i < 100; i++) {
             const star = document.createElement('div');
             const size = Math.random() * 2 + 0.5;
             Object.assign(star.style, { 
@@ -32,12 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 700);
     }
 
-     // --- 2. GLOBAL SCROLL PARALLAX & FADES ---
+    // --- 2. GLOBAL SCROLL PARALLAX & FADES ---
     const heroTitle = document.querySelector('.hero-title');
     const nameOverlay = document.querySelector('.hero-text-overlay');
     const bioOverlay = document.querySelector('.hero-bio');
     const bgGlow = document.getElementById('bg-glow'); 
-    const heroBanner = document.querySelector('.hero-banner'); // <-- Added this
 
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
@@ -51,15 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nightSky) nightSky.style.transform = `translateY(${scrolled * 0.1}px)`;
         
         if (window.innerWidth > 1024) {
-            // The text moves down at 20% speed
             const textSpeed = scrolled * 0.2;
             if (nameOverlay) nameOverlay.style.transform = `translateY(${textSpeed}px)`;
             if (bioOverlay) bioOverlay.style.transform = `translateY(${textSpeed}px)`;
-            
-            // The model moves down at 45% speed, making it float totally differently!
-            if (heroBanner) heroBanner.style.transform = `translateY(${scrolled * 0.45}px)`;
         }
-        
         if (heroTitle) heroTitle.classList.toggle('active-color', scrolled > 400);
     });
 
@@ -75,14 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if(icon.classList.contains('fa-bars')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
-                // Lock the background from scrolling
                 document.body.style.overflow = 'hidden'; 
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
-                // Unlock the background
                 document.body.style.overflow = ''; 
             }
         });
+    }
+
+    // --- 4. ULTIMATE SPLINE 3D OPTIMIZATION ---
+    if (window.innerWidth > 1024) {
+        const splineContainer = document.getElementById('spline-container');
+        if (splineContainer) {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'https://unpkg.com/@splinetool/viewer@1.12.60/build/spline-viewer.js';
+            document.head.appendChild(script);
+            splineContainer.innerHTML = '<spline-viewer url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" loading-reveal="hidden"></spline-viewer>';
+        }
     }
 });
