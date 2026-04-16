@@ -104,7 +104,14 @@
       const fGrid = document.getElementById('featured-grid');
 
       const getActionHTML = (type) => {
-        const actions = { 'github': '<i class="fab fa-github"></i> View Code', 'youtube': '<i class="fab fa-youtube"></i> Watch Video', 'game': '<i class="fas fa-gamepad"></i> Play Game', 'website': '<i class="fas fa-globe"></i> Visit Site', 'photo': '<i class="fas fa-camera-retro"></i> View Gallery' };
+        const actions = { 
+            'github': '<i class="fab fa-github"></i> View Code', 
+            'youtube': '<i class="fab fa-youtube"></i> Watch Video', 
+            'game': '<i class="fas fa-gamepad"></i> Play Game', 
+            'website': '<i class="fas fa-globe"></i> Visit Site', 
+            'photo': '<i class="fas fa-camera-retro"></i> View Gallery',
+            'internal': '<i class="fas fa-file-alt"></i> View Project'
+        };
         return actions[type] || '<i class="fas fa-arrow-right"></i> View Project';
       };
 
@@ -126,7 +133,7 @@
         }
 
         return `
-          <div class="project-card" data-link="${p.link}" data-category="${p.category}" ${videoDataAttr} ${hoverEvents}>
+          <div class="project-card" data-link="${p.link}" data-type="${p.linkType}" data-category="${p.category}" ${videoDataAttr} ${hoverEvents}>
             <div class="media-container">${mediaHTML}<div class="image-overlay"></div></div>
             <div class="category-tag cat-${p.category}">${getCategoryTag(p.category)}</div>
             <div class="hover-action-btn">${getActionHTML(p.linkType)}</div>
@@ -145,12 +152,30 @@
 
       document.addEventListener('click', (e) => {
         const card = e.target.closest('.project-card');
+        
         if (card) {
+          const link = card.dataset.link;
+          // BULLETPROOF CHECK: If the link doesn't start with "http", it's an internal page!
+          const isInternal = !link.startsWith('http'); 
+          
           if (('ontouchstart' in window) || navigator.maxTouchPoints > 0) {
-            if (card.classList.contains('touch-hover')) window.open(card.dataset.link, '_blank');
-            else { document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover')); card.classList.add('touch-hover'); }
-          } else window.open(card.dataset.link, '_blank');
-        } else document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
+            // MOBILE TOUCH LOGIC
+            if (card.classList.contains('touch-hover')) {
+              if (isInternal) window.location.assign(link);
+              else window.open(link, '_blank');
+            } else {
+              document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover')); 
+              card.classList.add('touch-hover'); 
+            }
+          } else {
+            // DESKTOP CLICK LOGIC
+            if (isInternal) window.location.assign(link);
+            else window.open(link, '_blank');
+          }
+        } else {
+          // CLICKS OUTSIDE CARDS
+          document.querySelectorAll('.project-card.touch-hover').forEach(c => c.classList.remove('touch-hover'));
+        }
       });
 
       renderF(); 
