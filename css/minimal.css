@@ -47,9 +47,33 @@ nav.hero-nav { width: 100%; z-index: 1000; position: relative; padding-top: 30px
 .hamburger:hover { color: var(--primary); }
 
 /* HERO SYSTEM */
-.hero-section { position: relative; height: 95vh; width: 100%; overflow: visible; isolation: isolate; }
+.hero-section { 
+  position: relative; 
+  height: 95vh; 
+  width: 100%; 
+  overflow: visible; 
+  isolation: isolate; 
+  /* (Background image removed from here) */
+}
+
+/* --- THE NEW SEPARATE LAYER --- */
+.hero-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/herobanner.png');
+  
+  /* The Magic Formula: Start at 20% down, then pull it back UP by exactly 100px */
+  background-position: right calc(20% - 100px); 
+  
+  background-size: contain; 
+  background-repeat: no-repeat;
+  z-index: 8; 
+  pointer-events: none; 
+}
 .hero-stack { position: relative; width: 100%; height: 100%; max-width: 1600px; margin: 0 auto; }
-.spline-wrapper { position: absolute; top: -200px; left: -60vw; width: 200vw; height: 120%; z-index: 10; pointer-events: auto; }
 .hero-text-overlay { position: absolute; bottom: 25%; left: 45px; z-index: 5; pointer-events: none; }
 .hero-title { font-family: var(--font-header); font-size: clamp(5rem, 22vw, 13rem); font-weight: 800; letter-spacing: -5px; line-height: 0.72; text-transform: uppercase; color: var(--font-mono); transition: color .6s ease; }
 .hero-title.active-color { color: var(--primary); }
@@ -94,10 +118,6 @@ nav.hero-nav { width: 100%; z-index: 1000; position: relative; padding-top: 30px
 .star { position: absolute; background: #fff; border-radius: 50%; }
 .shooting-star { position: absolute; width: 60px; height: 2px; background: linear-gradient(90deg, #fff, transparent); pointer-events: none; opacity: 0; box-shadow: 0 0 15px #fff; z-index: 5; animation: shoot-logic 1.5s linear forwards; }
 @keyframes shoot-logic { 0% { transform: translate(0, 0) rotate(-45deg) scaleX(0); opacity: 0; } 10% { opacity: 1; } 100% { transform: translate(-600px, 600px) rotate(-45deg) scaleX(1); opacity: 0; } }
-
-/* SPLINE CLEANUP */
-spline-viewer { --logo-display: none !important; }
-spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [id*="hint"], [class*="hint"] { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
 
 /* --- DYNAMIC HOVER BUTTON & OVERLAYS --- */
 .hover-action-btn { position: absolute; top: 20px; right: 20px; background: var(--primary); color: #fff; padding: 8px 16px; border-radius: 0; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateY(-10px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
@@ -188,7 +208,6 @@ spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [i
   .work-grid { grid-template-columns: repeat(2, 1fr); } 
   .bento-bio, .bento-ticker, .bento-experience, .bento-analog { grid-column: span 4; }
   .bento-academic, .bento-status, .bento-contact { grid-column: span 2; }
-  .spline-wrapper { display: none !important; }
   .hero-text-overlay { bottom: 35%; }
   .hero-bio { bottom: 20%; }
   .archive-controls { flex-direction: column; align-items: flex-start; gap: 30px; }
@@ -200,14 +219,17 @@ spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [i
   .bento-grid { grid-template-columns: 1fr; }
   .bento-item { grid-column: span 1 !important; grid-row: auto !important; }
   .hero-text-overlay { bottom: auto; top: 35vh; left: 20px; right: 20px; }
-  .hero-title { font-size: clamp(3.5rem, 16vw, 6rem); line-height: 0.85; word-wrap: break-word; }
+  .hero-title { font-size: clamp(3.5rem, 16vw, 10rem); line-height: 0.85; word-wrap: break-word; }
   .hero-bio { bottom: 5vh; left: 20px; right: 20px; width: auto; }
 
-  .spline-wrapper { display: none !important; }
-
   .nav-wrapper { flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 20px !important; gap: 0; }
-  .hamburger { display: block; } 
-  
+  .hamburger { display: block; }
+  .hero-banner {
+    /* Pushes him to the top right, above the text */
+    background-position: right 5%; 
+    /* Scales him up slightly so he doesn't look too tiny on a phone */
+    background-size: 140%; 
+  }
   .hero-buttons { display: none; width: 100%; flex-direction: column; gap: 20px; padding: 25px; margin-top: 20px; background: rgba(0, 0, 0, 0.95); border: 1px solid var(--border); backdrop-filter: blur(5px); }
   .hero-buttons.active { display: flex; }
   .scroll-down-btn { right: 20px; bottom: 30px; }

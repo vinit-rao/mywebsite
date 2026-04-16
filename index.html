@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/minimal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  </head>
+</head>
 <body>
   <div id="bg-glow"></div>
   <div id="night-sky"></div>
@@ -30,11 +30,12 @@
 
   <header class="hero-section">
     <div class="hero-stack">
+      
+      <div class="hero-banner"></div>
+
       <div class="hero-text-overlay">
         <h1 class="hero-title">VINIT<br>RAO</h1>
       </div>
-      <div class="spline-wrapper" id="spline-container">
-        </div>
       <div class="hero-bio">
         <p>STUDENT @ CARLETON UNIVERSITY<br>INTERACTIVE MULTIMEDIA DESIGNER<br>MOTION // 3D // PHOTO // VIDEO // CODE</p>
       </div>
@@ -83,7 +84,7 @@
   <section class="full-width-section" style="margin-top: 60px; margin-bottom: 80px;">
     <div class="container">
       <div class="section-header" style="padding: 0 0 20px;">
-        <br>
+        <br><br>
         <h2 style="color: var(--font-mono);">Latest Updates</h2>
       </div>
       <div class="linkedin-embed-container" style="display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px;">
@@ -103,7 +104,7 @@
   <section class="full-width-section massive-cta-section" style="margin-bottom: 0;">
     <a href="contact.html" class="massive-cta">
       <p>Summer 2026 Co-op Search Active</p>
-      <h2>INITIATE<br>CONTACT</h2>
+      <h2>CONTACT</h2>
     </a>
   </section>
 
@@ -131,7 +132,7 @@
       const pagContainer = document.getElementById('pagination-controls');
       
       let currentPage = 1;
-      const itemsPerPage = 12; 
+      const itemsPerPage = 6; 
       let currentFilteredData = projects; 
 
       const getActionHTML = (type) => {
@@ -166,7 +167,6 @@
         let videoDataAttr = '';
         let hoverEvents = '';
         
-        // IFRAMES KILLED HERE: Iframes in grids eat 100MB+ each. We strictly use images now.
         if (p.video) {
           mediaHTML = `<img src="${p.image || ''}" loading="lazy">`;
           videoDataAttr = `data-video="${p.video}"`;
