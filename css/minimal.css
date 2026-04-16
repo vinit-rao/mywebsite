@@ -188,7 +188,7 @@ spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [i
   .work-grid { grid-template-columns: repeat(2, 1fr); } 
   .bento-bio, .bento-ticker, .bento-experience, .bento-analog { grid-column: span 4; }
   .bento-academic, .bento-status, .bento-contact { grid-column: span 2; }
-  .spline-wrapper { pointer-events: none !important; top: -100px; left: -25vw; width: 150vw; height: 110%; }
+  .spline-wrapper { display: none !important; }
   .hero-text-overlay { bottom: 35%; }
   .hero-bio { bottom: 20%; }
   .archive-controls { flex-direction: column; align-items: flex-start; gap: 30px; }

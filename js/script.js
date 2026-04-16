@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. NIGHT SKY & SHOOTING STARS ---
+    // --- 1. NIGHT SKY OPTIMIZED (Reduced to 75 stars) ---
     const nightSky = document.getElementById('night-sky');
     if (nightSky) {
         nightSky.innerHTML = '';
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 75; i++) {
             const star = document.createElement('div');
             const size = Math.random() * 2 + 0.5;
             Object.assign(star.style, { 
@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setInterval(() => {
+            if (document.hidden) return; 
+
             const ss = document.createElement('div');
             ss.className = 'shooting-star';
             Object.assign(ss.style, { 
@@ -70,5 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-bars');
             }
         });
+    }
+
+    // --- 4. ULTIMATE SPLINE 3D OPTIMIZATION ---
+    if (window.innerWidth > 1024) {
+        const splineContainer = document.getElementById('spline-container');
+        if (splineContainer) {
+            // Dynamically inject the heavy script ONLY for desktops
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'https://unpkg.com/@splinetool/viewer@1.12.60/build/spline-viewer.js';
+            document.head.appendChild(script);
+
+            // Inject the viewer
+            splineContainer.innerHTML = '<spline-viewer url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" loading-reveal="hidden"></spline-viewer>';
+        }
     }
 });

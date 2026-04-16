@@ -35,7 +35,7 @@
       <div class="bento-grid">
         
         <div class="bento-item bento-bio">
-          <h2>About Me</h2>
+          <h2>ABOUT ME</h2>
           <p>I am an Interactive Multimedia and Design student at Carleton University, blending cinematic visual storytelling with technical engineering. My background spans from S-Log video production and motion graphics to C# systems in Unity and physical computing with Arduino.</p>
           <p>I specialize in bridging the gap between high-fidelity aesthetic design and functional, interactive code. Currently seeking a Summer 2026 Co-op placement where I can apply my range in multimedia design and development.</p>
         </div>
@@ -152,20 +152,26 @@
       const randomProject = featuredProjects[Math.floor(Math.random() * featuredProjects.length)];
 
       if (randomProject) {
-        
         let mediaHTML = '';
-        if (randomProject.iframe) {
-          mediaHTML = `<iframe src="${randomProject.iframe}" loading="lazy"></iframe>`;
-        } else if (randomProject.video) {
-          mediaHTML = `<video src="${randomProject.video}" poster="${randomProject.image || ''}" autoplay loop muted playsinline disablePictureInPicture></video>`;
+        let videoDataAttr = '';
+        let hoverEvents = '';
+        
+        if (randomProject.video) {
+          mediaHTML = `<img src="${randomProject.image || ''}" loading="lazy">`;
+          videoDataAttr = `data-video="${randomProject.video}"`;
+          hoverEvents = `
+               onmouseenter="if(this.dataset.video){ const c = this.querySelector('.media-container'); if(!c.querySelector('video')){ const v = document.createElement('video'); v.src = this.dataset.video; v.autoplay = true; v.loop = true; v.muted = true; v.playsInline = true; v.style.position = 'absolute'; v.style.top = '0'; v.style.left = '0'; v.style.width = '100%'; v.style.height = '100%'; v.style.objectFit = 'cover'; c.insertBefore(v, c.querySelector('.image-overlay')); } }"
+               onmouseleave="const v = this.querySelector('video'); if(v){ v.pause(); v.removeAttribute('src'); v.load(); v.remove(); }"
+          `;
         } else {
           mediaHTML = `<img src="${randomProject.image}" loading="lazy">`;
         }
 
         slot.innerHTML = `
-          <div class="project-card" style="aspect-ratio: 21/9;" onclick="window.open('${randomProject.link}', '_blank')">
+          <div class="project-card" style="aspect-ratio: 21/9;" onclick="window.open('${randomProject.link}', '_blank')" ${videoDataAttr} ${hoverEvents}>
             <div class="media-container">
               ${mediaHTML}
+              <div class="image-overlay"></div>
             </div>
             
             <div class="category-tag cat-${randomProject.category}">

@@ -1,9 +1,6 @@
 // projects.js - All your projects in one easy-to-edit file
-// TO ADD A NEW PROJECT: Just add a new object to this array!
-// 
 
 const projects = [
-    
     {
         category: 'code',
         title: 'Bennys Frozen Adventure',
@@ -11,6 +8,7 @@ const projects = [
         link: 'https://github.com/vinit-rao/bennys-frozen-adventure',
         linkType: 'github',
         video: 'videos/project_25.mp4',
+        image: 'images/project_25.jpg',
         badges: ['| C# | Unity | After Effects | School |'],
         featured: true
     },
@@ -21,7 +19,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=r1J8bAHEH4U',
         linkType: 'youtube',
         video: 'videos/project_34.mp4',
-        badges: ['| Premiere Pro | After Effects | Personal |'],
+        image: 'images/project_34.jpg',
+        badges: ['| Premiere Pro | After Effects | Personal |']
     },
     {
         category: 'code',
@@ -30,6 +29,7 @@ const projects = [
         link: 'https://github.com/vinit-rao/queueup-django',
         linkType: 'github',
         video: 'videos/project_26.mp4',
+        image: 'images/project_26.jpg',
         badges: ['| Python | Django | School |']
     },
     {
@@ -39,7 +39,7 @@ const projects = [
         iframe: "https://www.smugmug.com/frame/slideshow?key=S7zpk4&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&transitionSpeed=2",
         link: 'https://www.smugmug.com/gallery/n-hXFjj8',
         linkType: 'photo',
-        image: 'images/project_12.gif',
+        image: 'images/project_36.jpg',
         badges: ['| Lightroom | Personal |'],
         featured: true
     },
@@ -50,6 +50,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=dOJTkZ3NaNs',
         linkType: 'youtube',
         video: 'videos/project_24.mp4',
+        image: 'images/project_24.jpg',
         badges: ['| After Effects | Work |']
     },
     {
@@ -59,7 +60,7 @@ const projects = [
         iframe: "https://www.smugmug.com/frame/slideshow?key=g2SCzt&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&transitionSpeed=2",
         link: 'https://www.smugmug.com/gallery/n-2ZbFMs',
         linkType: 'photo',
-        image: 'images/project_12.gif',
+        image: 'images/project_37.jpg',
         badges: ['| Lightroom | Personal |']
     },
     {
@@ -69,6 +70,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=p6OpZmpUm80',
         linkType: 'youtube',
         video: 'videos/project_22.mp4',
+        image: 'images/project_22.jpg',
         badges: ['| C# | Unity | Blender | School |'],
         featured: true
     },
@@ -78,6 +80,7 @@ const projects = [
         description: 'Fun reel mixed with Minecraft assets!',
         link: 'https://www.instagram.com/reel/DT_e7HMAaOB/?igsh=MWN3ZnB3NHRuMnEwOQ==',
         video: 'videos/project_21.mp4',
+        image: 'images/project_21.jpg',
         badges: ['| After Effects | Club |']
     },
     {
@@ -87,6 +90,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=9wGekC8UZN4',
         linkType: 'youtube',
         video: 'videos/project_20.mp4',
+        image: 'images/project_20.jpg',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -96,6 +100,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=-lmDa3Hinbw',
         linkType: 'youtube',
         video: 'videos/project_19.mp4',
+        image: 'images/project_19.jpg',
         badges: ['| Premiere Pro | Work |']
     },
     {
@@ -105,6 +110,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=oekmYU2RsI8',
         linkType: 'youtube',
         video: 'videos/project_18.mp4',
+        image: 'images/project_18.jpg',
         badges: ['| Premiere Pro | Work |']
     },
     {
@@ -114,6 +120,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=lrCLhPRmp-g',
         linkType: 'youtube',
         video: 'videos/project_17.mp4',
+        image: 'images/project_17.jpg',
         badges: ['| Blender | Personal |'],
         featured: true
     },
@@ -124,6 +131,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=Co7ycAHEKb4',
         linkType: 'youtube',
         video: 'videos/project_23.mp4',
+        image: 'images/project_23.jpg',
         badges: ['| Blender | Personal |']
     },
     {
@@ -133,6 +141,7 @@ const projects = [
         link: 'https://www.youtube.com/shorts/Nse5BKR48dE',
         linkType: 'youtube',
         video: 'videos/project_16.mp4',
+        image: 'images/project_16.jpg',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -142,6 +151,7 @@ const projects = [
         link: 'https://www.youtube.com/shorts/3JITY32alVM',
         linkType: 'youtube',
         video: 'videos/project_15.mp4',
+        image: 'images/project_15.jpg',
         badges: ['| After Effects | Personal |'],
         featured: true
     },
@@ -152,6 +162,7 @@ const projects = [
         link: 'https://www.youtube.com/shorts/5S7Uq2qFkgY',
         linkType: 'youtube',
         video: 'videos/project_14.mp4',
+        image: 'images/project_14.jpg',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -161,6 +172,7 @@ const projects = [
         link: 'https://www.youtube.com/shorts/mpm4THyTKfw',
         linkType: 'youtube',
         video: 'videos/project_29.mp4',
+        image: 'images/project_29.jpg',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -170,7 +182,7 @@ const projects = [
         iframe: "https://www.smugmug.com/frame/slideshow?key=hxvKgw&speed=3&transition=fade&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&transitionSpeed=2",
         link: 'https://www.smugmug.com/gallery/n-9J8VRh',
         linkType: 'photo',
-        image: 'images/project_12.gif',
+        image: 'images/project_38.jpg',
         badges: ['| Lightroom | Personal |']
     },
     {
@@ -180,7 +192,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=8WFianh_Bko',
         linkType: 'youtube',
         video: 'videos/project_30.mp4',
-        badges: ['| After Effects | Personal |'],
+        image: 'images/project_30.jpg',
+        badges: ['| After Effects | Personal |']
     },
     {
         category: 'graphics',
@@ -189,7 +202,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=IrP4P2sCuQY',
         linkType: 'youtube',
         video: 'videos/project_13.mp4',
-        badges: ['| After Effects | Club |'],
+        image: 'images/project_13.jpg',
+        badges: ['| After Effects | Club |']
     },
     {
         category: 'graphics',
@@ -198,6 +212,7 @@ const projects = [
         link: 'https://www.youtube.com/shorts/0y-5EnI4KO8',
         linkType: 'youtube',
         video: 'videos/project_32.mp4',
+        image: 'images/project_32.jpg',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -207,6 +222,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=3i4h8ERBTiQ',
         linkType: 'youtube',
         video: 'videos/project_11.mp4',
+        image: 'images/project_11.jpg',
         badges: ['| Premiere Pro | School |'],
         featured: true
     },
@@ -217,6 +233,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=DOs879L4MvE',
         linkType: 'youtube',
         video: 'videos/project_8.mp4',
+        image: 'images/project_8.jpg',
         badges: ['| Premiere Pro | School |']
     },
     {
@@ -226,6 +243,7 @@ const projects = [
         link: 'https://github.com/vinit-rao/2dplatformer-godot',
         linkType: 'github',
         video: 'videos/project_33.mp4',
+        image: 'images/project_33.jpg',
         badges: ['| C++ | Godot | Personal |']
     },
     {
@@ -235,7 +253,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=VhibQHSWPOE',
         linkType: 'youtube',
         video: 'videos/project_7.mp4',
-        badges: ['| After Effects | Personal |'],
+        image: 'images/project_7.jpg',
+        badges: ['| After Effects | Personal |']
     },
     {
         category: 'graphics',
@@ -244,6 +263,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=4LNe7tF2YQ8',
         linkType: 'youtube',
         video: 'videos/project_1.mp4',
+        image: 'images/project_1.jpg',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -253,6 +273,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=8Q6uj5gckwI',
         linkType: 'youtube',
         video: 'videos/project_35.mp4',
+        image: 'images/project_35.jpg',
         badges: ['| Premiere Pro | After Effects | Work |']
     },
     {
@@ -262,6 +283,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=ML7khUEzdOY',
         linkType: 'youtube',
         video: 'videos/project_2.mp4',
+        image: 'images/project_2.jpg',
         badges: ['| After Effects | Personal |']
     },
     {
@@ -271,6 +293,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=7xYjZKmTmC8',
         linkType: 'youtube',
         video: 'videos/project_6.mp4',
+        image: 'images/project_6.jpg',
         badges: ['| After Effects | School |']
     },
     {
@@ -280,6 +303,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=RRANPGpEcV0',
         linkType: 'youtube',
         video: 'videos/project_10.mp4',
+        image: 'images/project_10.jpg',
         badges: ['| Premiere Pro | After Effects | Work |']
     },
     {
@@ -289,6 +313,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=mRWqT6rZetQ',
         linkType: 'youtube',
         video: 'videos/project_5.mp4',
+        image: 'images/project_5.jpg',
         badges: ['| Premiere Pro | After Effects | Personal |']
     },
     {
@@ -298,6 +323,7 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=6Rl1UXpWMZY',
         linkType: 'youtube',
         video: 'videos/project_9.mp4',
+        image: 'images/project_9.jpg',
         badges: ['| Java | NetBeans | School |']
     },
     {
@@ -307,7 +333,8 @@ const projects = [
         link: '#',
         linkType: 'github',
         video: 'videos/project_27.mp4',
-        badges: ['| Python | School']
+        image: 'images/project_27.jpg',
+        badges: ['| Python | School |']
     },
     {
         category: 'video',
@@ -316,7 +343,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=JGQL1EyGY1w',
         linkType: 'youtube',
         video: 'videos/project_31.mp4',
-        badges: ['| Premiere Pro | School']
+        image: 'images/project_31.jpg',
+        badges: ['| Premiere Pro | School |']
     },
     {
         category: 'graphics',
@@ -325,7 +353,8 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=_4oRm1HuIbo',
         linkType: 'youtube',
         video: 'videos/project_3.mp4',
-        badges: ['| Blender | Personal']
+        image: 'images/project_3.jpg',
+        badges: ['| Blender | Personal |']
     },
     {
         category: 'video',
@@ -334,26 +363,11 @@ const projects = [
         link: 'https://www.youtube.com/watch?v=ocfZhbex0U0',
         linkType: 'youtube',
         video: 'videos/project_28.mp4',
-        badges: ['| Final Cut | Personal']
-    },
-
-    // ==================== ADD YOUR NEW PROJECTS BELOW ====================
-    /*
-    TEMPLATE - Copy this and fill in your info:
-    {
-        category: 'video',  // Options: 'video', 'photos', 'graphics', 'code'
-        title: 'Your Project Title',
-        description: 'Detailed description of your project.',
-        link: 'https://youtube.com/watch?v=YOUR_VIDEO_ID',
-        video: 'images/your-video.mp4', // Use this for mp4s
-        image: 'images/your-image.gif', // Use this for gifs/images
-        badges: ['Tool 1', 'Tool 2', 'Skill']
-    },
-    */
+        image: 'images/project_28.jpg',
+        badges: ['| Final Cut | Personal |']
+    }
 ];
 
-// Don't edit below this line unless you know what you're doing!
-// This makes the projects variable available globally
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = projects;
 }
