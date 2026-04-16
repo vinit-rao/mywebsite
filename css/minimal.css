@@ -7,7 +7,7 @@
   --font-header: 'Syne', sans-serif; 
   --font-mono: 'JetBrains Mono', monospace; 
   --font-body: 'Inter', sans-serif;
-  --bg: radial-gradient(circle at 5% 300%, #9b0000 10%, #9e1111 50%, #260012 90%);
+  --bg: radial-gradient(circle at 5% 300%, #9b0000 10%, #9e1111 50%, #1b0000 90%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -223,15 +223,70 @@ nav.hero-nav { width: 100%; z-index: 1000; position: relative; padding-top: 30px
   .hero-bio { bottom: 5vh; left: 20px; right: 20px; width: auto; }
 
   .nav-wrapper { flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; padding-top: 20px !important; gap: 0; }
-  .hamburger { display: block; }
   .hero-banner {
     /* Pushes him to the top right, above the text */
-    background-position: right 5%; 
     /* Scales him up slightly so he doesn't look too tiny on a phone */
-    background-size: 140%; 
+    background-position: right calc(20% - 150px); 
+    background-size: 190%; 
   }
-  .hero-buttons { display: none; width: 100%; flex-direction: column; gap: 20px; padding: 25px; margin-top: 20px; background: rgba(0, 0, 0, 0.95); border: 1px solid var(--border); backdrop-filter: blur(5px); }
-  .hero-buttons.active { display: flex; }
+  /* --- PREMIUM CINEMATIC MOBILE MENU --- */
+  .hamburger { 
+    display: block; 
+    position: relative; 
+    z-index: 1001; /* Keeps the X icon above the dark overlay */
+  } 
+  
+  .hero-buttons { 
+    display: flex !important; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background: rgba(0, 0, 0, 0.98); 
+    backdrop-filter: blur(15px); 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 40px; 
+    padding: 0;
+    margin: 0;
+    border: none;
+    z-index: 1000; 
+    
+    /* Animation setup */
+    opacity: 0; 
+    visibility: hidden;
+    pointer-events: none; 
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+  }
+  
+  .hero-buttons.active { 
+    opacity: 1; 
+    visibility: visible;
+    pointer-events: auto; 
+  }
+
+  /* Massive Typography for Mobile Links */
+  .hero-buttons .navbtn {
+    font-family: var(--font-header);
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Staggered fade-in effect when menu opens */
+  .hero-buttons.active .navbtn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero-buttons.active .navbtn:nth-child(1) { transition-delay: 0.1s; }
+  .hero-buttons.active .navbtn:nth-child(2) { transition-delay: 0.2s; }
+  .hero-buttons.active .navbtn:nth-child(3) { transition-delay: 0.3s; }
   .scroll-down-btn { right: 20px; bottom: 30px; }
   
   .work-grid, .social-row { grid-template-columns: 1fr; } 

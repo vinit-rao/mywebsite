@@ -71,12 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = hamburger.querySelector('i');
+            
             if(icon.classList.contains('fa-bars')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+                // Lock the background from scrolling
+                document.body.style.overflow = 'hidden'; 
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                // Unlock the background
+                document.body.style.overflow = ''; 
             }
         });
     }
