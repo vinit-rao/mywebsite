@@ -1,35 +1,91 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. NIGHT SKY & SHOOTING STARS ---
+    // --- 1. TRUE PERFORMANCE OPTIMIZER (STARS + 3D GPU) ---
     const nightSky = document.getElementById('night-sky');
-    if (nightSky) {
-        nightSky.innerHTML = '';
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            const size = Math.random() * 2 + 0.5;
-            Object.assign(star.style, { 
-                left: `${Math.random() * 100}%`, 
-                top: `${Math.random() * 100}%`, 
-                width: `${size}px`, 
-                height: `${size}px`, 
-                opacity: Math.random(), 
-                position: 'absolute' 
-            });
-            star.className = 'star';
-            nightSky.appendChild(star);
+    const optimizeBtn = document.getElementById('optimize-btn');
+    const splineContainer = document.getElementById('spline-container');
+    let shootingStarInterval;
+    
+    // Check if the user previously turned on optimization
+    let isOptimized = localStorage.getItem('vinit_optimized') === 'true';
+
+    // Function to build DOM elements, start CPU clocks, and load GPU WebGL
+    function initVisuals() {
+        // Ignite Stars (If container exists on page)
+        if (nightSky) {
+            nightSky.innerHTML = ''; 
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 2 + 0.5;
+                Object.assign(star.style, { 
+                    left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, 
+                    width: `${size}px`, height: `${size}px`, opacity: Math.random(), position: 'absolute' 
+                });
+                star.className = 'star';
+                nightSky.appendChild(star);
+            }
+
+            shootingStarInterval = setInterval(() => {
+                if (document.hidden) return; 
+                const ss = document.createElement('div');
+                ss.className = 'shooting-star';
+                Object.assign(ss.style, { left: `${Math.random() * 50 + 50}%`, top: `${Math.random() * 40}%` });
+                nightSky.appendChild(ss);
+                setTimeout(() => ss.remove(), 2100);
+            }, 700);
         }
 
-        setInterval(() => {
-            if (document.hidden) return; 
+        // Ignite Spline 3D (Only on desktop, if container exists)
+        if (splineContainer && window.innerWidth > 1024) {
+            if (!document.querySelector('script[src*="spline-viewer.js"]')) {
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.src = 'https://unpkg.com/@splinetool/viewer@1.12.60/build/spline-viewer.js';
+                document.head.appendChild(script);
+            }
+            splineContainer.innerHTML = '<spline-viewer url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" loading-reveal="hidden"></spline-viewer>';
+        }
+    }
 
-            const ss = document.createElement('div');
-            ss.className = 'shooting-star';
-            Object.assign(ss.style, { 
-                left: `${Math.random() * 50 + 50}%`, 
-                top: `${Math.random() * 40}%` 
-            });
-            nightSky.appendChild(ss);
-            setTimeout(() => ss.remove(), 2100);
-        }, 700);
+    // Function to kill CPU clocks, delete DOM elements, and rip out 3D WebGL
+    function destroyVisuals() {
+        if (nightSky) {
+            nightSky.innerHTML = ''; 
+            clearInterval(shootingStarInterval); 
+        }
+        if (splineContainer) {
+            splineContainer.innerHTML = ''; // Instantly frees GPU memory
+        }
+    }
+
+    // Update the button visuals
+    function updateOptimizeUI() {
+        if (!optimizeBtn) return;
+        if (isOptimized) {
+            optimizeBtn.innerHTML = '<i class="fas fa-leaf"></i> ECO: ON';
+            optimizeBtn.classList.add('active');
+        } else {
+            optimizeBtn.innerHTML = '<i class="fas fa-bolt"></i> ECO: OFF';
+            optimizeBtn.classList.remove('active');
+        }
+    }
+
+    // Run on page load
+    if (!isOptimized) initVisuals();
+    else destroyVisuals(); // Ensure it stays dead across page loads
+    updateOptimizeUI();
+
+    // Button Click Listener
+    if (optimizeBtn) {
+        optimizeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            isOptimized = !isOptimized;
+            localStorage.setItem('vinit_optimized', isOptimized);
+            
+            if (isOptimized) destroyVisuals();
+            else initVisuals();
+            
+            updateOptimizeUI();
+        });
     }
 
     // --- 2. GLOBAL SCROLL PARALLAX & FADES ---
@@ -76,17 +132,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = ''; 
             }
         });
-    }
-
-    // --- 4. ULTIMATE SPLINE 3D OPTIMIZATION ---
-    if (window.innerWidth > 1024) {
-        const splineContainer = document.getElementById('spline-container');
-        if (splineContainer) {
-            const script = document.createElement('script');
-            script.type = 'module';
-            script.src = 'https://unpkg.com/@splinetool/viewer@1.12.60/build/spline-viewer.js';
-            document.head.appendChild(script);
-            splineContainer.innerHTML = '<spline-viewer url="https://prod.spline.design/vyQWyAKaGzlKQJKm/scene.splinecode" loading-reveal="hidden"></spline-viewer>';
-        }
     }
 });

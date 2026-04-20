@@ -183,6 +183,38 @@ spline-viewer::part(overlay), #spline-viewer-overlay, #hint, .hint-container, [i
 .massive-cta:hover p { color: #fff; }
 .massive-cta:hover h2 { transform: scale(1.05); }
 
+/* --- FLOATING ECO MODE BUTTON --- */
+.floating-eco-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #888;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+.floating-eco-btn:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+.floating-eco-btn.active {
+  color: #00ff41;
+  border-color: #00ff41;
+  background: rgba(0, 255, 65, 0.05);
+}
+
 /* UNIQUE PROJECT DISPLAY */
 @media (min-width: 1025px) {
   #featured-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 280px; gap: 20px; border: none; }
